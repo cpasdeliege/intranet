@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- les mappings de l'application-->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	
+		<property name="interceptors">
+			<list>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurChrono">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurTimeOut">
+					
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurLoggueur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.formations.intercepteur.IntercepteurFormationTestBD">
+					<property name="daoFormations">
+						<ref bean="daoFormations"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurExterieur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+					<property name="dao">
+						<ref bean="dao"/>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="mappings">
+			<props>
+				<prop key="/index.formations">IndexControler</prop>
+				<prop key="/services.formations">RechercheServiceControler</prop>
+				<prop key="/typeFormations.formations">TypeFormationsControler</prop>
+				<prop key="/formation.formations">FormationControler</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	
+		<property name="interceptors">
+			<list>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurChrono">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurTimeOut">
+					
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurLoggueur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.formations.intercepteur.IntercepteurFormationTestBD">
+					<property name="daoFormations">
+						<ref bean="daoFormations"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.formations.intercepteur.IntercepteurFormation">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="mappings">
+			<props>
+				<prop key="/index.formations">IndexControler</prop>
+				<prop key="/indexAdmin.formations">IndexAdminControler</prop>
+				<prop key="/formulaireAjouter.formations">FormulaireAjouterControler</prop>
+				<prop key="/formulaireModifier.formations">FormulaireModifierControler</prop>
+				<prop key="/supprimerFormation.formations">SupprimerFormationControler</prop>
+				<prop key="/gestionFormation.formations">GestionFormationControler</prop>
+				<prop key="/ajouterServiceFormation.formations">AjouterServiceFormationControler</prop>
+				<prop key="/supprimerServiceFormation.formations">SupprimerServiceFormationControler</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- les contrôleurs de l'application-->
+		
+	<bean id="IndexControler" 
+		class="be.cpasdeliege.intranet.formations.controler.Index">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+	</bean>
+	
+	<bean id="FormationControler" 
+		class="be.cpasdeliege.intranet.formations.controler.Formation">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+	</bean>
+	
+	<bean id="RechercheServiceControler" 
+		class="be.cpasdeliege.intranet.formations.controler.RechercheServices">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+	</bean>
+	
+	<bean id="TypeFormationsControler" 
+		class="be.cpasdeliege.intranet.formations.controler.RechercheTypeFormations">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+	</bean>
+	
+	<bean id="IndexAdminControler" 
+		class="be.cpasdeliege.intranet.formations.controler.IndexAdmin">
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireAjouterControler" 
+		class="be.cpasdeliege.intranet.formations.controler.FormulaireFormationAjouter">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.formations.model.Formation</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireFormationAjouter</value>
+		</property>
+		<property name="formView">
+			<value>formulaireAjouter</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireModifierControler" 
+		class="be.cpasdeliege.intranet.formations.controler.FormulaireFormationModifier">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.formations.model.Formation</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireFormationModifier</value>
+		</property>
+		<property name="formView">
+			<value>formulaireModifier</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerFormationControler" 
+		class="be.cpasdeliege.intranet.formations.controler.SupprimerFormation">
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionFormationControler" 
+		class="be.cpasdeliege.intranet.formations.controler.GestionFormation">
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="AjouterServiceFormationControler" 
+		class="be.cpasdeliege.intranet.formations.controler.AjouterServiceFormation">
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerServiceFormationControler" 
+		class="be.cpasdeliege.intranet.formations.controler.SupprimerServiceFormation">
+		<property name="daoFormations">
+			<ref bean="daoFormations"/>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<!-- les gestionnaires d'exceptions -->
+	
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="DomainException">exception</prop>
+				<prop key="DaoException">exception</prop>
+			</props>
+		</property>
+		<property name="exceptionAttribute">
+			<value>exception</value>
+		</property>
+		<property name="defaultStatusCode">
+			<value>500</value>
+		</property>
+		<property name="defaultErrorView">
+			<value>exception</value>
+		</property>
+	</bean>
+	
+	<!-- le résolveur de vues -->
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/vues/formations/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>	
+</beans>

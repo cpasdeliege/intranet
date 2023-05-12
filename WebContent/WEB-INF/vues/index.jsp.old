@@ -1,0 +1,429 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Intranet CPAS de Liège</title>
+<link rel="stylesheet" href="site.css" type="text/css">
+<style type="text/css">
+
+#gauche {
+   float:left; /* Le cadre sort du flux */
+   border:1px solid #DAA520;
+   width:600px; 
+   background-color:#DAA520;
+}
+#droite {
+   float:right; /* ou margin-left:202px;  */
+   border:1px solid gray;
+   width:600px; 
+   background-color:gray;
+}
+
+</style>
+</head>
+<body class="body">
+<jsp:include page="entete.jsp" ></jsp:include>
+<div>
+<hr>
+&nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">accueil</a>
+<hr>
+</div>
+<div  id="gauche">
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td></td>
+		<td class="titre_tableau">Intranet - Zone Libre d'Acc�s</td>
+		<td></td>
+	</tr>
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><a href="index.annuaire"><img src="images/telephone.png" border="0" width="50px"></a></td>
+					<td><a class="texte_menu_principal" href="index.annuaire"><nobr>Annuaire Interne</nobr></a></td>
+					<td><p class="texte_informatif_menu_principal">
+						Ce r�pertoire est destin� � un <span class="texte_gros">usage strictement interne.</span>
+						</p>
+						<p class="texte_informatif_menu_principal">
+						Nous comptons sur votre bienveillance pour respecter cette consigne puisque 
+						certains services - et plus particuli�rement les antennes sociales - pr�cisent 
+						<span class="texte_gros">un num�ro d'appel destin� au public.</span>
+						</p>
+						<p class="texte_informatif_menu_principal">
+						Si vous appelez <span class="texte_gros">de l'ext�rieur</span> composer les num�ros avec leur pr�fix en rouge.<br/>
+						Si vous appelez <span class="texte_gros">en interne</span>, composer seulement les 4 chiffres d'extension en noir.
+						</p>
+					</td>
+					<td align="right" valign="bottom"><a href="index.admin" class="lien_administratif_menu_principal">admin</a></td>
+				</tr>
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+<br>
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><a href="index.regTrav?param=lots"><img src="images/strategique.png" border="0" width="60px"></a></td>
+					<td><a class="texte_menu_principal">Plan Strat�gique</a></td>
+					<td width="70%">
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=etat" target="_blank">Etat des lieux (mai 2013)</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=tableau" target="_blank">Tableau de bord (juillet 2013)</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=presentation" target="_blank">Plan strat�gique (derni�re version)</a></p>
+						<p class="texte_informatif_menu_principal">
+							
+						</p>
+					</td>
+					<td align="right" valign="bottom"></td>
+				</tr>
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+<br>
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><a href="index.rues"><img src="images/agent.png" border="0" width="60px"></a></td>
+					<td><a class="texte_menu_principal" href="index.rues">R�partition et code des rues de Liège</a></td>
+					<td>
+						<p class="texte_informatif_menu_principal">
+							Il y a lieu d'inviter les personnes qui ont entre 18 et 25 ans � se pr�senter � l'antenne Jeunes situ�e rue Natalis et celles qui sont en ill�galit� de s�jour � se rendre au SADA situ� rue Hors-Chateau.
+						</p>
+						<p class="texte_informatif_menu_principal">
+							Une ic�ne permet de visualiser l'endroit o� se situe la rue sur le territoire de la Ville de Liège.
+						</p>
+					</td>
+					<td align="right" valign="bottom"></td>
+				</tr>
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+<br>
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><a href="index.regTrav?param=lots"><img src="images/travail.png" border="0" width="60px"></a></td>
+					<td><a class="texte_menu_principal">R�glement de travail du personnel<br></a></td>
+					<td>
+						<p class="texte_informatif_menu_principal">
+							<img src="./images/pdf.png" width="30px"></img><a class="texte_menu_principal" href="index.regTrav?param=lots" target="_blank">T�l�charger le R�glement de Travail</a>
+						</p>
+						<p>
+							Si votre ordinateur n'est pas �quip� d'une version suffisamment r�cente d'acrobat reader, veuillez utiliser le lien suivant: <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=normal" target="_blank">T�l�charger</a>
+						</p>
+						<p class="texte_informatif_menu_principal">
+							
+						</p>
+					</td>
+					<td align="right" valign="bottom"></td>
+				</tr>
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+<br>
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><img src="images/certificat.png" border="0" width="60px"></td>
+					<td><a class="texte_menu_principal">Ressources</a></td>
+					<td  width="70%">
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=certificat" target="_blank">Certificat M�dical</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmIAS" target="_blank">Vade-Mecum : Action Sociale</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmMado" target="_blank">Vade-Mecum : Maintien � Domicile</a></p>
+						<p class="texte_informatif_menu_principal">
+							
+						</p>
+					</td>
+					<td align="right" valign="bottom"></td>
+				</tr>
+				
+												
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+<br>
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><img src="images/amicale.png" border="0" width="60px"></td>
+					<td><a class="texte_menu_principal">Amicale du Personnel</a></td>
+					<td width="70%">
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=ethias" target="_blank">Promotion du 27 avril au 26 mai en Assurance Incendie.</a></p>
+						<p class="texte_informatif_menu_principal">
+							
+						</p>
+					</td>
+					<td align="right" valign="bottom"></td>
+				</tr>
+				
+												
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+<br>
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><a href="file:///P:/Infor%20Jeunes/info.html"><img src="images/infoJ.png" border="0" width="60px"></a></td>
+					<td><a class="texte_menu_principal" target="_blank" href="file:///P:/Infor%20Jeunes/info.html">Les Fiches Infor Jeunes</a></td>
+					<td><p class="texte_informatif_menu_principal"></p></td>
+					<td align="right" valign="bottom"></td>
+				</tr>
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+<br>
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td></td>
+		<td class="titre_tableau">Intranet - Zone � Acc�s R�serv�</td>
+		<td></td>
+	</tr>
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><a href="index.dsi"><img src="images/dsi.png" border="0" width="60px"></a></td>
+					<td><a class="texte_menu_principal" href="index.dsi">Introduction de Demande au Service Informatique</a></td>
+					<td>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=DSI" target="_blank">Guide Utilisateur</a></p>
+					</td>
+					<td align="right" class="lien_administratif_menu_principal"></td>
+				</tr>
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td></td>
+		<td class="titre_tableau"></td>
+		<td></td>
+	</tr>
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><a href="index.admin"><img src="images/informatique.png" border="0" width="60px"></a></td>
+					<td><a class="texte_menu_principal" href="index.admin">Service Informatique</a></td>
+					<td><p class="texte_informatif_menu_principal"></p></td>
+					<td align="right" class="lien_administratif_menu_principal"></td>
+				</tr>
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="droite">
+
+<table align="center" width="80%" cellpadding="0" cellspacing="0">
+	<tr height="25">
+		<td></td>
+		<td class="titre_tableau"></td>
+		<td></td>
+	</tr>
+	<tr height="25">
+		<td width="22" background="images/cadre/area_top_left.gif"></td>
+		<td background="images/cadre/area_top.gif"></td>
+		<td width="22" background="images/cadre/area_top_right.gif"></td>
+	</tr>
+	
+	<tr>
+		<td background="images/cadre/area_left.gif"></td>
+		<td>
+			<table width="100%">
+				<tr>
+					<td width="60px"><a href="index.admin"><img src="images/informatique.png" border="0" width="60px"></a></td>
+					<td><a class="texte_menu_principal" href="index.admin">Service Informatique</a></td>
+					<td><p class="texte_informatif_menu_principal"></p></td>
+					<td align="right" class="lien_administratif_menu_principal"></td>
+				</tr>
+			</table>
+		</td>
+		<td background="images/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/cadre/area_bottom_left.gif"></td>
+		<td background="images/cadre/area_bottom.gif"></td>
+		<td background="images/cadre/area_bottom_right.gif"></td>
+	</tr>
+</table>
+
+</div>
+
+
+
+
+
+<jsp:include page="basDePage.jsp" ></jsp:include>
+</body>
+</html>

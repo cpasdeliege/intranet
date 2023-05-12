@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="ISO_8859-1"?>
+<!DOCTYPE beans SYSTEM "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- LINUX-PROD-->
+	<!-- ____________________________________________  
+	<bean id="dao" class="be.cpasdeliege.intranet.informatique.model.dao.DaoMySQL">
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="aliasDB">				
+			<value>//localhost/cpas</value>
+		</property>
+		
+
+		<property name="user">				
+			<value>cpas</value>
+		</property>
+		<property name="password">				
+			<value>5263</value>
+		</property>
+	
+		
+		
+		
+		
+	</bean>
+	
+	<bean id="daoDsi" class="be.cpasdeliege.intranet.DemServInfo.dao.DaoDemServInf">
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+
+		<property name="aliasDB">				
+			<value>//localhost:3307/demservinfo</value>
+		</property>
+		
+		
+		<property name="user">				
+			<value>cpas</value>
+		</property>
+		<property name="password">				
+			<value>5263</value>
+		</property>
+
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean> 
+	
+	<bean id="daoCadastre" class="be.cpasdeliege.intranet.cadastre.dao.DaoCadastre">
+
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+	
+		<property name="aliasDB">				
+			<value>//localhost/cadastre_mp</value>
+		</property>
+		
+
+		<property name="user">				
+			<value>cpas</value>
+		</property>
+		<property name="password">				
+			<value>5263</value>
+		</property>
+
+		
+	
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean> 
+	
+	<bean id="domain" class="be.cpasdeliege.intranet.informatique.model.domain.Domain">
+		<property name="dao">				
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	________________________________________-->
+	<!-- LINUX-PROD -->
+	
+	<!-- WIN -->
+	
+		<!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!--  partie que j'ai ajouté -->
+		<!--  ================================================================== 
+		<bean id="dao" class="be.cpasdeliege.intranet.informatique.model.dao.DaoMySQL">
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="aliasDB">				
+			<value>//localhost:3306/cpas?characterEncoding=UTF-8</value>
+		</property>
+		
+
+		<property name="user">				
+			<value>root</value>
+		</property>
+		<property name="password">				
+			<value>CPas4013</value>
+		</property>
+				
+	</bean>
+	
+	
+	 
+	<bean id="daoDsi" class="be.cpasdeliege.intranet.DemServInfo.dao.DaoDemServInf">
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+
+		<property name="aliasDB">				
+			
+				<value>//localhost:3306/demservinfo?characterEncoding=UTF-8</value>
+		</property>
+		
+		
+		<property name="user">				
+			<value>root</value>
+		</property>
+		<property name="password">				
+			<value>CPas4013</value>
+		</property>
+
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean> 
+	 
+	
+	<bean id="daoCadastre" class="be.cpasdeliege.intranet.cadastre.dao.DaoCadastre">
+
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+	
+		<property name="aliasDB">				
+			<value>//localhost:3306/cadastre_mp?characterEncoding=UTF-8</value>
+		</property>
+		
+
+		<property name="user">				
+			<value>root</value>
+		</property>
+		<property name="password">				
+			<value>CPas4013</value>
+		</property>
+
+	
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean> 
+	
+	<bean id="domain" class="be.cpasdeliege.intranet.informatique.model.domain.Domain">
+		<property name="dao">				
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	  ======================================= -->
+	
+		
+		
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++ -->
+		
+	 
+	 <!-- <bean id="daoFormations" class="be.cpasdeliege.intranet.formations.model.dao.DaoFormations">
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+
+		
+		<property name="aliasDB">				
+			<value>//localhost:3307/formations?characterEncoding=latin1</value> 
+		</property>
+		<property name="user">				
+			<value>root</value>
+		</property>
+		<property name="password">				
+			<value>CPas4013</value>
+		</property>
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean>-->
+	 
+   <!-- WIN -->
+	 
+	 <!-- LINUX-PROD -->
+	<!-- ____________________________________________________
+	<bean id="daoCodesRues" class="be.cpasdeliege.intranet.codesRues.model.dao.DaoCodesRues">
+		<property name="driver">				
+			<value>org.relique.jdbc.csv.CsvDriver</value>
+		</property>
+		<property name="aliasDB">		
+			<value>/opt/fop</value>
+		</property>
+		<property name="user">				
+			<value></value>
+		</property>
+		<property name="password">				
+			<value></value>
+		</property>
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean>
+	 
+	<bean id="config" class="be.cpasdeliege.intranet.informatique.model.Config">
+		<property name="cpasAlphaSautXsl">				
+			<value>/opt/fop/cpas_alpha_saut.xsl</value>
+		</property>
+		<property name="cpasAlphaXsl">				
+			<value>/opt/fop/cpas_alpha.xsl</value>
+		</property>
+		<property name="cpasServiceSautXsl">				
+			<value>/opt/fop/cpas_service_saut.xsl</value>
+		</property>
+		<property name="cpasServiceXsl">				
+			<value>/opt/fop/cpas_service.xsl</value>
+		</property>
+		<property name="pdfReglementTravail">				
+			<value>/opt/fop/RegTravail2mars2010.pdf</value>
+		</property>
+		<property name="pdfReglementTravailLots">				
+			<value>/opt/fop/RegTravail2mars2010Lot.pdf</value>
+		</property>
+		<property name="pdf_PS_etatDesLieux">				
+			<value>/opt/fop/PS_etatDesLieux.pdf</value>
+		</property>
+		<property name="pdf_PS_tableauDeBord">				
+			<value>/opt/fop/PS_tableauDeBord.pdf</value>
+		</property>
+		<property name="pdf_PS_presentation">				
+			<value>/opt/fop/PS_presentation.pdf</value>
+		</property>
+		<property name="pdf_certificat">				
+			<value>/opt/fop/certificat_medical.pdf</value>
+		</property>
+		<property name="pdf_Ethias">				
+			<value>/opt/fop/ethias.pdf</value>
+		</property>
+		<property name="pdf_vmMado">				
+			<value>/opt/fop/VM_Maintien.pdf</value>
+		</property>
+		<property name="pdf_vmIAS">				
+			<value>/opt/fop/VM_action_sociale.pdf</value>
+		</property>
+		<property name="pdf_DSI">				
+			<value>/opt/fop/DSI.pdf</value>
+		</property>
+	</bean>
+	_____________________________________________________________-->
+	<!-- LINUX -->
+	
+	<!-- WIN -->
+	<!-- ==================================================================================
+	<bean id="daoCodesRues" class="be.cpasdeliege.intranet.codesRues.model.dao.DaoCodesRues">
+		<property name="driver">				
+			<value>org.relique.jdbc.csv.CsvDriver</value>
+		</property>
+		<property name="aliasDB">				
+			<value>c:/fop</value>
+		</property>
+		<property name="user">				
+			<value></value>
+		</property>
+		<property name="password">				
+			<value></value>
+		</property>
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean>
+	
+	
+	<bean id="config" class="be.cpasdeliege.intranet.informatique.model.Config">
+		<property name="cpasAlphaSautXsl">				
+			<value>c:\\fop\\cpas_alpha_saut.xsl</value>
+		</property>
+		<property name="cpasAlphaXsl">				
+			<value>c:\\fop\\cpas_alpha.xsl</value>
+		</property>
+		<property name="cpasServiceSautXsl">				
+			<value>c:\\fop\\cpas_service_saut.xsl</value>
+		</property>
+		<property name="cpasServiceXsl">				
+			<value>c:\\fop\\cpas_service.xsl</value>
+		</property>
+		<property name="pdfReglementTravail">				
+			<value>c:\\fop\\RegTravail2mars2010.pdf</value>
+		</property>
+		<property name="pdfReglementTravailLots">				
+			<value>c:\\fop\\RegTravail2mars2010Lot.pdf</value>
+		</property>
+		<property name="pdf_PS_etatDesLieux">				
+			<value>c:\\fop\\PS_etatDesLieux.pdf</value>
+		</property>
+		<property name="pdf_PS_tableauDeBord">				
+			<value>c:\\fop\\PS_tableauDeBord.pdf</value>
+		</property>
+		<property name="pdf_PS_presentation">				
+			<value>c:\\fop\\PS_presentation.pdf</value>
+		</property>
+		<property name="pdf_certificat">				
+			<value>c:\\fop\\certificat_medical.pdf</value>
+		</property>
+		<property name="pdf_Ethias">				
+			<value>c:\\fop\\ethias.pdf</value>
+		</property>
+		<property name="pdf_vmMado">				
+			<value>c:\\fop\\VM_Maintien.pdf</value>
+		</property>
+		<property name="pdf_vmIAS">				
+			<value>c:\\fop\\VM_action_sociale.pdf</value>
+		</property>
+		<property name="pdf_DSI">				
+			<value>c:\\fop\\DSI.pdf</value>
+		</property>
+	</bean>
+	========================================== -->
+	<!-- WIN -->
+	
+	<!-- ****************************************************************************** -->
+	
+	<!-- Lunix-Test -->
+	
+	<!--  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<bean id="dao" class="be.cpasdeliege.intranet.informatique.model.dao.DaoMySQL">
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="aliasDB">				
+			<value>//10.210.117.47:3306/cpas</value>
+		</property>
+		
+
+		<property name="user">				
+			<value>cpas</value>
+		</property>
+		<property name="password">				
+			<value>@psswrd+SQL%</value>
+		</property>
+	
+		
+		
+		
+		
+	</bean>
+	
+	<bean id="daoDsi" class="be.cpasdeliege.intranet.DemServInfo.dao.DaoDemServInf">
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+
+		<property name="aliasDB">				
+			<value>//10.210.117.47:3306/demservinfo</value>
+		</property>
+		
+		
+		<property name="user">				
+			<value>cpas</value>
+		</property>
+		<property name="password">				
+			<value>@psswrd+SQL%</value>
+		</property>
+
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean> 
+	
+	<bean id="daoCadastre" class="be.cpasdeliege.intranet.cadastre.dao.DaoCadastre">
+
+		<property name="driver">				
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+	
+		<property name="aliasDB">				
+			<value>//10.210.117.47:3306/cadastre_mp</value>
+		</property>
+		
+
+		<property name="user">				
+			<value>cpas</value>
+		</property>
+		<property name="password">				
+			<value>@psswrd+SQL%</value>
+		</property>
+
+		
+	
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean> 
+	
+	<bean id="domain" class="be.cpasdeliege.intranet.informatique.model.domain.Domain">
+		<property name="dao">				
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	
+	 
+	 <!-- LINUX-Test-->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<bean id="daoCodesRues" class="be.cpasdeliege.intranet.codesRues.model.dao.DaoCodesRues">
+		<property name="driver">				
+			<value>org.relique.jdbc.csv.CsvDriver</value>
+		</property>
+		<property name="aliasDB">		
+			<value>/opt/fop</value>
+		</property>
+		<property name="user">				
+			<value></value>
+		</property>
+		<property name="password">				
+			<value></value>
+		</property>
+		<property name="start">				
+			<value>true</value>
+		</property>
+	</bean>
+	 
+	<bean id="config" class="be.cpasdeliege.intranet.informatique.model.Config">
+		<property name="cpasAlphaSautXsl">				
+			<value>/opt/fop/cpas_alpha_saut.xsl</value>
+		</property>
+		<property name="cpasAlphaXsl">				
+			<value>/opt/fop/cpas_alpha.xsl</value>
+		</property>
+		<property name="cpasServiceSautXsl">				
+			<value>/opt/fop/cpas_service_saut.xsl</value>
+		</property>
+		<property name="cpasServiceXsl">				
+			<value>/opt/fop/cpas_service.xsl</value>
+		</property>
+		<property name="pdfReglementTravail">				
+			<value>/opt/fop/RegTravail2mars2010.pdf</value>
+		</property>
+		<property name="pdfReglementTravailLots">				
+			<value>/opt/fop/RegTravail2mars2010Lot.pdf</value>
+		</property>
+		<property name="pdf_PS_etatDesLieux">				
+			<value>/opt/fop/PS_etatDesLieux.pdf</value>
+		</property>
+		<property name="pdf_PS_tableauDeBord">				
+			<value>/opt/fop/PS_tableauDeBord.pdf</value>
+		</property>
+		<property name="pdf_PS_presentation">				
+			<value>/opt/fop/PS_presentation.pdf</value>
+		</property>
+		<property name="pdf_certificat">				
+			<value>/opt/fop/certificat_medical.pdf</value>
+		</property>
+		<property name="pdf_Ethias">				
+			<value>/opt/fop/ethias.pdf</value>
+		</property>
+		<property name="pdf_vmMado">				
+			<value>/opt/fop/VM_Maintien.pdf</value>
+		</property>
+		<property name="pdf_vmIAS">				
+			<value>/opt/fop/VM_action_sociale.pdf</value>
+		</property>
+		<property name="pdf_DSI">				
+			<value>/opt/fop/DSI.pdf</value>
+		</property>
+	</bean>
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- LINUX-Test -->
+	
+	<!-- Test -->
+	
+</beans>

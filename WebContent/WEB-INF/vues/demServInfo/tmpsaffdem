@@ -1,0 +1,481 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.util.*" %>
+<%@ page import="be.cpasdeliege.intranet.DemServInfo.*" %>
+<%@page import="be.cpasdeliege.intranet.DemServInfo.model.DemServInf"%>
+<%@page import="be.cpasdeliege.intranet.DemServInfo.model.Remarque"%>
+<%@page import="be.cpasdeliege.intranet.informatique.model.*"%>
+<%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Intranet CPAS de Liège</title>
+<link rel="stylesheet" href="site.css" type="text/css">
+
+<script language="JavaScript" src="javascript/calendar_db.js"></script>
+<link rel="stylesheet" href="calendar.css">
+</head>
+<body class="body">
+<jsp:include page="../entete.jsp" ></jsp:include>
+<div>
+<hr>
+&nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.dsi">demande service informatique</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">afficher une demande</a>
+<hr>
+</div>
+<p align="center" style="color: red">
+${erreur}
+</p>
+<% 
+DemServInf dsi = (DemServInf)request.getAttribute("dsi");
+Utilisateur utilisateur = (Utilisateur)request.getSession().getAttribute("utilisateur");
+PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().getAttribute("privilegeInformatique");
+%>
+
+<table cellpadding="0" cellspacing="0"  class="tableau_container">
+	<tr height="25">
+		<td></td>
+		<td>
+			<table>
+				<tr>
+					<td class="titre_tableau">Afficher une demande</td>
+					<td>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td></td>
+	</tr>
+	<tr height="25">
+		<td width="22" background="images/administration/cadre/area_top_left.gif"></td>
+		<td background="images/administration/cadre/area_top.gif"></td>
+		<td width="22" background="images/administration/cadre/area_top_right.gif"></td>
+	</tr>
+	<tr>
+		<td background="images/administration/cadre/area_left.gif"></td>
+		<td>
+			<form method="post" name="formulaire">
+			<table>
+				<tr>
+					<td align="right">n� Demande : </td>
+					<%-- <td><input disabled="disabled" type="text" size="80" maxlength="200" name="titre" value="${dsi.idDemandes}"/></td> --%>
+					<td>${dsi.idDemandes}</td>
+				</tr>
+				<tr>
+					<td align="right">date demande : </td>
+					<td>
+						<input disabled="disabled" type="text" name="dateDemande" value="${dsi.dateDemande}"/>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">auteur demande : </td>
+					<td>
+						<input disabled="disabled" type="text" size="30" maxlength="200" name="titre" value="${dsi.nom} ${dsi.prenom}"/>
+					</td>
+					<%-- <td>${dsi.typeDemande}</td> --%>
+				</tr>
+				<tr>
+					<td align="right">type de demande : </td>
+					<td>
+						<select disabled="disabled" name="typeDemande" size="1" />
+								<option >${dsi.typeDemande}</option>
+						</select>
+					</td>
+					<%-- <td>${dsi.typeDemande}</td> --%>
+				</tr>
+				<tr>
+					<td align="right">responsable : </td>
+					<td>
+						<input disabled="disabled" type="text" size="30" maxlength="200" name="titre" value="${dsi.nomChef} ${dsi.prenomChef}"/>
+					</td>
+					<%-- <td>${dsi.typeDemande}</td> --%>
+				</tr>
+				<tr>
+					<td align="right">service concern� : </td>
+					<td>
+						<select disabled="disabled" name="service" size="1" />
+								<option >${dsi.service}</option>
+						</select>
+					</td>
+					<%-- <td>${dsi.typeDemande}</td> --%>
+				</tr>
+				<tr>
+					<td align="right">�ch�ance souhait�e: </td>
+					<td>
+						<input disabled="disabled" type="text" name="echeanceSouhaitee" value="${dsi.dateExecSouhaitee}"/>
+						<!-- <script language="JavaScript">
+						new tcal ({
+							'formname': 'formulaire',
+							'controlname': 'echeanceSouhaitee'
+						});
+						</script> -->
+
+					</td>
+					<%-- <td>${dsi.dateExecSouhaitee}</td> --%>
+				</tr>
+				<tr>
+					<td align="right">Titre : </td>
+					<td><input disabled="disabled" type="text" size="80" maxlength="200" name="titre" value="${dsi.titre}"/></td>
+					<%-- <td>${dsi.titre}</td> --%>
+				</tr>
+				<tr>
+					<td align="right">description : </td>
+					<td><textarea disabled="disabled" cols="80" rows="20" name="description"/>${dsi.description}</textarea></td>
+					<%-- <td>
+						<table width="100%" cellpadding="0" cellspacing="0">
+							<tr height="25">
+								<td width="22" background="images/cadre/area_top_left.gif"></td>
+								<td background="images/cadre/area_top.gif"></td>
+								<td width="22" background="images/cadre/area_top_right.gif"></td>
+							</tr>
+							<tr>
+								<td background="images/cadre/area_left.gif"></td>
+								<td>
+									<%= dsi.getDescription().replaceAll("\r\n", "<br>") %>
+								</td>
+								<td background="images/cadre/area_right.gif"></td>
+							</tr>
+							
+							<tr height="25">
+								<td background="images/cadre/area_bottom_left.gif"></td>
+								<td background="images/cadre/area_bottom.gif"></td>
+								<td background="images/cadre/area_bottom_right.gif"></td>
+							</tr>
+						</table>
+					</td> --%>
+				</tr>
+				<tr>
+					<td><%-- <a href="${retour}"><img alt="retour" src="images/administration/retour.jpg" border="0"></a> --%></td>
+					<td align="right"></td>
+				</tr>
+			</table>
+			<input type="hidden" name="idDemandes" value="${dsi.idDemandes}"/>
+			</form>
+		</td>
+		<td background="
+		images/administration/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr>
+		<td background="images/administration/cadre/area_left.gif"></td>
+		<td>
+			<hr>
+		</td>
+		<td background="images/administration/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr>
+		<td background="images/administration/cadre/area_left.gif"></td>
+		<td>
+			<form method="post" name="formu">
+				<table width="100%">
+				
+				
+				
+				
+				
+				
+				
+				<% if(!dsi.getValidationChef().equals("none")) { %>
+					<% if(!privilege.isDsiUser()) { %>   
+					<tr>
+						<td align="right" width="200px">validation direction : </td>
+						<td>
+							
+							<input <% if(dsi.getValidationSecr().equals("oui")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %> 
+								type="radio" name="validationSecr" value="oui"> oui
+							<input <% if(dsi.getValidationSecr().equals("attente")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								type="radio" name="validationSecr" value="attente"> attente
+							<input <% if(dsi.getValidationSecr().equals("non")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								type="radio" name="validationSecr" value="non"> non 
+						</td>
+					</tr>
+					<tr>
+						<td align="right">�ch�ance direction : </td>
+						<td>
+							<input <% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								 type="text" name="dateExecSouhaiteeSecr" value="${dsi.dateExecSouhaiteeSecr}"/>
+							<% if(privilege.isDsiDirection()) { %> 
+								<script language="JavaScript">
+									new tcal ({
+										'formname': 'formu',
+										'controlname': 'dateExecSouhaiteeSecr'
+									});
+								</script>
+							<% } %> 
+						</td>
+					</tr>
+					<% } %>
+					<tr>
+						<td colspan="2"><hr></td>
+					</tr>
+					<% } %>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<% if(!dsi.getValidationChef().equals("none")) { %>
+					<% if(!privilege.isDsiUser()) { %>   
+					<tr>
+						<td align="right" width="200px">validation direction : </td>
+						<td>
+							
+							<input <% if(dsi.getValidationSecr().equals("oui")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %> 
+								type="radio" name="validationSecr" value="oui"> oui
+							<input <% if(dsi.getValidationSecr().equals("attente")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								type="radio" name="validationSecr" value="attente"> attente
+							<input <% if(dsi.getValidationSecr().equals("non")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								type="radio" name="validationSecr" value="non"> non 
+						</td>
+					</tr>
+					<tr>
+						<td align="right">�ch�ance direction : </td>
+						<td>
+							<input <% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								 type="text" name="dateExecSouhaiteeSecr" value="${dsi.dateExecSouhaiteeSecr}"/>
+							<% if(privilege.isDsiDirection()) { %> 
+								<script language="JavaScript">
+									new tcal ({
+										'formname': 'formu',
+										'controlname': 'dateExecSouhaiteeSecr'
+									});
+								</script>
+							<% } %> 
+						</td>
+					</tr>
+					<% } %>
+					<tr>
+						<td colspan="2"><hr></td>
+					</tr>
+					<% } %>
+					<% if(!dsi.getValidationSecr().equals("none")) { %>
+					<% if(!privilege.isDsiUser()) { %>   
+					<tr>
+						<td align="right">validation informatique : </td>
+						<td>
+							<input <% if(dsi.getValidationInfor().equals("oui")) { %> checked <% } %> 
+								<% if(!privilege.isDsiInfo()) { %> disabled <% } %>
+								type="radio" name="validationInfor" value="oui"> oui
+							<input <% if(dsi.getValidationInfor().equals("attente")) { %> checked <% } %> 
+								<% if(!privilege.isDsiInfo()) { %> disabled <% } %>
+								type="radio" name="validationInfor" value="attente"> attente
+							<input <% if(dsi.getValidationInfor().equals("non")) { %> checked <% } %> 
+								<% if(!privilege.isDsiInfo()) { %> disabled <% } %>
+								type="radio" name="validationInfor" value="non"> non
+						</td>
+					</tr>
+					<tr>
+						<td align="right">�ch�ance informatique : </td>
+						<td>
+							<input <% if(!privilege.isDsiInfo()) { %> disabled <% } %>
+								type="text" name="dateExecPrevue" value="${dsi.dateExecPrevue}"/>
+							
+							<% if(privilege.isDsiInfo()) { %> 
+								<script language="JavaScript">
+									new tcal ({
+										'formname': 'formu',
+										'controlname': 'dateExecPrevue'
+									});
+								</script>
+							<% } %> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2"><hr></td>
+					</tr>
+					<% } %>
+					<% if(!dsi.getValidationInfor().equals("none")) { %>
+					<tr>
+						<td align="right">validation finale : </td>
+						<td>
+							<input <% if(dsi.getValidationSecrConf().equals("oui")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								type="radio" name="validationSecrConf" value="oui"> oui
+							<input <% if(dsi.getValidationSecrConf().equals("attente")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								type="radio" name="validationSecrConf" value="attente"> attente
+							<input <% if(dsi.getValidationSecrConf().equals("non")) { %> checked <% } %> 
+								<% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								type="radio" name="validationSecrConf" value="non"> non
+						</td>
+					</tr>
+					
+					<tr>
+						<td align="right">�ch�ance : </td>
+						<td>
+							<input <% if(!privilege.isDsiDirection()) { %> disabled <% } %>
+								type="text" name="dateExecSouhaiteeSecrConf" value="${dsi.dateExecSouhaiteeSecrConf}"/>
+							<% if(privilege.isDsiDirection()) { %> 
+								<script language="JavaScript">
+									new tcal ({
+										'formname': 'formu',
+										'controlname': 'dateExecSouhaiteeSecrConf'
+									});
+								</script>
+							<% } %> 
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><hr></td>
+					</tr>
+					<% if(dsi.getValidationSecrConf().equals("oui")) { %>
+					<% if(dsi.getDateExecEffective() != null || privilege.isDsiInfo()) { %>
+					<tr>
+						<td align="right">ex�cution effective : </td>
+						<td>
+							<input <% if(!privilege.isDsiInfo()) { %> disabled <% } %>
+								type="text" name="dateExecEffective" value="${dsi.dateExecEffective}"/>
+							<% if(privilege.isDsiInfo()) { %> 
+								<script language="JavaScript">
+									new tcal ({
+										'formname': 'formu',
+										'controlname': 'dateExecEffective'
+									});
+								</script>
+							<% } %> 
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2"><hr></td>
+					</tr>
+					<% } %>
+					<% } %>
+					<% } %>
+					<% } %>
+					<tr>
+						<td><a href="${retour}"><img alt="retour" src="images/administration/retour.jpg" border="0"></a></td>
+						<td align="right">
+						<% if(!privilege.isDsiUser()) { %> <input type="submit" value="enregistrer"/></td> <%} %>
+						<input type="hidden" name="action" value="modifier"/>
+					</tr>
+					
+				</table>
+			</form>
+		</td>
+		<td background="images/administration/cadre/area_right.gif"></td>
+	</tr>
+	
+	<tr height="25">
+		<td background="images/administration/cadre/area_bottom_left.gif"></td>
+		<td background="images/administration/cadre/area_bottom.gif"></td>
+		<td background="images/administration/cadre/area_bottom_right.gif"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><br></td>
+	</tr>
+	
+	<tr height="25">
+		<td></td>
+		<td>
+			<table>
+				<tr>
+					<td class="titre_tableau">Remarques : </td>
+					<td>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td></td>
+	</tr>
+	
+	
+		<%
+			List<Remarque> liste = (List<Remarque>)request.getAttribute("remarques");
+			for(int i = 0; i < liste.size(); i++) {
+				Remarque item = liste.get(i);
+		%>		
+			<tr>
+				<td colspan="3">
+					<table width="100%">
+						<tr>
+							<td align="right" style="font-size: 10pt">
+							<%
+								if(i == liste.size()-1) {
+							%>
+							<a name="fin">ajout�</a>
+							<%
+								} else {
+							%>
+							ajout�
+							<%											
+								}
+							%>
+								 le <%= item.getDate() %> par <%= item.getUser() %>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" cellpadding="0" cellspacing="0">
+									<tr height="25">
+										<td width="22" background="images/cadre/area_top_left.gif"></td>
+										<td background="images/cadre/area_top.gif"></td>
+										<td width="22" background="images/cadre/area_top_right.gif"></td>
+									</tr>
+									<tr>
+										<td background="images/cadre/area_left.gif"></td>
+										<td>
+											<%= item.getTexte().replaceAll("\r\n", "<br>") %>
+										</td>
+										<td background="images/cadre/area_right.gif"></td>
+									</tr>
+									
+									<tr height="25">
+										<td background="images/cadre/area_bottom_left.gif"></td>
+										<td background="images/cadre/area_bottom.gif"></td>
+										<td background="images/cadre/area_bottom_right.gif"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		<%		
+			}
+		%>
+		
+	<tr>
+		<td></td>
+		<td>
+			<form method="get" action="afficherDemande.dsi">
+				<textarea  cols="80" rows="10" name="remarque"/></textarea>
+				<input type="submit" value="ajouter remarque"/>
+				<input type="hidden" name="idDemandes" value="${dsi.idDemandes}"/>
+			</form>
+		</td>
+		<td></td>
+	</tr>
+	
+</table>
+
+
+<jsp:include page="../basDePage.jsp" ></jsp:include>
+</body>
+</html>

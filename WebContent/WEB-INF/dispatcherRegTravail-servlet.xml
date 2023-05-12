@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- les mappings de l'application-->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	
+		<property name="interceptors">
+			<list>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurChrono">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurTimeOut">
+					
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurLoggueur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurExterieur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+					<property name="dao">
+						<ref bean="dao"/>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="mappings">
+			<props>
+				<prop key="/index.regTrav">IndexControler</prop>
+				
+			</props>
+		</property>
+		<!-- <property name="mappings">
+			<props>
+				<prop key="/indexrt.regTrav">IndexRtControler</prop>
+				
+			</props>
+		</property>-->
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	
+		<property name="interceptors">
+			<list>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurChrono">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurTimeOut">
+					
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurLoggueur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurExterieur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+					<property name="dao">
+						<ref bean="dao"/>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="mappings">
+			<props>
+				<prop key="/index.regTrav">IndexControler</prop>
+				<prop key="/indexrt.regTrav">IndexRtControler</prop>
+			</props>
+		</property>
+		<!-- <property name="mappings">
+			<props>
+				<prop key="/indexrt.regTrav">IndexRtControler</prop>
+				
+			</props>
+		</property>-->
+	</bean>
+	
+	<!-- les contrôleurs de l'application-->
+		
+	<bean id="IndexControler" 
+		class="be.cpasdeliege.intranet.regTravail.controler.IndexControler">
+		<property name="config">
+			<ref bean="config"/>
+		</property>
+		<property name="daoCadastre">
+			<ref bean="daoCadastre"/>
+		</property>
+	</bean>
+	
+	<bean id="IndexRtControler" 
+		class="be.cpasdeliege.intranet.regTravail.controler.IndexRtController">
+		<property name="config">
+			<ref bean="config"/>
+		</property>
+		<property name="daoCadastre">
+			<ref bean="daoCadastre"/>
+		</property>
+	</bean>
+
+	
+	<!-- les gestionnaires d'exceptions -->
+	
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="DomainException">exception</prop>
+				<prop key="DaoException">exception</prop>
+			</props>
+		</property>
+		<property name="exceptionAttribute">
+			<value>exception</value>
+		</property>
+		<property name="defaultStatusCode">
+			<value>500</value>
+		</property>
+		<property name="defaultErrorView">
+			<value>exception</value>
+		</property>
+	</bean>
+	
+	<!-- le résolveur de vues -->
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/vues/regTravail/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>	
+</beans>

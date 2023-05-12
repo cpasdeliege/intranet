@@ -1,0 +1,90 @@
+.menu_rues {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.liste_rues {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.ligne_paire {
+	background-color: #ffffff;
+}
+
+.ligne_impaire {
+	background-color: #faf0e6;
+}
+
+.titre_tableau {
+	font-size: 20px;
+	color: black;
+}
+#trPhoto:hover
+{
+    height: 75px;
+}
+.tableau_container_centre {
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+}
+
+.tableau_container {
+	margin-left: 50px;
+}
+
+.tableau_liste {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.titre_colonne_tableau_liste {
+	text-align: left;
+}
+
+.lien_tableau {
+	color: black;
+}
+
+.ligne_paire {
+	background-color: #ffffff;
+}
+
+.ligne_impaire {
+	background-color: #faf0e6;
+}
+
+.ligne_survol {
+	background-color: #CECDC9;
+}
+
+.body {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+.menu_contextuel {
+	text-decoration: none;
+	font-weight: bold;
+	font-size : 14px;
+	color: black;
+}
+.texte_tableau_confirmation {
+	font-weight: bold;
+}
+.texte_cadre_gestion {
+	font-weight: bold;
+}
+.texte_menu_principal {
+	font-weight: bold;
+	color: black;
+}
+.lien_navigation {
+	color: #00c;
+}
+.lien_navigation_actif {
+	font-weight: bold;
+}
+.lien_sous_navigation {
+	color: #00c;
+}

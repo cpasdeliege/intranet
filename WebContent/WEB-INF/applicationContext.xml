@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- LINUX-PROD -->
+	<!-- <value>//cpl-app-08:3306/cadastre_mp</value> -->
+	<!-- ********************************************************************************** 
+	<bean id="dao"
+		class="be.cpasdeliege.intranet.informatique.model.dao.DaoMySQL">
+		<property name="driver">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="aliasDB">
+			<value>//localhost:3306/cpas</value>
+		</property>
+		<property name="user">
+			<value>cpas</value>
+		</property>
+		<property name="password">
+			<value>5263</value>
+		</property>
+	</bean>
+
+	<bean id="daoDsi"
+		class="be.cpasdeliege.intranet.DemServInfo.dao.DaoDemServInf">
+		<property name="driver">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="aliasDB">
+			<value>//localhost:3306/demservinfo</value>
+		</property>
+		<property name="user">
+			<value>cpas</value>
+		</property>
+		<property name="password">
+			<value>5263</value>
+		</property>
+		<property name="start">
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="daoCadastre"
+		class="be.cpasdeliege.intranet.cadastre.dao.DaoCadastre">
+		<property name="driver">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="aliasDB">
+			<value>//localhost:3306/cadastre_mp</value>
+		</property>
+		<property name="user">
+			<value>cpas</value>
+		</property>
+		<property name="password">
+			<value>5263</value>
+		</property>
+		<property name="start">
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="domain"
+		class="be.cpasdeliege.intranet.informatique.model.domain.Domain">
+		<property name="dao">
+			<ref bean="dao" />
+		</property>
+	</bean>
+	 *************************************************************** -->
+
+	<!-- LINUX-PROD -->
+	<!-- *************************************************************************************** -->
+
+	<!-- WIN -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- partie que j'ai ajouté -->
+	<!-- ***************************************************************** -->
+	<!-- ************************************************************ 
+	<bean id="dao" class="be.cpasdeliege.intranet.informatique.model.dao.DaoMySQL"> 
+		<property name="driver">
+			<value>com.mysql.jdbc.Driver</value>
+		</property> 
+		<property name="aliasDB">
+			<value>//localhost:3306/cpas?characterEncoding=UTF-8</value> 
+		</property>
+		<property name="user">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>CPas4013</value>
+		</property>
+	</bean>
+	<bean id="daoDsi" class="be.cpasdeliege.intranet.DemServInfo.dao.DaoDemServInf">
+		<property name="driver">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="aliasDB">
+			<value>//localhost:3306/demservinfo?characterEncoding=UTF-8</value> 
+		</property>
+		<property name="user">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>CPas4013</value>
+		</property>
+		<property name="start"> 
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="daoCadastre" class="be.cpasdeliege.intranet.cadastre.dao.DaoCadastre"> 
+		<property name="driver">
+			<value>com.mysql.jdbc.Driver</value>
+		</property> 
+		<property name="aliasDB">
+			<value>//localhost:3306/cadastre_mp?characterEncoding=UTF-8</value> 
+		</property>
+		<property name="user">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>CPas4013</value>
+		</property>
+		<property name="start"> 
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="domain" class="be.cpasdeliege.intranet.informatique.model.domain.Domain"> 
+		<property name="dao">
+			<ref bean="dao" />
+		</property>
+	</bean>
+		 ********************************************************************** -->
+
+
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+	<!--<bean id="daoFormations" class="be.cpasdeliege.intranet.formations.model.dao.DaoFormations"> 
+		<property name="driver"> <value>com.mysql.jdbc.Driver</value> </property> 
+		<property name="aliasDB"> <value>//localhost:3306/formations?characterEncoding=latin1</value> 
+		</property> <property name="user"> <value>root</value> </property> <property 
+		name="password"> <value>CPas4013</value> </property> <property name="start"> 
+		<value>true</value> </property> </bean> -->
+
+	<!-- WIN -->
+
+	<!-- ****************************************************************************************************** -->
+
+	<!-- LINUX-PROD -->
+	<!-- ******************************************************************** 
+	<bean id="daoCodesRues"
+		class="be.cpasdeliege.intranet.codesRues.model.dao.DaoCodesRues">
+		<property name="driver">
+			<value>org.relique.jdbc.csv.CsvDriver</value>
+		</property>
+		<property name="aliasDB">
+			<value>/opt/fop</value>
+		</property>
+		<property name="user">
+			<value></value>
+		</property>
+		<property name="password">
+			<value></value>
+		</property>
+		<property name="start">
+			<value>true</value>
+		</property>
+	</bean>
+	<bean id="config"
+		class="be.cpasdeliege.intranet.informatique.model.Config">
+		<property name="cpasAlphaSautXsl">
+			<value>/opt/fop/cpas_alpha_saut.xsl</value>
+		</property>
+		<property name="cpasAlphaXsl">
+			<value>/opt/fop/cpas_alpha.xsl</value>
+		</property>
+		<property name="cpasServiceSautXsl">
+			<value>/opt/fop/cpas_service_saut.xsl</value>
+		</property>
+		<property name="cpasServiceXsl">
+			<value>/opt/fop/cpas_service.xsl</value>
+		</property>
+		<property name="pdfReglementTravail">
+			<value>/opt/fop/RegTravail2mars2010.pdf</value>
+		</property>
+		<property name="pdfReglementTravailLots">
+			<value>/opt/fop/RegTravail2mars2010Lot.pdf</value>
+		</property>
+		<property name="pdf_PS_etatDesLieux">
+			<value>/opt/fop/PS_etatDesLieux.pdf</value>
+		</property>
+		<property name="pdf_PS_tableauDeBord">
+			<value>/opt/fop/PS_tableauDeBord.pdf</value>
+		</property>
+		<property name="pdf_PS_presentation">
+			<value>/opt/fop/PS_presentation.pdf</value>
+		</property>
+		<property name="pdf_certificat">
+			<value>/opt/fop/certificat_medical.pdf</value>
+		</property>
+		<property name="pdf_Ethias">
+			<value>/opt/fop/ethias.pdf</value>
+		</property>
+		<property name="pdf_vmMado">
+			<value>/opt/fop/VM_Maintien.pdf</value>
+		</property>
+		<property name="pdf_vmIAS">
+			<value>/opt/fop/VM_action_sociale.pdf</value>
+		</property>
+		<property name="pdf_DSI">
+			<value>/opt/fop/DSI.pdf</value>
+		</property>
+		<property name="pdfNouveauReglement">
+			<value>/opt/fop/regTravail/Règlement de travail CPAS VF.pdf</value>
+		</property>
+		<property name="pdfStatutAdm"> <value>/opt/fop/regTravail/Statut administratif CPAS VF.pdf</value> </property>
+		<property name="pdfStatutPec"> <value>/opt/fop/regTravail/Statut pécuniaire CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe01"> <value>/opt/fop/regTravail/Annexe 1 - Congés des agents contractuels CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe02"> <value>/opt/fop/regTravail/Annexe 2 - Horaire flottant CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe03"> <value>/opt/fop/regTravail/Annexe 3 - Horaires fixes CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe04"> <value>/opt/fop/regTravail/Annexe 4  - Horaires variables CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe05"> <value>/opt/fop/regTravail/Annexe 5 - Horaire à temps partiel CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe06"> <value>/opt/fop/regTravail/Annexe 6 - Horaire décalé en cas de circonstances extraordinaires CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe07"> <value>/opt/fop/regTravail/Annexe 7 - Contrôle du temps de travail CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe08"> <value>/opt/fop/regTravail/Annexe 8 - Télétravail CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe09"> <value>/opt/fop/regTravail/Annexe 9 - Formation CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe10"> <value>/opt/fop/regTravail/Annexe 10 - Évaluation CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe11"> <value>/opt/fop/regTravail/Annexe 11 - Contrôle médical CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe12"> <value>/opt/fop/regTravail/Annexe 12 - Surveillance de la santé recommandations médicales VF.pdf</value> </property>
+		<property name="pdfAnnexe13"> <value>/opt/fop/regTravail/Annexe 13 - Accident de travail et maladie professionnelle CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe14"> <value>/opt/fop/regTravail/Annexe 14 - Mesures de prévention et de protection au travail VF.pdf</value> </property>
+		<property name="pdfAnnexe14b"> <value>/opt/fop/regTravail/Annexe 14 bis - formulaires dépendance (article IV.5).pdf</value> </property>
+		<property name="pdfAnnexe15"> <value>/opt/fop/regTravail/Annexe 15 - Règlement relatif aux droits et obligations liés à l'utilisation des systèmes d'information VF.pdf</value> </property>
+		<property name="pdfAnnexe16"> <value>/opt/fop/regTravail/Annexe 16 - Règlement relatif à l'utilisation de la Banque Carrefour de la Sécurité Sociale VF.pdf</value> </property>
+		<property name="pdfAnnexe17"> <value>/opt/fop/regTravail/Annexe 17 - Charte wallonne de la diversité.pdf</value> </property>
+		<property name="pdfAnnexe18"> <value>/opt/fop/regTravail/Annexe 18 - Renseignements administratifs - Contacts utiles - CPAS - VF.pdf</value> </property>
+		<property name="pdfPromoEthias"> <value>/opt/fop/Promo_fin_2022_Pouvoir_dachat_Liege_CPAS.pdf</value> </property>
+	</bean>
+	 ******************************************************************************* -->
+	<!-- ****************************************************************************************************** -->
+
+	<!-- WIN -->
+	<!-- ***************************************************************** -->
+	<!-- ************************************* -->
+	 <bean id="daoCodesRues" class="be.cpasdeliege.intranet.codesRues.model.dao.DaoCodesRues"> 
+		<property name="driver"> <value>org.relique.jdbc.csv.CsvDriver</value> </property> 
+		<property name="aliasDB"> <value>c:/fop</value> </property>
+		<property name="user"><value></value> </property>
+		<property name="password"> <value></value> </property> 
+		<property name="start"> <value>true</value> </property>
+	</bean>
+	<bean id="config" class="be.cpasdeliege.intranet.informatique.model.Config">
+		<property name="cpasAlphaSautXsl">	<value>c:\\fop\\cpas_alpha_saut.xsl</value> </property>
+		<property name="cpasAlphaXsl"><value>c:\\fop\\cpas_alpha.xsl</value> </property>
+		<property name="cpasServiceSautXsl"><value>c:\\fop\\cpas_service_saut.xsl</value> </property>
+		<property name="cpasServiceXsl"><value>c:\\fop\\cpas_service.xsl</value> </property>
+		<property name="pdfReglementTravail"><value>c:\\fop\\RegTravail2mars2010.pdf</value> </property>
+		<property name="pdfReglementTravailLots"> <value>c:\\fop\\RegTravail2mars2010Lot.pdf</value> </property>
+		<property name="pdf_PS_etatDesLieux"> <value>c:\\fop\\PS_etatDesLieux.pdf</value> </property> 
+		<property name="pdf_PS_tableauDeBord"> <value>c:\\fop\\PS_tableauDeBord.pdf</value> </property>
+		<property name="pdf_PS_presentation"> <value>c:\\fop\\PS_presentation.pdf</value></property>
+		<property name="pdf_certificat"> <value>c:\\fop\\certificat_medical.pdf</value></property>
+		<property name="pdf_Ethias"> <value>c:\\fop\\ethias.pdf</value></property>
+		<property name="pdf_vmMado"> <value>c:\\fop\\VM_Maintien.pdf</value></property>
+		<property name="pdf_vmIAS"> <value>c:\\fop\\VM_action_sociale.pdf</value></property>
+		<property name="pdf_DSI"> <value>c:\\fop\\DSI.pdf</value> </property> 
+		<property name="pdfNouveauReglement"> <value>c:\\fop\\regTravail\\Règlement de travail CPAS VF.pdf</value> </property>
+		<property name="pdfStatutAdm"> <value>c:\\fop\\regTravail\\Statut administratif CPAS VF.pdf</value> </property>
+		<property name="pdfStatutPec"> <value>c:\\fop\\regTravail\\Statut pécuniaire CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe01"> <value>c:\\fop\\regTravail\\Annexe 1 - Congés des agents contractuels CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe02"> <value>c:\\fop\\regTravail\\Annexe 2 - Horaire flottant CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe03"> <value>c:\\fop\\regTravail\\Annexe 3 - Horaires fixes CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe04"> <value>c:\\fop\\regTravail\\Annexe 4  - Horaires variables CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe05"> <value>c:\\fop\\regTravail\\Annexe 5 - Horaire à temps partiel CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe06"> <value>c:\\fop\\regTravail\\Annexe 6 - Horaire décalé en cas de circonstances extraordinaires CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe07"> <value>c:\\fop\\regTravail\\Annexe 7 - Contrôle du temps de travail CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe08"> <value>c:\\fop\\regTravail\\Annexe 8 - Télétravail CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe09"> <value>c:\\fop\\regTravail\\Annexe 9 - Formation CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe10"> <value>c:\\fop\\regTravail\\Annexe 10 - Évaluation CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe11"> <value>c:\\fop\\regTravail\\Annexe 11 - Contrôle médical CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe12"> <value>c:\\fop\\regTravail\\Annexe 12 - Surveillance de la santé recommandations médicales VF.pdf</value> </property>
+		<property name="pdfAnnexe13"> <value>c:\\fop\\regTravail\\Annexe 13 - Accident de travail et maladie professionnelle CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe14"> <value>c:\\fop\\regTravail\\Annexe 14 - Mesures de prévention et de protection au travail VF.pdf</value> </property>
+		<property name="pdfAnnexe14b"> <value>c:\\fop\\regTravail\\Annexe 14 bis - formulaires dépendance (article IV.5).pdf</value> </property>
+		<property name="pdfAnnexe15"> <value>c:\\fop\\regTravail\\Annexe 15 - Règlement relatif aux droits et obligations liés à l'utilisation des systèmes d'information VF.pdf</value> </property>
+		<property name="pdfAnnexe16"> <value>c:\\fop\\regTravail\\Annexe 16 - Règlement relatif à l'utilisation de la Banque Carrefour de la Sécurité Sociale VF.pdf</value> </property>
+		<property name="pdfAnnexe17"> <value>c:\\fop\\regTravail\\Annexe 17 - Charte wallonne de la diversité.pdf</value> </property>
+		<property name="pdfAnnexe18"> <value>c:\\fop\\regTravail\\Annexe 18 - Renseignements administratifs - Contacts utiles - CPAS - VF.pdf</value> </property>
+		<property name="pdfPromoEthias"> <value>c:\\opt\\fop\\Promo_fin_2022_Pouvoir_dachat_Liege_CPAS.pdf</value> </property>
+	</bean>
+	<!-- ************************************** -->
+
+	<!-- LINUX-Test -->
+	<!-- *************************************************** -->
+	<!-- ***************************************************** 
+	<bean id="dao" class="be.cpasdeliege.intranet.informatique.model.dao.DaoMySQL"> 
+		<property name="driver"> <value>com.mysql.jdbc.Driver</value> </property> 
+		<property name="aliasDB"> <value>//cpl-app-30:3306/cpas</value> </property> 
+		<property name="user"> <value>cpas</value> </property> <property name="password"> 
+		<value>5263</value> </property> </bean> <bean id="daoDsi" class="be.cpasdeliege.intranet.DemServInfo.dao.DaoDemServInf"> 
+		<property name="driver"> <value>com.mysql.jdbc.Driver</value> </property> 
+		<property name="aliasDB"> <value>//cpl-app-30:3306/demservinfo</value> </property> 
+		<property name="user"> <value>cpas</value> </property> <property name="password"> 
+		<value>5263</value> </property> <property name="start"> <value>true</value> 
+		</property> </bean> <bean id="daoCadastre" class="be.cpasdeliege.intranet.cadastre.dao.DaoCadastre"> 
+		<property name="driver"> <value>com.mysql.jdbc.Driver</value> </property> 
+		<property name="aliasDB"> <value>//cpl-app-30:3306/cadastre_mp</value> </property> 
+		<property name="user"> <value>cpas</value> </property> <property name="password"> 
+		<value>5263</value> </property> <property name="start"> <value>true</value> 
+		</property> </bean> <bean id="domain" class="be.cpasdeliege.intranet.informatique.model.domain.Domain"> 
+		<property name="dao"> <ref bean="dao"/> </property> 
+	</bean>		
+	<bean id="daoCodesRues"	class="be.cpasdeliege.intranet.codesRues.model.dao.DaoCodesRues">
+		<property name="driver">
+			<value>org.relique.jdbc.csv.CsvDriver</value>
+		</property> 
+		<property name="aliasDB">		<value>/opt/fop</value>		</property>
+		<property name="user">		<value></value>		</property>
+		<property name="password">		<value></value> </property>
+		<property name="start"> <value>true</value> </property> 
+	</bean> 
+	<bean id="config" class="be.cpasdeliege.intranet.informatique.model.Config"> 
+		<property name="cpasAlphaSautXsl"><value>/opt/fop/cpas_alpha_saut.xsl</value></property> 
+		<property name="cpasAlphaXsl"><value>/opt/fop/cpas_alpha.xsl</value> </property> <property name="cpasServiceSautXsl"> 
+		<value>/opt/fop/cpas_service_saut.xsl</value> </property> <property name="cpasServiceXsl"> 
+		<value>/opt/fop/cpas_service.xsl</value> </property> <property name="pdfReglementTravail"> 
+		<value>/opt/fop/RegTravail2mars2010.pdf</value> </property> <property name="pdfReglementTravailLots"> 
+		<value>/opt/fop/RegTravail2mars2010Lot.pdf</value> </property> <property 
+		name="pdf_PS_etatDesLieux"> <value>/opt/fop/PS_etatDesLieux.pdf</value> </property> 
+		<property name="pdf_PS_tableauDeBord"> <value>/opt/fop/PS_tableauDeBord.pdf</value> 
+		</property> <property name="pdf_PS_presentation"> <value>/opt/fop/PS_presentation.pdf</value> 
+		</property> <property name="pdf_certificat"> <value>/opt/fop/certificat_medical.pdf</value> 
+		</property> <property name="pdf_Ethias"> <value>/opt/fop/ethias.pdf</value> 
+		</property> <property name="pdf_vmMado"> <value>/opt/fop/VM_Maintien.pdf</value> 
+		</property> <property name="pdf_vmIAS"> <value>/opt/fop/VM_action_sociale.pdf</value> 
+		</property> <property name="pdf_DSI"> <value>/opt/fop/DSI.pdf</value> </property>
+		<property name="pdfStatutAdm"> <value>/opt/fop/regTravail/Statut administratif CPAS VF.pdf</value> </property>
+		<property name="pdfStatutPec"> <value>/opt/fop/regTravail/Statut pécuniaire CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe01"> <value>/opt/fop/regTravail/Annexe 1 - Congés des agents contractuels CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe02"> <value>/opt/fop/regTravail/Annexe 2 - Horaire flottant CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe03"> <value>/opt/fop/regTravail/Annexe 3 - Horaires fixes CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe04"> <value>/opt/fop/regTravail/Annexe 4  - Horaires variables CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe05"> <value>/opt/fop/regTravail/Annexe 5 - Horaire à temps partiel CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe06"> <value>/opt/fop/regTravail/Annexe 6 - Horaire décalé en cas de circonstances extraordinaires CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe07"> <value>/opt/fop/regTravail/Annexe 7 - Contrôle du temps de travail CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe08"> <value>/opt/fop/regTravail/Annexe 8 - Télétravail CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe09"> <value>/opt/fop/regTravail/Annexe 9 - Formation CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe10"> <value>/opt/fop/regTravail/Annexe 10 - Évaluation CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe11"> <value>/opt/fop/regTravail/Annexe 11 - Contrôle médical CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe12"> <value>/opt/fop/regTravail/Annexe 12 - Surveillance de la santé recommandations médicales VF.pdf</value> </property>
+		<property name="pdfAnnexe13"> <value>/opt/fop/regTravail/Annexe 13 - Accident de travail et maladie professionnelle CPAS VF.pdf</value> </property>
+		<property name="pdfAnnexe14"> <value>/opt/fop/regTravail/Annexe 14 - Mesures de prévention et de protection au travail VF.pdf</value> </property>
+		<property name="pdfAnnexe14b"> <value>/opt/fop/regTravail/Annexe 14 bis - formulaires dépendance (article IV.5).pdf</value> </property>
+		<property name="pdfAnnexe15"> <value>/opt/fop/regTravail/Annexe 15 - Règlement relatif aux droits et obligations liés à l'utilisation des systèmes d'information VF.pdf</value> </property>
+		<property name="pdfAnnexe16"> <value>/opt/fop/regTravail/Annexe 16 - Règlement relatif à l'utilisation de la Banque Carrefour de la Sécurité Sociale VF.pdf</value> </property>
+		<property name="pdfAnnexe17"> <value>/opt/fop/regTravail/Annexe 17 - Charte wallonne de la diversité.pdf</value> </property>
+		<property name="pdfAnnexe18"> <value>/opt/fop/regTravail/Annexe 18 - Renseignements administratifs - Contacts utiles - CPAS - VF.pdf</value> </property> 
+		<property name="pdfPromoEthias"> <value>/opt/fop/Promo_fin_2022_Pouvoir_dachat_Liege_CPAS.pdf</value> </property>
+		</bean>
+		 ******************************************************* -->
+	 <!--*************************************************** -->
+
+</beans>

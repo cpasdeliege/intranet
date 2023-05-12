@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>cpas</display-name>
+
+
+	<!-- le chargeur du contexte spring de l'application -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- la servlet -->
+	<servlet>
+		<servlet-name>dispatcherInformatique</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dispatcherFormations</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dispatcherAnnuaire</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dispatcherCodesRues</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dispatcherRegTravail</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dispatcherDemServInfo</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dispatcherCadastre</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	
+	
+	<filter>
+	    <description>
+	        Check for multipart HttpServletRequests and parse the multipart form data so that all
+	        regular form fields are available in the parameterMap of the HttpServletRequest and that
+	        all form file fields are available as attribute of the HttpServletRequest. The attribute
+	        value of a form file field can be an instance of FileItem or FileUploadException.
+	    </description>
+	    <filter-name>multipartFilter</filter-name>
+	    <filter-class>be.cpasdeliege.intranet.DemServInfo.controler.MultipartFilter</filter-class>
+	    <init-param>
+	        <description>
+	            Sets the maximum file size of the uploaded file in bytes. Set to 0 to indicate an
+	            unlimited file size. The example value of 1048576 indicates a maximum file size of
+	            1MB. This parameter is not required and can be removed safely.
+	        </description>
+	        <param-name>maxFileSize</param-name>
+	        <param-value>204857600</param-value>
+	    </init-param>
+	</filter>
+	<filter-mapping>
+	    <filter-name>multipartFilter</filter-name>
+	    <url-pattern>/addDemande.dsi</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>multipartFilter</filter-name>
+	    <url-pattern>/afficherDemande.dsi</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>multipartFilter</filter-name>
+	    <url-pattern>/gestionTache.admin</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>multipartFilter</filter-name>
+	    <url-pattern>/utilsTache.admin</url-pattern>
+	</filter-mapping>
+
+	<!-- le mapping des url -->
+	<servlet-mapping>
+		<servlet-name>dispatcherInformatique</servlet-name>
+		<url-pattern>*.admin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcherFormations</servlet-name>
+		<url-pattern>*.formations</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcherAnnuaire</servlet-name>
+		<url-pattern>*.annuaire</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcherCodesRues</servlet-name>
+		<url-pattern>*.rues</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcherRegTravail</servlet-name>
+		<url-pattern>*.regTrav</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcherDemServInfo</servlet-name>
+		<url-pattern>*.dsi</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dispatcherCadastre</servlet-name>
+		<url-pattern>*.cad</url-pattern>
+	</servlet-mapping>
+</web-app>

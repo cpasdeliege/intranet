@@ -1,0 +1,85 @@
+.titre_tableau {
+	font-size: 20px;
+	color: black;
+}
+
+
+.tableau_container_centre {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+.tableau_container {
+	margin-left: 50px;
+}
+
+.tableau_liste {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.titre_colonne_tableau_liste {
+	text-align: left;
+}
+
+.lien_tableau {
+	color: black;
+}
+
+.ligne_paire {
+	background-color: #ffffff;
+}
+
+.ligne_impaire {
+	background-color: #faf0e6;
+}
+
+.ligne_survol {
+	background-color: #CECDC9;
+}
+
+.body {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+.menu_contextuel {
+	text-decoration: none;
+	font-weight: bold;
+	font-size : 14px;
+	color: black;
+}
+.texte_tableau_confirmation {
+	font-weight: bold;
+}
+.texte_cadre_gestion {
+	font-weight: bold;
+}
+.texte_menu_principal {
+	font-weight: bold;
+	color: black;
+}
+.texte_informatif_menu_principal {
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 14px;
+}
+.lien_administratif_menu_principal {
+	font-size: 12px;
+	color: black;
+}
+.texte_gros {
+	font-size: 18px;
+	font-style: italic;
+	font-weight: bold;
+}
+.bodyCadastre {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	font-size: small;
+	font-family:  arial;
+}
+	

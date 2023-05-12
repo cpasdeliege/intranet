@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+
+	<!-- les mappings de l'application-->
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		
+		<property name="interceptors">
+			<list>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurTimeOut">
+					
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurChrono">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurLoggueur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurExterieur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+					<property name="dao">
+						<ref bean="dao"/>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="mappings">
+			<props>			
+				<prop key="/utilsTache.admin">UtilsTache</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+		<!-- administrateur -->
+		
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		
+		<property name="interceptors">
+			<list>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurTimeOut">
+					
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurChrono">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurLoggueur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.informatique.interceptor.IntercepteurAdministrateur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurExterieur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="mappings">
+			<props>			
+				<prop key="/formulairePersonnelOrdinateurAssigner.admin">FormulairePersonnelOrdinateurAssignerControler</prop>
+					
+				<prop key="/gestionOrdinateurs.admin">GestionOrdinateursControler</prop>
+				<prop key="/gestionOrdinateur.admin">GestionOrdinateurControler</prop>
+				<prop key="/formulaireOrdinateurAjouter.admin">FormulaireOrdinateurAjouterControler</prop>
+				<prop key="/formulaireOrdinateurPersonnelAssigner.admin">FormulaireOrdinateurPersonnelAssignerControler</prop>
+				<prop key="/formulaireOrdinateurImprimanteAssigner.admin">FormulaireOrdinateurImprimanteAssignerControler</prop>
+				<prop key="/desassignerOrdinateurPersonnel.admin">DesassignerOrdinateurPersonnelControler</prop>
+				<prop key="/ajouterOrdinateur.admin">AjouterOrdinateurControler</prop>
+				<prop key="/supprimerOrdinateur.admin">SupprimerOrdinateurControler</prop>
+				<prop key="/supprimerOrdinateurConfirmation.admin">SupprimerOrdinateurConfirmationControler</prop>
+				<prop key="/formulaireOrdinateurModifier.admin">FormulaireOrdinateurModifierControler</prop>
+				<prop key="/modifierOrdinateur.admin">ModifierOrdinateurControler</prop>
+				
+				<prop key="/gestionImprimantes.admin">GestionImprimantesControler</prop>
+				<prop key="/gestionImprimante.admin">GestionImprimanteControler</prop>
+				<prop key="/formulaireImprimanteAjouter.admin">FormulaireImprimanteAjouterControler</prop>
+				<prop key="/formulaireImprimanteOrdinateurAssigner.admin">FormulaireImprimanteOrdinateurAssignerControler</prop>
+				<prop key="/desassignerImprimanteOrdinateur.admin">DesassignerImprimanteOrdinateurControler</prop>
+				<prop key="/ajouterImprimante.admin">AjouterImprimanteControler</prop>
+				<prop key="/supprimerImprimante.admin">SupprimerImprimanteControler</prop>
+				<prop key="/supprimerImprimanteConfirmation.admin">SupprimerImprimanteConfirmationControler</prop>
+				<prop key="/formulaireImprimanteModifier.admin">FormulaireImprimanteModifierControler</prop>
+				<prop key="/modifierImprimante.admin">ModifierImprimanteControler</prop>
+				
+				<prop key="/gestionScanners.admin">GestionScannersControler</prop>
+				<prop key="/formulaireScannerAjouter.admin">FormulaireScannerAjouterControler</prop>
+				<prop key="/ajouterScanner.admin">AjouterScannerControler</prop>
+				<prop key="/supprimerScanner.admin">SupprimerScannerControler</prop>
+				<prop key="/supprimerScannerConfirmation.admin">SupprimerScannerConfirmationControler</prop>
+				<prop key="/formulaireScannerModifier.admin">FormulaireScannerModifierControler</prop>
+				<prop key="/modifierScanner.admin">ModifierScannerControler</prop>
+
+				<prop key="/ajouterUtilisateurIntranet.admin">AjouterUtilisateurIntranetControler</prop>
+				<prop key="/supprimerUtilisateurIntranet.admin">SupprimerUtilisateurIntranetControler</prop>
+				<prop key="/formulaireModifierPrivilegeInformatique.admin">FormulaireModifierPrivilegeInformatiqueControler</prop>
+				<prop key="/reinitialiserMotDePasse.admin">ReinitialiserMotDePasseControler</prop>
+				<prop key="/activationAccesIntranet.admin">ActivationAccesIntranetControler</prop>
+				
+				<prop key="/gestionEmails.admin">GestionEmailsControler</prop>
+				<prop key="/formulaireEmailGeneriqueAjouter.admin">FormulaireEmailGeneriqueAjouterControler</prop>
+				<prop key="/supprimerEmailGenerique.admin">SupprimerEmailGeneriqueControler</prop>
+				
+				<prop key="/gestionPlanning.admin">GestionPlanningControler</prop>
+				<prop key="/ajouterTicketItem.admin">AjouterTicketItemControler</prop>
+				<prop key="/gestionTache.admin">GestionTacheControler</prop>
+				<prop key="/formulaireTacheAjouter.admin">FormulaireTacheAjouterControler</prop>
+				
+				<prop key="/rapports.admin">GestionLogControler</prop>
+				
+			</props>
+		</property>
+	</bean>
+	
+		<!-- administrateur + telephonie -->
+		
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		
+		<property name="interceptors">
+			<list>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurTimeOut">
+					
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurChrono">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurLoggueur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				
+				<bean class="be.cpasdeliege.intranet.informatique.interceptor.IntercepteurAdministrateurTelephonie">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+				<bean class="be.cpasdeliege.intranet.controler.intercepteur.IntercepteurExterieur">
+					<property name="metier">
+						<ref bean="domain"/>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="mappings">
+			<props>
+				<prop key="/index.admin">IndexAdministrationControler</prop>
+				
+				
+				<prop key="/gestionFonctions.admin">GestionFonctionsControler</prop>
+				<prop key="/ajouterFonction.admin">AjouterFonctionControler</prop>
+				<prop key="/supprimerFonction.admin">SupprimerFonctionControler</prop>
+				
+				<prop key="/gestionServices.admin">GestionServicesControler</prop>
+				<prop key="/gestionService.admin">GestionServiceControler</prop>
+				<prop key="/formulaireServicePersonnelAssigner.admin">FormulaireServicePersonnelAssignerControler</prop>
+				<prop key="/formulaireServicePersonnelModifier.admin">FormulaireServicePersonnelModifierControler</prop>
+				<prop key="/desassignerServicePersonnel.admin">DesassignerServicePersonnelControler</prop>
+				<prop key="/formulaireServiceAjouter.admin">FormulaireServiceAjouterControler</prop>
+				
+				
+				<prop key="/ajouterService.admin">AjouterServiceControler</prop>
+				<prop key="/supprimerService.admin">SupprimerServiceControler</prop>
+				<prop key="/supprimerServiceConfirmation.admin">SupprimerServiceConfirmationControler</prop>
+				<prop key="/formulaireServiceModifier.admin">FormulaireServiceModifierControler</prop>
+				<prop key="/modifierService.admin">ModifierServiceControler</prop>
+				
+				<prop key="/gestionPersonnels.admin">GestionPersonnelsControler</prop>
+				<prop key="/gestionPersonnel.admin">GestionPersonnelControler</prop>
+				<prop key="/formulairePersonnelServiceAssigner.admin">FormulairePersonnelServiceAssignerControler</prop>
+				<prop key="/formulairePersonnelServiceModifier.admin">FormulairePersonnelServiceModifierControler</prop>
+				<prop key="/formulairePersonnelAjouter.admin">FormulairePersonnelAjouterControler</prop>
+				<prop key="/ajouterPersonnel.admin">AjouterPersonnelControler</prop>
+				<prop key="/supprimerPersonnel.admin">SupprimerPersonnelControler</prop>
+				<prop key="/supprimerPersonnelConfirmation.admin">SupprimerPersonnelConfirmationControler</prop>
+				<prop key="/formulairePersonnelModifier.admin">FormulairePersonnelModifierControler</prop>
+				<prop key="/modifierPersonnel.admin">ModifierPersonnelControler</prop>	
+			</props>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/genererPDF.admin">GenererPDFControler</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<!-- les contrôleurs de l'application-->
+	
+	<bean id="UtilsTache" 
+		class="be.cpasdeliege.intranet.informatique.controler.UtilsTache">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="dao">
+			<ref bean="dao"/>
+		</property>
+		<property name="daoDsi">
+			<ref bean="daoDsi"/>
+		</property>
+		<property name="daoCadastre">
+			<ref bean="daoCadastre"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionLogControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionLog">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="IndexAdministrationControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.Index">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="GenererPDFControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GenererPDF">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="config">
+			<ref bean="config"/>
+		</property>
+	</bean>
+	
+	<!-- emails -->
+	
+	<bean id="GestionEmailsControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionEmails">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerEmailGeneriqueControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.SupprimerEmailGenerique">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireEmailGeneriqueAjouterControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireEmailGeneriqueAjouterControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.model.EmailGenerique</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireEmailGeneriqueAjouter</value>
+		</property>
+		<property name="formView">
+			<value>formulaireEmailGeneriqueAjouter</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<!-- planning -->
+	
+	<bean id="GestionPlanningControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionPlanning">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="dao">
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	
+	<bean id="AjouterTicketItemControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.AjouterTicketItem">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionTacheControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireTacheModifierControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.model.Tache</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireTacheModifier</value>
+		</property>
+		<property name="formView">
+			<value>gestionTache</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="dao">
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireTacheAjouterControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireTacheAjouterControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.model.Tache</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireTacheAjouter</value>
+		</property>
+		<property name="formView">
+			<value>formulaireTacheAjouter</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="dao">
+			<ref bean="dao"/>
+		</property>
+		<property name="daoDsi">
+			<ref bean="daoDsi"/>
+		</property>
+	</bean>
+	
+	<!-- fonctions -->
+	
+	<bean id="GestionFonctionsControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionFonctions">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="AjouterFonctionControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.AjouterFonction">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerFonctionControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.SupprimerFonction">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	
+	<!-- services -->
+	
+	<bean id="GestionServicesControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionServices">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionServiceControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionService">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireServicePersonnelAssignerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireServicePersonnelAssignerControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireServicePersonnelAssigner</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireServicePersonnelAssigner</value>
+		</property>
+		<property name="formView">
+			<value>formulaireServicePersonnelAssigner</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireServicePersonnelModifierControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireServicePersonnelModifierControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireServicePersonnelAssigner</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireServicePersonnelModifier</value>
+		</property>
+		<property name="formView">
+			<value>formulaireServicePersonnelModifier</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="DesassignerServicePersonnelControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.DesassignerServicePersonnel">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="AjouterServiceControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.AjouterService">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireServiceAjouterControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireServiceAjouter">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireService</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireServiceAjouter</value>
+		</property>
+		<property name="formView">
+			<value>formulaireServiceAjouter</value>
+		</property>
+		<property name="successView">
+			<value>ajouterServiceConfirmation</value>
+		</property>
+	</bean>
+	
+	<bean id="ModifierServiceControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.ModifierService">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireServiceModifierControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireServiceModifier">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireService</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireServiceModifier</value>
+		</property>
+		<property name="formView">
+			<value>formulaireServiceModifier</value>
+		</property>
+		<property name="successView">
+			<value>modifierServiceConfirmation</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerServiceControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.SupprimerService">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="SupprimerServiceConfirmationControler" class="be.cpasdeliege.intranet.informatique.controler.SupprimerServiceConfirmation">
+		<property name="metier">
+			<ref bean="domain" />
+		</property>
+	</bean><!-- personnel -->
+	
+	<bean id="GestionPersonnelsControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionPersonnels">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionPersonnelControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionPersonnel">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulairePersonnelServiceAssignerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulairePersonnelServiceAssignerControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireServicePersonnelAssigner</value>
+		</property>
+		<property name="commandName">
+			<value>formulairePersonnelServiceAssigner</value>
+		</property>
+		<property name="formView">
+			<value>formulairePersonnelServiceAssigner</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulairePersonnelServiceModifierControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulairePersonnelServiceModifierControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireServicePersonnelAssigner</value>
+		</property>
+		<property name="commandName">
+			<value>formulairePersonnelServiceModifier</value>
+		</property>
+		<property name="formView">
+			<value>formulairePersonnelServiceModifier</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulairePersonnelOrdinateurAssignerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulairePersonnelOrdinateurAssignerControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireOrdinateurPersonnelAssigner</value>
+		</property>
+		<property name="commandName">
+			<value>formulairePersonnelOrdinateurAssigner</value>
+		</property>
+		<property name="formView">
+			<value>formulairePersonnelOrdinateurAssigner</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="AjouterPersonnelControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.AjouterPersonnel">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulairePersonnelAjouterControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulairePersonnelAjouter">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulairePersonnel</value>
+		</property>
+		<property name="commandName">
+			<value>formulairePersonnelAjouter</value>
+		</property>
+		<property name="formView">
+			<value>formulairePersonnelAjouter</value>
+		</property>
+		<property name="successView">
+			<value>ajouterPersonnelConfirmation</value>
+		</property>
+	</bean>
+	
+	<bean id="ModifierPersonnelControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.ModifierPersonnel">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulairePersonnelModifierControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulairePersonnelModifier">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulairePersonnel</value>
+		</property>
+		<property name="commandName">
+			<value>formulairePersonnelModifier</value>
+		</property>
+		<property name="formView">
+			<value>formulairePersonnelModifier</value>
+		</property>
+		<property name="successView">
+			<value>modifierPersonnelConfirmation</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerPersonnelControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.SupprimerPersonnel">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerPersonnelConfirmationControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.SupprimerPersonnelConfirmation">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<!-- ordinateurs -->
+	
+	<bean id="GestionOrdinateursControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionOrdinateurs">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="dao">
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionOrdinateurControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionOrdinateur">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="dao">
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	
+	<bean id="AjouterOrdinateurControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.AjouterOrdinateur">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="DesassignerOrdinateurPersonnelControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.DesassignerOrdinateurPersonnel">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireOrdinateurAjouterControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireOrdinateurAjouter">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireOrdinateur</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireOrdinateurAjouter</value>
+		</property>
+		<property name="formView">
+			<value>formulaireOrdinateurAjouter</value>
+		</property>
+		<property name="successView">
+			<value>ajouterOrdinateurConfirmation</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireOrdinateurPersonnelAssignerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireOrdinateurPersonnelAssignerControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireOrdinateurPersonnelAssigner</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireOrdinateurPersonnelAssigner</value>
+		</property>
+		<property name="formView">
+			<value>formulaireOrdinateurPersonnelAssigner</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="ModifierOrdinateurControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.ModifierOrdinateur">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireOrdinateurModifierControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireOrdinateurModifier">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireOrdinateur</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireOrdinateurModifier</value>
+		</property>
+		<property name="formView">
+			<value>formulaireOrdinateurModifier</value>
+		</property>
+		<property name="successView">
+			<value>modifierOrdinateurConfirmation</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireOrdinateurImprimanteAssignerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireOrdinateurImprimanteAssignerControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireImprimanteOrdinateurAssigner</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireOrdinateurImprimanteAssigner</value>
+		</property>
+		<property name="formView">
+			<value>formulaireOrdinateurImprimanteAssigner</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerOrdinateurControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.SupprimerOrdinateur">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerOrdinateurConfirmationControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.SupprimerOrdinateurConfirmation">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	
+	<!-- imprimantes -->
+	
+	<bean id="GestionImprimantesControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionImprimantes">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionImprimanteControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionImprimante">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="AjouterImprimanteControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.AjouterImprimante">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="DesassignerImprimanteOrdinateurControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.DesassignerImprimanteOrdinateur">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireImprimanteOrdinateurAssignerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireImprimanteOrdinateurAssignerControler">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireImprimanteOrdinateurAssigner</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireImprimanteOrdinateurAssigner</value>
+		</property>
+		<property name="formView">
+			<value>formulaireImprimanteOrdinateurAssigner</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireImprimanteAjouterControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireImprimanteAjouter">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.model.Imprimante</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireImprimanteAjouter</value>
+		</property>
+		<property name="formView">
+			<value>formulaireImprimanteAjouter</value>
+		</property>
+		<property name="successView">
+			<value>ajouterImprimanteConfirmation</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="ModifierImprimanteControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.ModifierImprimante">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireImprimanteModifierControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireImprimanteModifier">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.model.Imprimante</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireImprimanteModifier</value>
+		</property>
+		<property name="formView">
+			<value>formulaireImprimanteModifier</value>
+		</property>
+		<property name="successView">
+			<value>modifierImprimanteConfirmation</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerImprimanteControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.SupprimerImprimante">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerImprimanteConfirmationControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.SupprimerImprimanteConfirmation">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<!-- scanners -->
+	
+	<bean id="GestionScannersControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionScanners">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="AjouterScannerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.AjouterScanner">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireScannerAjouterControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireScannerAjouter">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireScanner</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireScannerAjouter</value>
+		</property>
+		<property name="formView">
+			<value>formulaireScannerAjouter</value>
+		</property>
+		<property name="successView">
+			<value>ajouterScannerConfirmation</value>
+		</property>
+	</bean>
+	
+	<bean id="ModifierScannerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.ModifierScanner">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireScannerModifierControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireScannerModifier">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireScanner</value>
+		</property>
+		<property name="commandName">
+			<value>formulaireScannerModifier</value>
+		</property>
+		<property name="formView">
+			<value>formulaireScannerModifier</value>
+		</property>
+		<property name="successView">
+			<value>modifierScannerConfirmation</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerScannerControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.SupprimerScanner">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerScannerConfirmationControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.SupprimerScannerConfirmation">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<!-- gestion des privileges -->
+	
+	<bean id="AjouterUtilisateurIntranetControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.AjouterUtilisateurIntranet">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="SupprimerUtilisateurIntranetControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.SupprimerUtilisateurIntranet">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="FormulaireModifierPrivilegeInformatiqueControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireModifierPrivilegeInformatique">
+		<property name="sessionForm">
+			<value>true</value>
+		</property>
+		<property name="commandClass">
+			<value>be.cpasdeliege.intranet.informatique.model.PrivilegeInformatique</value>
+		</property>
+		<property name="commandName">
+			<value>formulairePrivilegeInformatique</value>
+		</property>
+		<property name="formView">
+			<value>formulairePrivilegeInformatique</value>
+		</property>
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="ReinitialiserMotDePasseControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.ReinitialiserMotDePasse">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
+	
+	<bean id="ActivationAccesIntranetControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.ActivationAccesIntranet">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean> 
+	
+	<!-- les gestionnaires d'exceptions -->
+	
+	
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="DomainException">exception</prop>
+				<prop key="DaoException">exception</prop>
+			</props>
+		</property>
+		<property name="exceptionAttribute">
+			<value>exception</value>
+		</property>
+		<property name="defaultStatusCode">
+			<value>500</value>
+		</property>
+		<property name="defaultErrorView">
+			<value>exception</value>
+		</property>
+	</bean>
+	
+	<!-- le résolveur de vues -->
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/vues/administration/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>	
+</beans>
