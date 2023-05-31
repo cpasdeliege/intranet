@@ -47,6 +47,8 @@ import be.cpasdeliege.intranet.informatique.model.dao.DaoPersonnel;
 import be.cpasdeliege.intranet.informatique.model.domain.DomainInterface;
 import java.net.URLDecoder;
 
+import be.cpasdeliege.intranet.utils.Utils;
+
 public class UtilsTache implements Controller {
 
 	DomainInterface metier = null;
@@ -64,12 +66,22 @@ public class UtilsTache implements Controller {
 		 * envoimail
 		 */
 		if(action.equals("envoiemail")) {
-
 			String maila = request.getParameter("pers");
-			//String nom = new String(maila.split(",")[0].getBytes(),"UTF-8");
-			String nom = maila.split(",")[0];
-			//String prenom = new String(maila.split(",")[1].getBytes(),"UTF-8");
-			String prenom = maila.split(",")[1];
+			String nom = URLDecoder.decode(maila.split(",")[0],"ISO-8859-1");
+			//String nom = Utils.replaceAccentedCharacters(maila.split(",")[0]);
+			String prenom = URLDecoder.decode(maila.split(",")[1],"ISO-8859-1");
+			//String prenom = Utils.replaceAccentedCharacters(maila.split(",")[1]);
+
+			System.out.println("CA PLANTE ???? 2");
+			System.out.println(prenom);
+			//System.out.println(new String(nom, "ISO-8859-1").getBytes("UTF-8"));
+			//System.out.println(new String(prenom.getBytes("ISO-8859-1"), "UTF-8"));
+			/*
+			System.out.println("Béatrice......");
+			System.out.println(new String("Béatrice......".getBytes(),"UTF-8"));
+			System.out.println(new String("Béatrice......".getBytes(),"ISO-8859-1"));
+			*/
+
 			Utilisateur utilisateur = (Utilisateur)request.getSession().getAttribute("utilisateur");
 			DaoPersonnel from = ((List<DaoPersonnel>)dao.getListePersonnels(utilisateur.getNom(), utilisateur.getPrenom())).get(0);
 			DaoPersonnel to = ((List<DaoPersonnel>)dao.getListePersonnels(nom, prenom)).get(0);
@@ -709,14 +721,17 @@ public class UtilsTache implements Controller {
 		TicketItem rem = listticket.get(listticket.size() - 1);
 		String subject = "TI " + tache.getIdPlanning() + " ** 2.NOTIFICATION** -" + tache.getTitre();
 
-		String message = "Bonjour,\n\nNotification sur la t�che n�" + tache.getIdPlanning() + " (" + tache.getTitre()
+		String message = "Bonjour,\n\nNotification sur la tâche n°" + tache.getIdPlanning() + " (" + tache.getTitre()
 				+ ") " + "\n\n" + "Voici le dernier ticket : \n\n" + rem.getTexte() + "\n\n\n"
-				+ "Voir la t�che sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
-				+ tache.getIdPlanning() + "\n\nBonne journ�e.";
+				+ "Voir la tâche sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
+				+ tache.getIdPlanning() + "\n\nBonne journée.";
 		try {
+			System.out.println("-------------- DEST ---------------");
+			System.out.println(dest);
+			System.out.println(URLEncoder.encode(dest, "UTF8"));
 //			response.sendRedirect("https://mail.cpasdeliege.be/?to=" + dest+ "&view=compose&body=" + message + "&subject=" + subject + "#1");
 			//https://outlook.office.com/mail/deeplink/compose?body=Hello%20World&subject=Test%20Email&to=test@example.com&cc=testcc@example.com
-			response.sendRedirect("https://outlook.office.com/mail/deeplink/compose?to=" + dest + "&body="
+			response.sendRedirect("https://outlook.office.com/mail/deeplink/compose?to=" + Utils.replaceAccentedCharacters(URLEncoder.encode(dest, "UTF8")) + "&body="
 					+ URLEncoder.encode(message, "UTF8") + "&subject=" + URLEncoder.encode(subject, "UTF8") + "#1");
 		} catch (IOException e) {
 			e.printStackTrace();

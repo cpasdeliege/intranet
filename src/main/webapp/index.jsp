@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<title>Intranet CPAS de Liï¿½ge</title>
 </head>
 <body>
 <jsp:forward page="index.htm" />

@@ -40,6 +40,8 @@ import be.cpasdeliege.intranet.informatique.model.TypeOrdinateur;
 import be.cpasdeliege.intranet.informatique.model.Utilisateur;
 import be.cpasdeliege.intranet.informatique.model.WifiVisiteurs;
 
+import be.cpasdeliege.intranet.utils.Utils;
+
 public class DaoMySQL implements DaoInterface {
 
 	public String driver = null;
@@ -791,6 +793,7 @@ public class DaoMySQL implements DaoInterface {
 		System.out.println("Freeeeeeeeeeeeeeeed :5555                                                            ");
 		System.out.println(" daoMysql.getListPersonnels*******************");
 		System.out.println("nom ==> " + nom + " , Prenom => " + prenom);
+
 		try {
 			String requete = "select * from personnel where nom like ? and prenom like ? order by nom ASC";
 			// Object[] parametres = new Object[] {new String(nom.getBytes(),"UTF-8"), new

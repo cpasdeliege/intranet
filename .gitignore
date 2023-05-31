@@ -5,6 +5,7 @@
 *.classpath
 *.project
 *.settings
+/bin/
 /bin/*
 /target/*
 
@@ -16,7 +17,8 @@
 *.class
 
 # Package Files
-*.jar
+# C'est un vieux projet on veut laisser les .jar externes
+# *.jar 
 *.war
 *.ear
 *.zip
@@ -49,3 +51,6 @@ $RECYCLE.BIN/
 
 #spring
 .springBeans
+
+# VS Code
+.vscode

@@ -84,9 +84,9 @@ public class GestionPlanning implements Controller {
 						
 			if(tachePerso == null) {
 				tachePerso = utilisateur.getNom();
-				titreMesTaches = "Liste de mes t�ches";
+				titreMesTaches = "Liste de mes tâches";
 			} else {
-				titreMesTaches = "Liste des t�ches de " + tachePerso;
+				titreMesTaches = "Liste des tâches de " + tachePerso;
 			}
 			
 			modele.put("listePersInfo", metier.getListePersonnelDepartement(8, "%", "%"));

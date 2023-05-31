@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.informatique.model.*" %>
@@ -7,13 +6,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
 <script language="JavaScript" src="javascript/calendar_db.js"></script>
 <link rel="stylesheet" href="calendar.css">
 <link rel="stylesheet" href="cpas.css" type="text/css">
 <script type="text/javascript">
-<!-- 
 
 function goToService() {
 	var service = document.formulaire.service.value;
@@ -48,9 +46,8 @@ function ajoutLienTHI() {
 	document.getElementById('zonedetexte').value = document.getElementById('zonedetexte').value+' <a href="gestionTache.admin?idPlanning=">TI</a>';
 }
 
-//-->
 </script>
-<title>THI ${formulaireTacheModifier.idPlanning } - Intranet CPAS de Liège - administration - gestion du planning</title>
+<title>THI ${formulaireTacheModifier.idPlanning } - Intranet CPAS de LiÃ¨ge - administration - gestion du planning</title>
 </head>
 
 
@@ -67,7 +64,7 @@ function ajoutLienTHI() {
 &nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.admin">administration</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="gestionPlanning.admin">gestion du planning</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" >tâche n° ${formulaireTacheModifier.idPlanning }</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" >tÃ¢che nÂ° ${formulaireTacheModifier.idPlanning }</a>
 <hr>
 </div>
 <br>
@@ -80,7 +77,7 @@ ${erreurFormulaireTacheModifier}
 		<td>
 			<table width="100%">
 				<tr>
-					<td class="titre_tableau">Tâche n° ${formulaireTacheModifier.idPlanning } - ${formulaireTacheModifier.titre }</td>
+					<td class="titre_tableau">TÃ¢che nÂ° ${formulaireTacheModifier.idPlanning } - ${formulaireTacheModifier.titre }</td>
 					<td align="right">
 						<a class="lien_tableau" href="index.dsi"> - DSI - </a>
 					</td>
@@ -102,7 +99,7 @@ ${erreurFormulaireTacheModifier}
 						
 						<td colspan="3">
 							<form  method="get" action="utilsTache.admin" target="_blank">
-								Notifier à &nbsp; <select name="pers" size="1" />
+								Notifier Ã  &nbsp; <select name="pers" size="1" />
 								<option>-</option>
 								<c:forEach items="${listePersInfo}" var="pers">
 									<option value="${pers.nom},${pers.prenom}" >${pers.nom}</option>
@@ -207,7 +204,7 @@ ${erreurFormulaireTacheModifier}
 				<tr>
 					 <td>
 						<form method="get" action="utilsTache.admin">
-							<input type="submit" value="notif à Juan"/>
+							<input type="submit" value="notif ï¿½ Juan"/>
 							<input type="hidden" name="mail" value="juan"/>
 							<input type="hidden" name="idPlanning" value="${formulaireTacheModifier.idPlanning }"/>
 							<input type="hidden" name="action" value="envoiemail">
@@ -229,7 +226,7 @@ ${erreurFormulaireTacheModifier}
 					<%		
 						}
 					%>
-							<input type="submit" value="notif à ${formulaireTacheModifier.personnelInfo}"/>
+							<input type="submit" value="notif ï¿½ ${formulaireTacheModifier.personnelInfo}"/>
 							<input type="hidden" name="mail" value="assign"/>
 							<input type="hidden" name="idPlanning" value="${formulaireTacheModifier.idPlanning }"/>
 							<input type="hidden" name="action" value="envoiemail">
@@ -238,7 +235,7 @@ ${erreurFormulaireTacheModifier}
 					</td>   
 					<td align="left">
 						<form  method="get" action="utilsTache.admin">
-							Notifié à &nbsp;
+							Notifiï¿½ ï¿½ &nbsp;
 							<select name="pers" size="1" />
 							<option>-</option>
 							<c:forEach items="${listePersInfo}" var="pers">
@@ -280,7 +277,7 @@ ${erreurFormulaireTacheModifier}
 				<% if(tache.getIncident().equals("1")) { %>
 				<tr>
 					<td colspan="3" align="center">
-						<p style="font-size: 16; font-weight: bold;color: red">/!\ /!\ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INCIDENT survenu à <%= tache.getHeureIncident() %>H<%= tache.getMinuteIncident() %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/!\ /!\</p>
+						<p style="font-size: 16; font-weight: bold;color: red">/!\ /!\ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INCIDENT survenu Ã  <%= tache.getHeureIncident() %>H<%= tache.getMinuteIncident() %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/!\ /!\</p>
 					</td>
 				</tr>
 				<% } %>
@@ -320,7 +317,7 @@ ${erreurFormulaireTacheModifier}
 					</td>
 				</tr>
 				<tr>
-					<td align="right">employé : </td>
+					<td align="right">employÃ© : </td>
 					<td>
 						<select name="personnel" size="1" />
 							<option>-</option>
@@ -364,7 +361,7 @@ ${erreurFormulaireTacheModifier}
 					</td>
 				</tr>
 				<tr>
-					<td align="right">échéance : </td>
+					<td align="right">Ã©chÃ©ance : </td>
 					<td>
 							<input type="text" name="echeance" value="${ formulaireTacheModifier.echeance }"/>
 							<script language="JavaScript">
@@ -414,7 +411,7 @@ ${erreurFormulaireTacheModifier}
 					</td>
 				</tr>
 				<tr>
-					<td align="right">coordonné par : </td>
+					<td align="right">coordonnÃ© par : </td>
 					<td>
 						<select name="personnelInfo" size="1" />
 							<option>-</option>
@@ -459,11 +456,11 @@ ${erreurFormulaireTacheModifier}
 									<%
 										if(i == liste.size()-1) {
 									%>
-									<a name="fin">ajouté</a>
+									<a name="fin">ajoutÃ©</a>
 									<%
 										} else {
 									%>
-									ajouté
+									ajoutÃ©
 									<%											
 										}
 									%>

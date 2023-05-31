@@ -6,7 +6,15 @@ import java.util.List;
 import be.cpasdeliege.intranet.informatique.model.Tache;
 import be.cpasdeliege.intranet.informatique.model.TacheListe;
 
+import java.text.Normalizer;
+
 public class Utils {
+
+	public static String replaceAccentedCharacters(String s) {
+		s = Normalizer.normalize(s, Normalizer.Form.NFD);
+		s = s.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+		return s;
+    }
 
 	public static String formatDateAffichage(String date) {
 		String[] tmp = date.split("-");
