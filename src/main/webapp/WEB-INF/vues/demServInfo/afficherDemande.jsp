@@ -1,6 +1,6 @@
 <%@page import="java.net.URLEncoder"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.DemServInfo.*" %>
 <%@page import="be.cpasdeliege.intranet.DemServInfo.model.DemServInf"%>
@@ -17,8 +17,8 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>DSI ${dsi.idDemandes} - Intranet CPAS de Liège</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>DSI ${dsi.idDemandes} - Intranet CPAS de LiÃ¨ge</title>
 		<link rel="stylesheet" href="site.css" type="text/css">
 	
 		<script language="JavaScript" src="javascript/calendar_db.js"></script>
@@ -35,13 +35,13 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 				document.getElementById('zonedetexte').value = document.getElementById('zonedetexte').value+' <a href="gestionTache.admin?idPlanning=">voir THI</a>';
 			}
 			function associerTache() {
-				var person = prompt("Entrer le numéro de tâche à associer : ", "");
+				var person = prompt("Entrer le numÃ©ro de tÃ¢che Ã  associer : ", "");
 				if (person != null) {
 					window.location = "utilsTache.admin?action=associerGTI2DSI&idDemandes=<%= dsi.getIdDemandes() %>&idPlanning="+person;
 				}
 			}
 			function supAssoTache() {
-				var person = prompt("Entrer le numéro de tâche à dissocier : ", "");
+				var person = prompt("Entrer le numÃ©ro de tÃ¢che Ã  dissocier : ", "");
 				if (person != null) {
 					window.location = "utilsTache.admin?action=supAssoGTI2DSI&idDemandes=<%= dsi.getIdDemandes() %>&idPlanning="+person;
 				}
@@ -101,7 +101,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 					<td>
 						<table>
 							<tr>
-								<td align="right">n° Demande : </td>
+								<td align="right">nÂ° Demande : </td>
 								<td>${dsi.idDemandes}</td>
 								<td rowspan="10">&nbsp;&nbsp;&nbsp;&nbsp;</td>
 								<td rowspan="10">
@@ -133,17 +133,17 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 														if(dsi.getEnAttente().equals("0")) {
 															if(privilege.isDsiInfo()) {
 												%>
-													En attente d'une action extérieure : <input type="checkbox" name="enAttente">
+													En attente d'une action extÃ©rieure : <input type="checkbox" name="enAttente">
 												<%
 															}
 														} else {
 															if(privilege.isDsiInfo()) {
 												%>
-													En attente d'une action extérieure : <input type="checkbox" name="enAttente" checked>
+													En attente d'une action extÃ©rieure : <input type="checkbox" name="enAttente" checked>
 												<%			
 															} else {
 												%>
-													statut : En attente d'une action extérieure
+													statut : En attente d'une action extÃ©rieure
 												<%												
 																
 															}
@@ -173,7 +173,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 										<tr>
 											<th></th>
 											<th>Validation</th>
-											<th>Echéance</th>
+											<th>EchÃ©ance</th>
 										</tr>
 										<tr>
 											<td align="right">U : </td>
@@ -348,7 +348,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 																	'controlname': 'dateModifEcheance'
 																});
 															</script>
-															<input type="submit" name="action" value="Modifier échéance"/>
+															<input type="submit" name="action" value="Modifier Ã©chÃ©ance"/>
 														</form>
 														
 														<%} %>
@@ -360,7 +360,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 															<td colspan="3"><hr></td>
 														</tr>
 														<tr>
-															<td align="right">Exécution : </td>
+															<td align="right">ExÃ©cution : </td>
 															<td></td>
 															<td>
 																<input size="8" <% if(!privilege.isDsiInfo() || dsi.getDateExecEffective() != null) { %> disabled <% } %>
@@ -390,7 +390,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 							if(privilege.isDsiInfo()) {
 							%>
 								<tr>
-									<td align="right">n° GTI : </td>
+									<td align="right">nÂ° GTI : </td>
 									<td>
 										<c:forEach items="${dsigti}" var="gti">
 				                           > <a href="gestionTache.admin?idPlanning=${gti.idPlanning}">${gti.idPlanning}</a>
@@ -428,7 +428,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 								</td>
 							</tr>
 							<tr>
-								<td align="right">service concerné : </td>
+								<td align="right">service concernÃ© : </td>
 								<td>
 									<select disabled="disabled" name="service" size="1" />
 											<option >${dsi.service}</option>
@@ -436,7 +436,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 								</td>
 							</tr>
 							<tr>
-								<td align="right">échéance souhaitée: </td>
+								<td align="right">Ã©chÃ©ance souhaitÃ©e: </td>
 								<td>
 									<input disabled="disabled" type="text" name="echeanceSouhaitee" value="${dsi.dateExecSouhaitee}"/>
 								</td>
@@ -454,7 +454,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 								if(dsi.getRemarqueEcheance() != null) {
 							%>
 								<tr>
-									<td align="right">remarques sur échéance : </td>
+									<td align="right">remarques sur Ã©chÃ©ance : </td>
 									<td><textarea disabled="disabled" cols="80" rows="5" name="remarqueEcheance"/>${dsi.remarqueEcheance}</textarea></td>
 								</tr>
 							<%
@@ -503,13 +503,13 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 					<% if(privilege.isDsiInfo()) { %>
 						<td align="center">
 							<form method="get" action="formulaireTacheAjouter.admin" target="_blank">
-								<input type="submit" value="Créer une tâche"/>
+								<input type="submit" value="CrÃ©er une tÃ¢che"/>
 								<input type="hidden" name="nomFormulaire" value="${dsi.nom}">
 								<input type="hidden" name="prenomFormulaire" value="${dsi.prenom}">
 								<input type="hidden" name="serviceFormulaire" value="${dsi.service}">
 								<input type="hidden" name="echeanceFormulaire" value="${dsi.dateExecSouhaiteeSecrConfAffichage}">
 								<input type="hidden" name="titreFormulaire" value="${dsi.titre}">
-								<input type="hidden" name="descriptionFormulaire" value="<a href=&quot;afficherDemande.dsi?idDemandes=${dsi.idDemandes}&quot;>voir demande DSI n° ${dsi.idDemandes}</a><br><br><%= dsi.getDescription().replaceAll("\"", "&quot;") %>">
+								<input type="hidden" name="descriptionFormulaire" value="<a href=&quot;afficherDemande.dsi?idDemandes=${dsi.idDemandes}&quot;>voir demande DSI nÂ° ${dsi.idDemandes}</a><br><br><%= dsi.getDescription().replaceAll("\"", "&quot;") %>">
 								<input type="hidden" name="idDemande" value="${dsi.idDemandes}">
 								<input type="hidden" name="typeDemande" value="${dsi.typeDemande}">
 								<%
@@ -520,13 +520,13 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 						<% if(privilege.isDsiInfo()) { %> 
 						<td>&nbsp;&nbsp;&nbsp;</td>
 						<td>
-							<input onclick="associerTache()" type="button" value="Associer tâche"/>
+							<input onclick="associerTache()" type="button" value="Associer tÃ¢che"/>
 						</td>
 					<% } %>
 					<% if(privilege.isDsiInfo()) { %> 
 					<td>&nbsp;&nbsp;&nbsp;</td>
 					<td>
-						<input onclick="supAssoTache()" type="button" value="Dissocier tâche"/>
+						<input onclick="supAssoTache()" type="button" value="Dissocier tÃ¢che"/>
 					</td>
 					<% } %>
 					<td>&nbsp;&nbsp;&nbsp;</td>
@@ -561,7 +561,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 					<td>&nbsp;&nbsp;&nbsp;</td>		
 					<td>
 						<form method="get" action="transmettre.dsi"  target="_blank">
-							<input type="submit" value="Transmettre à un tiers"/>
+							<input type="submit" value="Transmettre Ã  un tiers"/>
 							<input type="hidden" name="idDemande" value="${dsi.idDemandes}">
 							
 						</form>
@@ -709,11 +709,11 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 										<%
 											if(i == liste.size()-1) {
 										%>
-											<a name="fin">ajouté</a>
+											<a name="fin">ajoutÃ©</a>
 										<%
 											} else {
 										%>
-											ajouté
+											ajoutÃ©
 										<%											
 											}
 										%>

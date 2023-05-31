@@ -1,6 +1,6 @@
 <%@page import="be.cpasdeliege.intranet.DemServInfo.model.DemServInf"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.DemServInfo.*" %>
 <%@page import="be.cpasdeliege.intranet.informatique.model.*"%>
@@ -8,8 +8,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 
 </head>
@@ -41,7 +41,7 @@ List<DemServInf> refusees = (List<DemServInf>) request.getAttribute("listeDsiRef
 		<td>
 			<table width="100%">
 				<tr>
-					<td align="center"><a class="lien_tableau" href="index.dsi">Demandes en cours</a> - <a class="lien_tableau" href="index.dsi?action=fini">Demandes traitées</a></td>
+					<td align="center"><a class="lien_tableau" href="index.dsi">Demandes en cours</a> - <a class="lien_tableau" href="index.dsi?action=fini">Demandes traitÃ©es</a></td>
 				</tr>
 			</table>
 		</td>
@@ -69,7 +69,7 @@ List<DemServInf> refusees = (List<DemServInf>) request.getAttribute("listeDsiRef
 			<table width="100%">
 				<tr>
 					<td width="30px"><img src="images/termine.png" border="0" width="35px"></td>
-					<td class="titre_tableau"><a name="executees">Liste des demandes exécutées (<%= executees.size() %>)</a></td>
+					<td class="titre_tableau"><a name="executees">Liste des demandes exÃ©cutÃ©es (<%= executees.size() %>)</a></td>
 					<td align="right">
 						
 					</td>
@@ -88,7 +88,7 @@ List<DemServInf> refusees = (List<DemServInf>) request.getAttribute("listeDsiRef
 		<td>
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
-					<th><a href="index.dsi?action=fini&orderby=idDemandes#executees">n°</a></th>
+					<th><a href="index.dsi?action=fini&orderby=idDemandes#executees">nÂ°</a></th>
 					<th><a href="index.dsi?action=fini&orderby=typeDemande#executees">Type</a></th>
 					<th>Titre</th>
 					<th><a href="index.dsi?action=fini&orderby=nom#executees">Auteur Demande</a></th>
@@ -136,7 +136,7 @@ List<DemServInf> refusees = (List<DemServInf>) request.getAttribute("listeDsiRef
 			<table width="100%">
 				<tr>
 					<td width="30px"><img src="images/refuse.png" border="0" width="35px"></td>
-					<td class="titre_tableau"><a name="refusees">Liste des demandes refusées (<%= refusees.size() %>)</a></td>
+					<td class="titre_tableau"><a name="refusees">Liste des demandes refusÃ©es (<%= refusees.size() %>)</a></td>
 					<td align="right">
 						
 					</td>
@@ -155,7 +155,7 @@ List<DemServInf> refusees = (List<DemServInf>) request.getAttribute("listeDsiRef
 		<td>
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
-					<th><a href="index.dsi?action=fini&orderby=idDemandes#refusees">n°</a></th>
+					<th><a href="index.dsi?action=fini&orderby=idDemandes#refusees">nÂ°</a></th>
 					<th><a href="index.dsi?action=fini&orderby=typeDemande#refusees">Type</a></th>
 					<th>Titre</th>
 					<th><a href="index.dsi?action=fini&orderby=nom#refusees">Auteur Demande</a></th>

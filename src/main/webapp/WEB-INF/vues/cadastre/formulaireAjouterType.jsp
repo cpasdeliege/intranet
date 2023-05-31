@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@page import="be.cpasdeliege.intranet.cadastre.model.*"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 
 <script type="text/javascript">
@@ -54,8 +54,8 @@
 	<div>
 		<hr>
 		&nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.cad">Cadastre des Marchés Publics</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Ajouter un type de Marché Public</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.cad">Cadastre des MarchÃ©s Publics</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Ajouter un type de MarchÃ© Public</a>
 		<hr>
 	</div>
 <div id="principal">
@@ -70,7 +70,7 @@ ${erreur}
 		<td>
 			<table>
 				<tr>
-					<td class="titre_tableau">Ajouter un type de marché public</td>
+					<td class="titre_tableau">Ajouter un type de marchÃ© public</td>
 					<td>
 					</td>
 				</tr>
@@ -90,7 +90,7 @@ ${erreur}
 			<form method="post" enctype="multipart/form-data" action="utilsTache.admin">
 			<table>
 				<tr>
-					<td align="right">Intitulé : </td>
+					<td align="right">IntitulÃ© : </td>
 					<td><input type="text" size="100" maxlength="100" name="type_marche" value="${typeMarche.type_marche}"/></td>
 				</tr>
 				<tr>

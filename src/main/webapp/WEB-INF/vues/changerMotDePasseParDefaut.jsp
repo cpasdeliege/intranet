@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 
 </head>
@@ -18,7 +18,7 @@
 <table align="center" width="80%" cellpadding="0" cellspacing="0">
 	<tr height="25">
 		<td></td>
-		<td class="titre_tableau">Bienvenue sur l'intranet du CPAS de Liège </td>
+		<td class="titre_tableau">Bienvenue sur l'intranet du CPAS de LiÃ¨ge </td>
 		<td></td>
 	</tr>
 	<tr height="25">
@@ -30,8 +30,8 @@
 		<td background="images/cadre/area_left.gif"></td>
 		<td>
 		
-		<p>Ceci est surement votre première connexion.</p>
-		<p> Vous vous êtes connecté avec le mot de passe "cpas" qui est le mot de passe par défaut. Pour des raisons de sécurité, nous vous demandons de bien vouloir modifier votre mot de passe. </p>
+		<p>Ceci est surement votre premiÃ¨re connexion.</p>
+		<p> Vous vous Ãªtes connectÃ© avec le mot de passe "cpas" qui est le mot de passe par dÃ©faut. Pour des raisons de sÃ©curitÃ©, nous vous demandons de bien vouloir modifier votre mot de passe. </p>
 		
 		<p>Pour ce faire veuillez utiliser le formulaire ci-dessous : <p>
 		<%@ page import="be.cpasdeliege.intranet.informatique.model.*" %>
@@ -58,7 +58,7 @@
 			</table>
 		</form>
 		<br>
-		<p>Vous pouvez à tout moment changer votre mot de passe via l'interface qui si trouve en haut à droite sur la page lorsque vous êtes connecté.</p>
+		<p>Vous pouvez Ã  tout moment changer votre mot de passe via l'interface qui si trouve en haut Ã  droite sur la page lorsque vous Ãªtes connectÃ©.</p>
 
 		</td>
 		<td background="images/cadre/area_right.gif"></td>

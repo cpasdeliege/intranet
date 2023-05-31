@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Intranet CPAS de Liège</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 <style type="text/css">
@@ -34,7 +34,7 @@
 <table align="center" width="80%" cellpadding="0" cellspacing="0">
 	<tr height="25">
 		<td></td>
-		<td class="titre_tableau">Intranet - Zone Libre d'Acc�s</td>
+		<td class="titre_tableau">Intranet - Zone Libre d'Accès</td>
 		<td></td>
 	</tr>
 	<tr height="25">
@@ -50,15 +50,15 @@
 					<td width="60px"><a href="index.annuaire"><img src="images/telephone.png" border="0" width="50px"></a></td>
 					<td><a class="texte_menu_principal" href="index.annuaire"><nobr>Annuaire Interne</nobr></a></td>
 					<td><p class="texte_informatif_menu_principal">
-						Ce r�pertoire est destin� � un <span class="texte_gros">usage strictement interne.</span>
+						Ce répertoire est destiné à un <span class="texte_gros">usage strictement interne.</span>
 						</p>
 						<p class="texte_informatif_menu_principal">
 						Nous comptons sur votre bienveillance pour respecter cette consigne puisque 
-						certains services - et plus particuli�rement les antennes sociales - pr�cisent 
-						<span class="texte_gros">un num�ro d'appel destin� au public.</span>
+						certains services - et plus particulièrement les antennes sociales - précisent 
+						<span class="texte_gros">un numéro d'appel destiné au public.</span>
 						</p>
 						<p class="texte_informatif_menu_principal">
-						Si vous appelez <span class="texte_gros">de l'ext�rieur</span> composer les num�ros avec leur pr�fix en rouge.<br/>
+						Si vous appelez <span class="texte_gros">de l'extérieur</span> composer les numéros avec leur préfix en rouge.<br/>
 						Si vous appelez <span class="texte_gros">en interne</span>, composer seulement les 4 chiffres d'extension en noir.
 						</p>
 					</td>
@@ -89,11 +89,11 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><a href="index.regTrav?param=lots"><img src="images/strategique.png" border="0" width="60px"></a></td>
-					<td><a class="texte_menu_principal">Plan Strat�gique</a></td>
+					<td><a class="texte_menu_principal">Plan Stratégique</a></td>
 					<td width="70%">
 						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=etat" target="_blank">Etat des lieux (mai 2013)</a></p>
 						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=tableau" target="_blank">Tableau de bord (juillet 2013)</a></p>
-						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=presentation" target="_blank">Plan strat�gique (derni�re version)</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=presentation" target="_blank">Plan stratégique (dernière version)</a></p>
 						<p class="texte_informatif_menu_principal">
 							
 						</p>
@@ -125,13 +125,13 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><a href="index.rues"><img src="images/agent.png" border="0" width="60px"></a></td>
-					<td><a class="texte_menu_principal" href="index.rues">R�partition et code des rues de Liège</a></td>
+					<td><a class="texte_menu_principal" href="index.rues">Répartition et code des rues de Liège</a></td>
 					<td>
 						<p class="texte_informatif_menu_principal">
-							Il y a lieu d'inviter les personnes qui ont entre 18 et 25 ans � se pr�senter � l'antenne Jeunes situ�e rue Natalis et celles qui sont en ill�galit� de s�jour � se rendre au SADA situ� rue Hors-Chateau.
+							Il y a lieu d'inviter les personnes qui ont entre 18 et 25 ans à se présenter à l'antenne Jeunes située rue Natalis et celles qui sont en illégalité de séjour à se rendre au SADA situé rue Hors-Chateau.
 						</p>
 						<p class="texte_informatif_menu_principal">
-							Une ic�ne permet de visualiser l'endroit o� se situe la rue sur le territoire de la Ville de Liège.
+							Une icône permet de visualiser l'endroit où se situe la rue sur le territoire de la Ville de Liège.
 						</p>
 					</td>
 					<td align="right" valign="bottom"></td>
@@ -161,13 +161,13 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><a href="index.regTrav?param=lots"><img src="images/travail.png" border="0" width="60px"></a></td>
-					<td><a class="texte_menu_principal">R�glement de travail du personnel<br></a></td>
+					<td><a class="texte_menu_principal">Règlement de travail du personnel<br></a></td>
 					<td>
 						<p class="texte_informatif_menu_principal">
-							<img src="./images/pdf.png" width="30px"></img><a class="texte_menu_principal" href="index.regTrav?param=lots" target="_blank">T�l�charger le R�glement de Travail</a>
+							<img src="./images/pdf.png" width="30px"></img><a class="texte_menu_principal" href="index.regTrav?param=lots" target="_blank">Télécharger le Règlement de Travail</a>
 						</p>
 						<p>
-							Si votre ordinateur n'est pas �quip� d'une version suffisamment r�cente d'acrobat reader, veuillez utiliser le lien suivant: <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=normal" target="_blank">T�l�charger</a>
+							Si votre ordinateur n'est pas équipé d'une version suffisamment récente d'acrobat reader, veuillez utiliser le lien suivant: <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=normal" target="_blank">Télécharger</a>
 						</p>
 						<p class="texte_informatif_menu_principal">
 							
@@ -202,9 +202,9 @@
 					<td width="60px"><img src="images/certificat.png" border="0" width="60px"></td>
 					<td><a class="texte_menu_principal">Ressources</a></td>
 					<td  width="70%">
-						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=certificat" target="_blank">Certificat M�dical</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=certificat" target="_blank">Certificat Médical</a></p>
 						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmIAS" target="_blank">Vade-Mecum : Action Sociale</a></p>
-						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmMado" target="_blank">Vade-Mecum : Maintien � Domicile</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmMado" target="_blank">Vade-Mecum : Maintien à Domicile</a></p>
 						<p class="texte_informatif_menu_principal">
 							
 						</p>
@@ -294,7 +294,7 @@
 <table align="center" width="80%" cellpadding="0" cellspacing="0">
 	<tr height="25">
 		<td></td>
-		<td class="titre_tableau">Intranet - Zone � Acc�s R�serv�</td>
+		<td class="titre_tableau">Intranet - Zone à Accès Réservé</td>
 		<td></td>
 	</tr>
 	<tr height="25">

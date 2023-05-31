@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
 	<xsl:template match="/">
 		<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" 
@@ -43,7 +43,7 @@
 					padding-right="2pt"
 					padding-left="2pt"
 					padding-bottom="2pt">
-					CPAS de Liège - Annuaire Interne 
+					CPAS de LiÃ¨ge - Annuaire Interne 
 		</fo:block>
 	</xsl:template>
 	
@@ -62,10 +62,10 @@
 			Annuaire Interne
 		</fo:block>
 		<fo:block text-align="center" font-size="26pt" space-before="40pt">
-			- ordre alphabétique -
+			- ordre alphabÃ©tique -
 		</fo:block>
 		<fo:block text-align="center" font-size="14pt" space-before="250pt" break-after="page">
-			- généré le <xsl:value-of select="date"/> -
+			- gÃ©nÃ©rÃ© le <xsl:value-of select="date"/> -
 		</fo:block>
 		<xsl:apply-templates select="lettre"/>
 	</xsl:template>
@@ -119,7 +119,7 @@
 					padding-left="2pt"
 					padding-bottom="2pt">
 			<fo:block text-align="center">
-			Ce répertoire est destiné à un usage strictement interne.
+			Ce rÃ©pertoire est destinÃ© Ã  un usage strictement interne.
 		</fo:block>
 			<fo:block>
 				page <fo:page-number/>

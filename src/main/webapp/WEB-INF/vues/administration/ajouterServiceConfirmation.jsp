@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion des
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des
 	services</title>
 </head>
 <%@ page
@@ -71,7 +71,7 @@
 					</td>	
 				</tr>
 				<tr>
-					<td align="right">département : </td>
+					<td align="right">dÃ©partement : </td>
 					<td>
 						<select>
 							<option>-</option>
@@ -98,7 +98,7 @@
 						<td class="texte_tableau_confirmation">${ formulaireServiceAjouter.adresse }</td>
 					</tr>
 					<tr>
-						<td align="right">numéro :</td>
+						<td align="right">numÃ©ro :</td>
 						<td class="texte_tableau_confirmation">${ formulaireServiceAjouter.numero }</td>
 					</tr>
 					<tr>
@@ -106,7 +106,7 @@
 						<td class="texte_tableau_confirmation">${ formulaireServiceAjouter.codePostal }</td>
 					</tr>
 					<tr>
-						<td align="right">localité :</td>
+						<td align="right">localitÃ© :</td>
 						<td class="texte_tableau_confirmation">${ formulaireServiceAjouter.localite }</td>
 					</tr>
 					<tr>

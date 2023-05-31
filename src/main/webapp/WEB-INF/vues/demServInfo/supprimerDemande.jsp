@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.DemServInfo.*" %>
 <%@page import="be.cpasdeliege.intranet.DemServInfo.model.DemServInf"%>
@@ -9,8 +9,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 
 <script language="JavaScript" src="javascript/calendar_db.js"></script>
@@ -45,7 +45,7 @@ ${erreur}
 		<td>
 			<table width="100%">
 				<tr>
-					<td class="titre_tableau">Supprimer la demande n°<%= dsi.getIdDemandes() %> (<%= dsi.getTitre() %>) de <%= dsi.getPrenom() %> <%= dsi.getNom() %></td>
+					<td class="titre_tableau">Supprimer la demande nÂ°<%= dsi.getIdDemandes() %> (<%= dsi.getTitre() %>) de <%= dsi.getPrenom() %> <%= dsi.getNom() %></td>
 					<td align="right">
 						
 					</td>
@@ -63,8 +63,8 @@ ${erreur}
 	<tr>
 		<td background="images/administration/cadre/area_left.gif"></td>
 		<td>
-			<p align="center">Pour supprimer une demande, il est nécessaire de le motiver via l'ajout d'une remarque.</p>
-			<!--  <p align="center">Une demande supprimée passe en statut "Demande exécutée"</p> -->
+			<p align="center">Pour supprimer une demande, il est nÃ©cessaire de le motiver via l'ajout d'une remarque.</p>
+			<!--  <p align="center">Une demande supprimÃ©e passe en statut "Demande exÃ©cutÃ©e"</p> -->
 		</td>
 		<td background="
 		images/administration/cadre/area_right.gif"></td>

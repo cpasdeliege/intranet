@@ -45,6 +45,10 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 		 * formulaire).getTitre().getBytes(),"UTF-8")); ((Tache) formulaire).setType(new
 		 * String(((Tache) formulaire).getType().getBytes(),"UTF-8"));
 		 */
+
+		System.out.println("-------------- DEBUG PIERRE BEFORE FORM -----------");
+		System.out.println(new String(((Tache) formulaire).getTitre().getBytes(),"UTF-8"));
+
 		((Tache) formulaire).setIncident(((Tache) formulaire).getIncident());
 		((Tache) formulaire).setPersonnel(((Tache) formulaire).getPersonnel());
 		((Tache) formulaire).setPersonnelInfo(((Tache) formulaire).getPersonnelInfo());
@@ -60,6 +64,10 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 		if (testFormulaire(request, formulaire)) {
 
 			Tache tache = (Tache) formulaire;
+
+			System.out.println("-------------- DEBUG PIERRE FIRST -----------");
+			System.out.println(tache.getTitre());
+
 			Tache oldTache = metier.getTache("" + tache.getIdPlanning());
 			((Tache) formulaire).setIncident(oldTache.getIncident());
 			((Tache) formulaire).setHeureIncident(oldTache.getHeureIncident());
@@ -68,7 +76,7 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 			Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
 			// System.out.println("Freeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeed :
 			// nom="+utilisateur.getNom()+" prenom="+utilisateur.getPrenom());
-			// mail si tache termin�e
+			// mail si tache terminée
 			if (oldTache.getDateFin() == null && !tache.getDateFin().equals("")) {
 
 				DaoPersonnel from = ((List<DaoPersonnel>) dao.getListePersonnels(utilisateur.getNom(),
@@ -76,12 +84,12 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 				// Ajout ticket de fin de tache
 				TicketItem ticket = new TicketItem();
 				ticket.setIdPlanning(tache.getIdPlanning());
-				ticket.setTexte("<font color=\"#af391f\">T�che clotur�e par " + utilisateur.getPrenom() + " "
+				ticket.setTexte("<font color=\"#af391f\">Tâche cloturée par " + utilisateur.getPrenom() + " "
 						+ utilisateur.getNom() + " le " + tache.getDateFin() + ".</font>");
 				ticket.setUser(utilisateur.getNom());
 				metier.addTicketItem(ticket);
 				/**********************************************/
-				// decomment� le 26/05/2021
+				// decommenté le 26/05/2021
 				mailFinTache(tache, "juan.hernandez@cpasdeliege.be", from);
 				mailFinTache(tache, "nicolas.radoux@cpasdeliege.be", from);
 				mailFinTache(tache, "vanessa.verschoren@cpasdeliege.be", from);
@@ -89,10 +97,10 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 			}
 
 			if (!oldTache.getEcheance().equals(tache.getEcheance())) {
-				// Ajout ticket de modification d'�ch�ance
+				// Ajout ticket de modification d'échéance
 				TicketItem ticket = new TicketItem();
 				ticket.setIdPlanning(tache.getIdPlanning());
-				ticket.setTexte("<font color=\"#af391f\">Modification �ch�ance ==>   " + tache.getEcheance()
+				ticket.setTexte("<font color=\"#af391f\">Modification échéance ==>   " + tache.getEcheance()
 						+ "   (ancienne " + oldTache.getEcheance() + ")</font>");
 				ticket.setUser(utilisateur.getNom());
 				metier.addTicketItem(ticket);
@@ -108,10 +116,9 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 				System.out.println("modification ****************************");
 				// System.out.println(" user c coordinateur ==>" + tache.getPersonnelInfo());
 				System.out.println(" user c coordinateur ==>" + tache.getPersonnelInfo());
-				System.out
-						.println(" user c coordinateur ==>" + new String(tache.getPersonnelInfo().getBytes(), "UTF-8"));
+				System.out.println(" user c coordinateur ==>" + new String(tache.getPersonnelInfo().getBytes(), "UTF-8"));
 				// recuperre id de l'utuilisateur : tache.getPersonnelInfo()
-				// mettre � jour id du coordinateur dans la table tache
+				// mettre à jour id du coordinateur dans la table tache
 				/* *********************************************/
 				String[] coord = tache.getPersonnelInfo().split(",");
 				String[] nomPrenomPerso = tache.getPersonnel().split(",");
@@ -146,6 +153,8 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 
 			tache.setDsi(oldTache.isDsi());
 
+			System.out.println("-------------- DEBUG PIERRE BEFORE UPDATE -----------");
+			System.out.println(tache.getTitre());
 			metier.updateTache(tache);
 			request.getSession().setAttribute("formulaireTacheModifier", null);
 			response.sendRedirect(
@@ -217,10 +226,10 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 //			email.setTLS(true);
 			email.setFrom(from.getEmail(), from.getPrenom() + " " + from.getNom());
 			email.setSubject("TI " + tache.getIdPlanning() + " ** 9.CLOTURE** - " + tache.getTitre());
-			email.setMsg("Bonjour,\n\nNotification de la cl�ture de la t�che n�" + tache.getIdPlanning() + " ("
+			email.setMsg("Bonjour,\n\nNotification de la clôture de la tâche n°" + tache.getIdPlanning() + " ("
 					+ tache.getTitre() + ") " + "\n\n"
-					+ "Voir la t�che sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
-					+ tache.getIdPlanning() + "\n\nBonne journ�e.");
+					+ "Voir la tâche sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
+					+ tache.getIdPlanning() + "\n\nBonne journée.");
 			email.addTo(dest);
 			email.send();
 		} catch (EmailException e) {
@@ -236,7 +245,7 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 		Tache tache = (Tache) formulaire;
 		if (tache.getService().equals("-")) {
 			request.getSession().setAttribute("erreurFormulaireTacheModifier",
-					"Il faut que la t�che soit associ�e � un service !");
+					"Il faut que la tâche soit associée à un service !");
 			return false;
 		} else {
 			request.getSession().setAttribute("erreurFormulaireTacheModifier", null);

@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.codesRues.model.dao.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="annuaire.css" type="text/css">
 <script type="text/javascript">
 
@@ -21,10 +21,10 @@ List<Addenda> listeRues = (List<Addenda>)request.getAttribute("listeRues");
 <div>
 <hr>
 &nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">répartition et code des rues de Liège</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">rÃ©partition et code des rues de LiÃ¨ge</a>
 <hr>
 </div>
-<h1 align="center">Répartition et code des rues de Liège</h1>
+<h1 align="center">RÃ©partition et code des rues de LiÃ¨ge</h1>
 <table cellpadding="0" cellspacing="0"  class="tableau_container_centre">
 	<tr>
 		<td>
@@ -43,7 +43,7 @@ List<Addenda> listeRues = (List<Addenda>)request.getAttribute("listeRues");
 						<a href="index.rues?param=A05">Bressoux</a>
 					</td>
 					<td class="menu_rues">
-						<a href="index.rues?param=A08">Grivegnée</a>
+						<a href="index.rues?param=A08">GrivegnÃ©e</a>
 					</td>
 					<td class="menu_rues">
 						<a href="index.rues?param=A02">Laveu</a>

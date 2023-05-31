@@ -54,8 +54,8 @@ public class SplitDemande implements Controller {
 			// Ajout remarque dans Demande parent
 			Remarque rem = new Remarque();
 			rem.setIdDemande(idDemande);
-			rem.setTexte("/!\\ Demande scind�e.<br><br>" +
-					"<a href=\"afficherDemande.dsi?idDemandes=" + id + "\">Voir la demande fille (n� " + id + ")</a>");
+			rem.setTexte("/!\\ Demande scindée.<br><br>" +
+					"<a href=\"afficherDemande.dsi?idDemandes=" + id + "\">Voir la demande fille (n° " + id + ")</a>");
 			rem.setUser(utilisateur.getPrenom() + " " + utilisateur.getNom());
 			rem.setDate(sdf.format(now.getTime()));
 			daoDsi.addRemarque(rem);
@@ -63,7 +63,7 @@ public class SplitDemande implements Controller {
 			// Ajout remarque dans Demande enfant
 			rem = new Remarque();
 			rem.setIdDemande(""+id);
-			rem.setTexte("/!\\ Cette demande a �t� cr��e pour scinder la demande n� " + idDemande + ".<br><br>" +
+			rem.setTexte("/!\\ Cette demande a été créée pour scinder la demande n° " + idDemande + ".<br><br>" +
 					"<a href=\"afficherDemande.dsi?idDemandes=" + idDemande + "\">Voir la demande originale</a>");
 			rem.setUser(utilisateur.getPrenom() + " " + utilisateur.getNom());
 			rem.setDate(sdf.format(now.getTime()));

@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion des imprimantes</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des imprimantes</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -76,9 +76,9 @@ int width = 40;
 							<tr>
 								<td>
 									<%	if(listeOrdi.size() > 1) { %>														
-											<%= listeOrdi.size() %> ordinateurs connectés
+											<%= listeOrdi.size() %> ordinateurs connectÃ©s
 									<%	} else { %>
-											<%= listeOrdi.size() %> ordinateur connecté
+											<%= listeOrdi.size() %> ordinateur connectÃ©
 									<%	} %>
 								</td>
 							</tr>
@@ -107,10 +107,10 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="45px"><img src="images/administration/ordinateur.png" border="0" width="<%= width %>"></td>
-					<td class="titre_tableau"><a name="listeOrdinateur">Liste des ordinateurs connectés</a></td>
+					<td class="titre_tableau"><a name="listeOrdinateur">Liste des ordinateurs connectÃ©s</a></td>
 					<td align="right">
 						<form method="get" action="formulaireImprimanteOrdinateurAssigner.admin">
-							<input type="submit" value="assigner à un ordinateur"/>
+							<input type="submit" value="assigner Ã  un ordinateur"/>
 							<input type="hidden" name="numeroS" value="${imprimante.numeroSerie }"/>
 						</form>
 					</td>

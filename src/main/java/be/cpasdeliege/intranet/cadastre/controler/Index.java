@@ -103,11 +103,11 @@ public class Index implements Controller {
 				HSSFRow row = sheet.createRow(0);
 				HSSFCell cell0 = row.createCell(0);
 				cell0.setCellType(HSSFCell.CELL_TYPE_STRING);
-				cell0.setCellValue(new HSSFRichTextString("Intitul�"));
+				cell0.setCellValue(new HSSFRichTextString("Intitulé"));
 
 				HSSFCell cell1 = row.createCell(1);
 				cell1.setCellType(HSSFCell.CELL_TYPE_STRING);
-				cell1.setCellValue(new HSSFRichTextString("R�f�rence"));
+				cell1.setCellValue(new HSSFRichTextString("Référence"));
 
 				HSSFCell cell2 = row.createCell(2);
 				cell2.setCellType(HSSFCell.CELL_TYPE_STRING);
@@ -127,7 +127,7 @@ public class Index implements Controller {
 
 				HSSFCell cell6 = row.createCell(6);
 				cell6.setCellType(HSSFCell.CELL_TYPE_STRING);
-				cell6.setCellValue(new HSSFRichTextString("Date d�but"));
+				cell6.setCellValue(new HSSFRichTextString("Date début"));
 
 				HSSFCell cell7 = row.createCell(7);
 				cell7.setCellType(HSSFCell.CELL_TYPE_STRING);
@@ -221,7 +221,7 @@ public class Index implements Controller {
 		listeMarche = daoCadastre.getListeMarchesSupp(null, null);
 		request.getSession().setAttribute("listeMarche", listeMarche);
 		HashMap modele = new HashMap();
-		modele.put("info", "supprim�s");
+		modele.put("info", "supprimés");
 		modele.put("listeMarche", listeMarche);
 		modele.put("typeMarche", typeMarche);
 		modele.put("listeTypeMarche", daoCadastre.getListeTypeMarche());
@@ -236,7 +236,7 @@ public class Index implements Controller {
 		listeMarche = daoCadastre.getListeMarchesSupp(null, null);
 		request.getSession().setAttribute("listeMarche", listeMarche);
 		HashMap modele = new HashMap();
-		modele.put("info", "supprim�s");
+		modele.put("info", "supprimés");
 		modele.put("listeMarche", listeMarche);
 		modele.put("typeMarche", typeMarche);
 		modele.put("listeTypeMarche", daoCadastre.getListeTypeMarche());
@@ -273,7 +273,7 @@ public class Index implements Controller {
 		if(listeMarche.size() == 0) {
 			daoCadastre.supprimerType(id_type_marche);
 		} else {
-			modele.put("erreur", "Il reste des march�s de type " + daoCadastre.getTypeMarche(id_type_marche).getType_marche() + ", suppression impossible !");
+			modele.put("erreur", "Il reste des marchés de type " + daoCadastre.getTypeMarche(id_type_marche).getType_marche() + ", suppression impossible !");
 		}
 		request.getSession().setAttribute("listeMarche", listeMarche);
 		modele.put("listeMail", daoCadastre.getListeAdresseMail());
@@ -447,7 +447,7 @@ public class Index implements Controller {
 			modele.put("info", "");
 		} else if(type.equals("supp")) {
 			listeMarche = daoCadastre.getListeMarchesSupp(orderBy, sensOrderBy);
-			modele.put("info", "supprim�s");
+			modele.put("info", "supprimés");
 		} else if(type.equals("recherche")) {
 			String motcle = request.getParameter("motcle");
 			listeMarche = daoCadastre.getListeMarchesRecherche(motcle, orderBy, sensOrderBy);
@@ -517,7 +517,7 @@ public class Index implements Controller {
 	private boolean verifFormulaireTypeMarche(HttpServletRequest request) {
 		String type_marche = request.getParameter("type_marche");
 		if (type_marche.equals("")) {
-			request.setAttribute("erreur", "Vous devez indiquer un intitul�");
+			request.setAttribute("erreur", "Vous devez indiquer un intitulé");
 			return false;
 		}
 		return true;
@@ -531,7 +531,7 @@ public class Index implements Controller {
 		}
 		String intitule = request.getParameter("intitule");
 		if (intitule.equals("")) {
-			request.setAttribute("erreur", "Vous devez indiquer un intitul�");
+			request.setAttribute("erreur", "Vous devez indiquer un intitulé");
 			return false;
 		}
 		String adjudicataire = request.getParameter("adjudicataire");
@@ -561,7 +561,7 @@ public class Index implements Controller {
 		}
 		String date_debut = request.getParameter("date_debut");
 		if (date_debut.equals("")) {
-			request.setAttribute("erreur", "Vous devez indiquer une date de d�but");
+			request.setAttribute("erreur", "Vous devez indiquer une date de début");
 			return false;
 		}
 		String date_fin = request.getParameter("date_fin");

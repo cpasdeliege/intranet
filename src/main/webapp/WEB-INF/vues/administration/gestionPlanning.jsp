@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion du planning</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion du planning</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -49,7 +49,7 @@
 					<a class="lien_tableau" href="index.dsi"> - DSI - </a> </td>
 					<td align="right">
 						<form method="get" action="formulaireTacheAjouter.admin">
-							<input type="submit" value="ajouter une tâche"/>
+							<input type="submit" value="ajouter une tÃ¢che"/>
 						</form>
 					</td>
 				</tr>
@@ -73,8 +73,8 @@
 					<th align="center"><a href="gestionPlanning.admin?triEnCours=ordinateur">ordinateur</a></th>
 					<th align="center"><a href="gestionPlanning.admin?triEnCours=service">service</a></th>
 					<th align="center">contact</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=echeance">echéance</a></th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=nomInfo">assigné à</a></th>
+					<th align="center"><a href="gestionPlanning.admin?triEnCours=echeance">echÃ©ance</a></th>
+					<th align="center"><a href="gestionPlanning.admin?triEnCours=nomInfo">assignÃ© Ã </a></th>
 				</tr>
 				<% int i = 0; %>
 				<c:forEach items="${listeMesTaches}" var="tache">
@@ -159,7 +159,7 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/tache.png" border="0" width="50px"></td>
-					<td class="titre_tableau">Liste des tâches à effectuer (<%= nbreTache %>)</td>
+					<td class="titre_tableau">Liste des tÃ¢ches Ã  effectuer (<%= nbreTache %>)</td>
 					<td align="right">
 						
 					</td>
@@ -184,8 +184,8 @@
 					<th align="center"><a href="gestionPlanning.admin?triEnCours=ordinateur">ordinateur</a></th>
 					<th align="center"><a href="gestionPlanning.admin?triEnCours=service">service</a></th>
 					<th align="center">contact</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=echeance">echéance</a></th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=nomInfo">assigné à</a></th>
+					<th align="center"><a href="gestionPlanning.admin?triEnCours=echeance">echÃ©ance</a></th>
+					<th align="center"><a href="gestionPlanning.admin?triEnCours=nomInfo">assignÃ© Ã </a></th>
 				</tr>
 				<% i = 0; %>
 				<c:forEach items="${listeTacheEnCours}" var="tache">
@@ -270,7 +270,7 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/kthememgr.png" border="0" width="50px"></td>
-					<td class="titre_tableau"><a name="enAttente">Liste des tâches en attente (<%= nbreTache3 %>)</a></td>
+					<td class="titre_tableau"><a name="enAttente">Liste des tÃ¢ches en attente (<%= nbreTache3 %>)</a></td>
 					<td align="right">
 					</td>
 				</tr>
@@ -294,7 +294,7 @@
 					<th align="center"><a href="gestionPlanning.admin?triEnAttente=ordinateur#enAttente">ordinateur</a></th>
 					<th align="center"><a href="gestionPlanning.admin?triEnAttente=service#enAttente">service</a></th>
 					<th align="center">contact</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnAttente=echeance#enAttente">echéance</a></th>
+					<th align="center"><a href="gestionPlanning.admin?triEnAttente=echeance#enAttente">echÃ©ance</a></th>
 				</tr>
 				<% int i3 = 0; %>
 				<c:forEach items="${listeTacheEnAttente}" var="tache">
@@ -360,7 +360,7 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/tacheFinie.png" border="0" width="50px"></td>
-					<td class="titre_tableau"><a name="fini">Liste des tâches effectuées (<%= nbreTFinie %>)</a></td>
+					<td class="titre_tableau"><a name="fini">Liste des tÃ¢ches effectuÃ©es (<%= nbreTFinie %>)</a></td>
 					<td align="right">
 						
 					</td>

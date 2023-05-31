@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 	<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 	<%@page import="be.cpasdeliege.intranet.informatique.model.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,8 +11,8 @@ if(privilege == null) {
 %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 <style type="text/css">
 #gauche {
@@ -72,7 +72,7 @@ function modifierMDP() {
 				cellspacing="0">
 				<tr height="25">
 					<td></td>
-					<td class="titre_tableau">Zone Libre d'Accès</td>
+					<td class="titre_tableau">Zone Libre d'AccÃ¨s</td>
 					<td></td>
 				</tr>
 				<tr height="25">
@@ -116,8 +116,8 @@ function modifierMDP() {
 									href="index.rues"><img src="images/agent.png" border="0"
 										width="60px">
 								</a></td>
-								<td><a class="texte_menu_principal" href="index.rues">Répartition
-										et code des rues de Liège</a></td>
+								<td><a class="texte_menu_principal" href="index.rues">RÃ©partition
+										et code des rues de LiÃ¨ge</a></td>
 
 								<td align="right" valign="bottom" colspan="2">&nbsp;
 								</td>
@@ -158,7 +158,7 @@ function modifierMDP() {
 									href="index.htm?rep=personnelCPAS"><img src="images/cadastre.png" border="0"
 										width="60px">
 								</a></td>
-								<td><a class="texte_menu_principal" href="index.cad">Cadastre des Marchés Publics</a></td>
+								<td><a class="texte_menu_principal" href="index.cad">Cadastre des MarchÃ©s Publics</a></td>
 
 
 							</tr>
@@ -183,7 +183,7 @@ function modifierMDP() {
 				cellspacing="0">
 				<tr height="25">
 					<td></td>
-					<td class="titre_tableau">Zone à Accès Réservé</td>
+					<td class="titre_tableau">Zone Ã  AccÃ¨s RÃ©servÃ©</td>
 					<td></td>
 				</tr>
 				<tr height="25">
@@ -223,7 +223,7 @@ function modifierMDP() {
 								<td width="60px"><a href="index.admin"><img
 										src="images/informatique.png" border="0" width="60px"> </a>
 								</td>
-								<td><a class="texte_menu_principal" href="index.admin">Département Informatique</a></td>
+								<td><a class="texte_menu_principal" href="index.admin">DÃ©partement Informatique</a></td>
 								<td><p class="texte_informatif_menu_principal"></p></td>
 								<td align="right" class="lien_administratif_menu_principal"></td>
 							</tr>

@@ -1,5 +1,5 @@
 /*
- * Cr�� le 25 janv. 2005
+ * Créé le 25 janv. 2005
  * 
  */
 package pJSQL;
@@ -18,14 +18,14 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
  * Gestion des transactions sql.
  * 
  * @version 1.0
- * @author Fr�d�ric Delr�e - frederic@delree.be.tf
+ * @author Frédéric Delrée - frederic@delree.be.tf
  */
 public class JSQL {
 
 	private Connection conDB = null;
 
 	/**
-	 * Charge le pilote du driver sp�cifi�.
+	 * Charge le pilote du driver spécifié.
 	 * 
 	 * @param driver la classe du driver
 	 * @throws JSQLException si la classe du driver n'est pas dans le classpath de
@@ -43,9 +43,9 @@ public class JSQL {
 	/**
 	 * Effectue la connexion avec la base.
 	 * 
-	 * @param protocole le nom du protocole � utiliser avec le driver.
-	 * @param aliasDB   le chemin de la base de donn�e.
-	 * @param user      utilisateur de la base de donn�e.
+	 * @param protocole le nom du protocole à utiliser avec le driver.
+	 * @param aliasDB   le chemin de la base de donnée.
+	 * @param user      utilisateur de la base de donnée.
 	 * @param pwd       mot de passe utilisateur.
 	 * @throws JSQLException
 	 */
@@ -63,16 +63,16 @@ public class JSQL {
 		} catch (ExceptionInInitializerError e) {
 			throw new JSQLException("ExceptionInInitializerError dans "
 					+ "connect(String protocole, String aliasDB, String user, "
-					+ "String pwd) :\n\nMessage : v�rifiez les arguments " + "de la connection � la base de donn�es.");
+					+ "String pwd) :\n\nMessage : vérifiez les arguments " + "de la connection à la base de données.");
 		}
 	}
 
 	/**
 	 * Effectue la connexion avec la base CSV.
 	 * 
-	 * @param protocole  le nom du protocole � utiliser avec le driver.
-	 * @param aliasDB    le chemin de la base de donn�e.
-	 * @param properties les propri�t�s du fichier csv.
+	 * @param protocole  le nom du protocole à utiliser avec le driver.
+	 * @param aliasDB    le chemin de la base de donnée.
+	 * @param properties les propriétés du fichier csv.
 	 * @throws JSQLException
 	 */
 	public void connect(String protocole, String aliasDB, Properties properties) throws JSQLException {
@@ -85,7 +85,7 @@ public class JSQL {
 		} catch (ExceptionInInitializerError e) {
 			throw new JSQLException("ExceptionInInitializerError dans "
 					+ "connect(String protocole, String aliasDB, String user, "
-					+ "String pwd) :\n\nMessage : v�rifiez les arguments " + "de la connection � la base de donn�es.");
+					+ "String pwd) :\n\nMessage : vérifiez les arguments " + "de la connection à la base de données.");
 		}
 	}
 
@@ -100,7 +100,7 @@ public class JSQL {
 	}
 
 	/**
-	 * Ferme la connexion � la base.
+	 * Ferme la connexion à la base.
 	 * 
 	 * @throws JSQLException
 	 */
@@ -113,10 +113,10 @@ public class JSQL {
 	}
 
 	/**
-	 * Ex�cute la requete sp�cifi�e.
+	 * Exécute la requete spécifiée.
 	 * 
-	 * @param query la requ�te sql.
-	 * @return Le r�sultat sous forme d'un JSQLResultset.
+	 * @param query la requête sql.
+	 * @return Le résultat sous forme d'un JSQLResultset.
 	 * @throws JSQLException
 	 */
 	public ResultSet executeQuery(String query) throws JSQLException {
@@ -131,14 +131,14 @@ public class JSQL {
 	}
 
 	/**
-	 * Ex�cute la requ�tte format�e sp�cifi�e.<br>
+	 * Exécute la requête formatée spécifiée.<br>
 	 * <br>
 	 * Exemple : "Select * from userData" pourrait donner : executeQuery ("Select *
 	 * from ?", new Objet[]{"userData"}).
 	 * 
-	 * @param query la requ�te sql � format�.
-	 * @param args  les �l�ments pour formater la requ�te.
-	 * @return Le r�sultat sous forme d'un JSQLResultset.
+	 * @param query la requête sql à formater.
+	 * @param args  les éléments pour formater la requête.
+	 * @return Le résultat sous forme d'un JSQLResultset.
 	 * @throws JSQLException
 	 */
 	public ResultSet executeQuery(String query, Object[] args) throws JSQLException {
@@ -201,10 +201,10 @@ public class JSQL {
 	}
 
 	/**
-	 * Ex�cute la requ�tte sp�cifi�e.
+	 * Exécute la requête spécifiée.
 	 * 
-	 * @param query la requ�te sql.
-	 * @return int nombre de tuple mis � jour.
+	 * @param query la requête sql.
+	 * @return int nombre de tuple mis à jour.
 	 * @throws JSQLException
 	 */
 	public int executeUpdate(String query) throws JSQLException {
@@ -219,11 +219,11 @@ public class JSQL {
 	}
 
 	/**
-	 * Ex�cute la requ�tte format�e sp�cifi�e.
+	 * Exécute la requête formatée spécifiée.
 	 * 
-	 * @param query la requ�te sql � format�.
-	 * @param args  les �l�ments pour formater la requ�te.
-	 * @return int nombre de tuple mis � jour.
+	 * @param query la requête sql à formater.
+	 * @param args  les éléments pour formater la requête.
+	 * @return int nombre de tuple mis à jour.
 	 * @throws JSQLException
 	 */
 	public int executeUpdate(String query, Object[] args) throws JSQLException {

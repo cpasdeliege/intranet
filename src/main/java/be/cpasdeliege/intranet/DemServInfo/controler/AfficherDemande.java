@@ -46,7 +46,7 @@ public class AfficherDemande implements Controller {
 		if(remarque != null) {
 			daoDsi.addRemarque(getFormulaireRemarque(request));
 			/**
-			 * Notifiaction de la remarque � tous les organisateurs concern�s
+			 * Notifiaction de la remarque à tous les organisateurs concernés
 			 */
 			//List<DaoPersonnel> listeDirection = metier.getPersonnelDsiDirection();
 //			List<DaoPersonnel> listeInfo = metier.getPersonnelDsiInfo();
@@ -54,7 +54,7 @@ public class AfficherDemande implements Controller {
 
 			List<Remarque> remarques = daoDsi.getRemarques(request.getParameter("idDemandes"));
 			Remarque dernirereRemarque = remarques.get(remarques.size() - 1);
-			// Notification � tous
+			// Notification à tous
 
 			// USER
 			Personnel user = metier.getPersonnel(demande.getNom(), demande.getPrenom());
@@ -135,18 +135,18 @@ public class AfficherDemande implements Controller {
 					if(verifDate(request, dateExecSouhaiteeChef) && demande.getValidationChef().equals("none")){
 
 						if(validationChef != null) {
-							ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Validation de la demande du R � " + validationChef + "");
+							ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Validation de la demande du R à " + validationChef + "");
 						} 
 						demande.setValidationChef(validationChef);
 						demande.setDateExecSouhaiteeChef(dateExecSouhaiteeChef);
-						// si accord DG non n�cessaire passage � l'�tape suivante
+						// si accord DG non nécessaire passage à l'étape suivante
 						if(!dao.isAccordDG_DSI(demande.getTypeDemande())) {
 							demande.setValidationSecr("oui");
 							demande.setDateExecSouhaiteeSecr(demande.getDateExecSouhaitee());
 							Utilisateur tmp = new Utilisateur();
 							tmp.setNom("Message automatique");
 							tmp.setPrenom("");
-							ajoutRemarque(""+demande.getIdDemandes(), tmp, "Validation implicite de la demande du D � oui");
+							ajoutRemarque(""+demande.getIdDemandes(), tmp, "Validation implicite de la demande du D à oui");
 							mailValidDGInfo(demande);
 						}
 					} 
@@ -157,7 +157,7 @@ public class AfficherDemande implements Controller {
 						if(demande.getValidationSecr().equals("none")) {
 
 							if(validationSecr != null) {
-								ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Validation de la demande du D � " + validationSecr + "");
+								ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Validation de la demande du D à " + validationSecr + "");
 								mailValidDGInfo(demande);
 							} 
 							demande.setValidationSecr(validationSecr);
@@ -165,7 +165,7 @@ public class AfficherDemande implements Controller {
 						} else if(demande.getValidationSecrConf().equals("none")) {
 
 							if(validationSecrConf != null) {
-								ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Validation de la demande du D � " + validationSecrConf + "");
+								ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Validation de la demande du D à " + validationSecrConf + "");
 							}
 							demande.setValidationSecrConf(validationSecrConf);
 							demande.setDateExecSouhaiteeSecrConf(dateExecSouhaiteeSecrConf);
@@ -180,7 +180,7 @@ public class AfficherDemande implements Controller {
 						if(demande.getValidationInfor().equals("none")) {
 
 							if(validationInfor != null) {
-								ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Validation de la demande du I � " + validationInfor + "");
+								ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Validation de la demande du I à " + validationInfor + "");
 							} 
 							demande.setValidationInfor(validationInfor);
 							demande.setDateExecPrevue(dateExecPrevue);
@@ -203,7 +203,7 @@ public class AfficherDemande implements Controller {
 						} else {
 							demande.setDateExecEffective(dateExecEffective);
 							//TI 19505
-							ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Nous venons de cl�turer cette DSI. Si cela vous semble pr�matur�, il vous est toujours possible d'y ajouter une �ventuelle remarque dans les 15 jours � venir. Pass� ce d�lai, une nouvelle DSI devra �tre introduite.");
+							ajoutRemarque(""+demande.getIdDemandes(), utilisateur, "Nous venons de clôturer cette DSI. Si cela vous semble prématuré, il vous est toujours possible d'y ajouter une éventuelle remarque dans les 15 jours à venir. Passé ce délai, une nouvelle DSI devra être introduite.");
 						}
 					}
 				}
@@ -214,13 +214,13 @@ public class AfficherDemande implements Controller {
 				if(demande.getValidationChef().equals("non") || demande.getValidationSecrConf().equals("non")) {
 					mailRefus(demande);
 				}
-				if(demande.getValidationSecrConf().equals("oui") && demande.getDateExecEffective() == null) {  // !!!!! r�duire condition d'envoi
+				if(demande.getValidationSecrConf().equals("oui") && demande.getDateExecEffective() == null) {  // !!!!! réduire condition d'envoi
 					mailAcceptation(demande);
 				}
 				if(demande.getDateExecEffective() != null) {
 					mailExecution(demande);
 				}
-			} else if(action.equals("Modifier �ch�ance")) {
+			} else if(action.equals("Modifier échéance")) {
 				String dateModif = request.getParameter("dateModifEcheance");
 				System.out.println("dateModif: " + dateModif);
 				
@@ -228,9 +228,9 @@ public class AfficherDemande implements Controller {
 					if(!dateModif.equals(demande.getDateExecSouhaiteeSecrConf()) && !dateModif.equals("")) {
 
 						String idDemandes = request.getParameter("idDemandes");
-						String texte = "Notification automatique du changement de la date d'�ch�ance : ancienne date : " 
+						String texte = "Notification automatique du changement de la date d'échéance : ancienne date : " 
 							+ demande.getDateExecSouhaiteeSecrConf() + ", nouvelle date : " + dateModif +
-							", Une notification par mail a �t� envoy�e aux diff�rents intervenants de cette demande.";
+							", Une notification par mail a été envoyée aux différents intervenants de cette demande.";
 						Remarque rem = new Remarque();
 						GregorianCalendar now = new GregorianCalendar();
 						SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -289,7 +289,7 @@ public class AfficherDemande implements Controller {
 			File dest = null;
 			File tmp = new File("c:\\fop");
 			if (!tmp.exists()) {
-				byte[] isoByte = fileItem.getName().getBytes("ISO-8859-1");
+				byte[] isoByte = fileItem.getName().getBytes("UTF-8");
 				String utf8String = new String(isoByte, "UTF-8");
 
 				new File("/opt/fop/DSI/" + request.getParameter("idDemandes") + "/").mkdirs();
@@ -422,12 +422,12 @@ public class AfficherDemande implements Controller {
 			// email.setSSLOnConnect(true);
 			// email.setTLS(true);ww
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
-			email.setSubject("DSI n�" + demande.getIdDemandes() + " - Une demande a �t� supprim�e");
-			email.setMsg("Bonjour,\n\nUne demande a �t� supprim�e : demande n�" + demande.getIdDemandes() + " ("
+			email.setSubject("DSI n°" + demande.getIdDemandes() + " - Une demande a été supprimée");
+			email.setMsg("Bonjour,\n\nUne demande a été supprimée : demande n°" + demande.getIdDemandes() + " ("
 					+ demande.getTitre() + ").\n"
-					+ "Le motif de cette suppression peut �tre lu dans les remarques de la demande.\n\n"
+					+ "Le motif de cette suppression peut être lu dans les remarques de la demande.\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 			email.addTo(adresse);
 			email.send();
 		} catch (EmailException e) {
@@ -446,11 +446,11 @@ public class AfficherDemande implements Controller {
 			// email.setSSLOnConnect(true);
 			// email.setTLS(true);
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
-			email.setSubject("DSI n�" + demande.getIdDemandes() + " - L'�ch�ance de votre demande a �t� modifi�e");
-			email.setMsg("Bonjour,\n\nL'�ch�ance de votre demande n�" + demande.getIdDemandes() + " ("
-					+ demande.getTitre() + ") a �t� modifi�e.\n\n"
+			email.setSubject("DSI n°" + demande.getIdDemandes() + " - L'échéance de votre demande a été modifiée");
+			email.setMsg("Bonjour,\n\nL'échéance de votre demande n°" + demande.getIdDemandes() + " ("
+					+ demande.getTitre() + ") a été modifiée.\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 			email.addTo(user.getEmail());
 			email.addTo(chef.getEmail());
 			email.send();
@@ -473,10 +473,10 @@ public class AfficherDemande implements Controller {
 				// email.setTLS(true);ww
 				email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
 				email.setSubject("Ajout remarque : " + demande.getTitre());
-				email.setMsg("Bonjour,\n\nUne remarque a �t� ajout�e sur la demande n�" + demande.getIdDemandes() + " ("
-						+ demande.getTitre() + ").\n\n" + remarque.getUser() + " a �crit : \n" + remarque.getTexte()
+				email.setMsg("Bonjour,\n\nUne remarque a été ajoutée sur la demande n°" + demande.getIdDemandes() + " ("
+						+ demande.getTitre() + ").\n\n" + remarque.getUser() + " a écrit : \n" + remarque.getTexte()
 						+ "\n\n" + "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-						+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+						+ demande.getIdDemandes() + "\n\nBonne journée.");
 				email.addTo(adresse);
 				email.send();
 			} catch (EmailException e) {
@@ -497,11 +497,11 @@ public class AfficherDemande implements Controller {
 			// email.setTLS(true);ww
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
 			email.setSubject(
-					"DSI n�" + demande.getIdDemandes() + " - Votre demande a �t� refus�e : " + demande.getTitre());
-			email.setMsg("Bonjour,\n\nVotre demande n�" + demande.getIdDemandes() + " (" + demande.getTitre()
-					+ ") a �t� refus�e.\n\n"
+					"DSI n°" + demande.getIdDemandes() + " - Votre demande a été refusée : " + demande.getTitre());
+			email.setMsg("Bonjour,\n\nVotre demande n°" + demande.getIdDemandes() + " (" + demande.getTitre()
+					+ ") a été refusée.\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 			email.addTo(user.getEmail());
 			email.addTo(chef.getEmail());
 			email.send();
@@ -520,11 +520,11 @@ public class AfficherDemande implements Controller {
 			// email.setSSLOnConnect(true);
 			// email.setTLS(true);
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
-			email.setSubject("Nouvelle demande : n�" + demande.getIdDemandes() + " (" + demande.getTitre() + ")");
-			email.setMsg("Bonjour,\n\nLa demande n�" + demande.getIdDemandes() + " (" + demande.getTitre()
-					+ "), a �t� valid�e par le DG.\n\n"
+			email.setSubject("Nouvelle demande : n°" + demande.getIdDemandes() + " (" + demande.getTitre() + ")");
+			email.setMsg("Bonjour,\n\nLa demande n°" + demande.getIdDemandes() + " (" + demande.getTitre()
+					+ "), a été validée par le DG.\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 //			List<DaoPersonnel> listeInfo = metier.getPersonnelDsiInfo();
 //			for (DaoPersonnel info : listeInfo) {
 //				email.addTo(info.getEmail());
@@ -551,11 +551,11 @@ public class AfficherDemande implements Controller {
 			// email.setTLS(true);
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
 			email.setSubject(
-					"DSI n�" + demande.getIdDemandes() + " - Votre demande a �t� accept�e : " + demande.getTitre());
-			email.setMsg("Bonjour,\n\nVotre demande n�" + demande.getIdDemandes() + " (" + demande.getTitre()
-					+ ") a �t� accept�e.\n\n"
+					"DSI n°" + demande.getIdDemandes() + " - Votre demande a été acceptée : " + demande.getTitre());
+			email.setMsg("Bonjour,\n\nVotre demande n°" + demande.getIdDemandes() + " (" + demande.getTitre()
+					+ ") a été acceptée.\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 			email.addTo(user.getEmail());
 			email.addTo(chef.getEmail());
 			email.send();
@@ -576,12 +576,12 @@ public class AfficherDemande implements Controller {
 			// email.setTLS(true);
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
 			email.setSubject(
-					"DSI n�" + demande.getIdDemandes() + " - Votre demande a �t� ex�cut�e : " + demande.getTitre());
-			email.setMsg("Bonjour,\n\nVotre demande n�" + demande.getIdDemandes() + " (" + demande.getTitre()
-					+ ") a �t� ex�cut�e.\n\n"
-					+ "Si cela vous semble pr�matur�, il vous est toujours possible d'y ajouter une �ventuelle remarque dans les 15 jours � venir. Pass� ce d�lai, une nouvelle DSI devra �tre introduite.\n\n"
+					"DSI n°" + demande.getIdDemandes() + " - Votre demande a été exécutée : " + demande.getTitre());
+			email.setMsg("Bonjour,\n\nVotre demande n°" + demande.getIdDemandes() + " (" + demande.getTitre()
+					+ ") a été exécutée.\n\n"
+					+ "Si cela vous semble prématuré, il vous est toujours possible d'y ajouter une éventuelle remarque dans les 15 jours à venir. Passé ce délai, une nouvelle DSI devra être introduite.\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 			email.addTo(user.getEmail());
 			email.addTo(chef.getEmail());
 			email.send();

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@page import="be.cpasdeliege.intranet.informatique.model.PrivilegeInformatique"%>
 <%@page import="be.cpasdeliege.intranet.cadastre.model.*"%>
@@ -7,8 +7,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 <link rel="stylesheet" href="annuaire.css" type="text/css">
 <style type="text/css">
@@ -49,21 +49,21 @@
 <!-- 
 
 function supprimerMarche(id_marche_public, reference, type_marche) {
-	var mdp = confirm('Confirmer la suppression du marché ?\n\n ' + reference);
+	var mdp = confirm('Confirmer la suppression du marchÃ© ?\n\n ' + reference);
    if(mdp) {
 	   document.location.href='index.cad?action=deleteMarche&id_marche_public=' + id_marche_public + '&retour=' + type_marche;
    }
 }
 
 function deflagMarche(id_marche_public, reference, type_marche) {
-	var mdp = confirm('Confirmer la publication du marché ?\n\n ' + reference);
+	var mdp = confirm('Confirmer la publication du marchÃ© ?\n\n ' + reference);
    if(mdp) {
 	   document.location.href='index.cad?action=deflagMarche&id_marche_public=' + id_marche_public + '&retour=' + type_marche;
    }
 }
 	
 function flagMarche(id_marche_public, reference, type_marche) {
-   var mdp = confirm('Confirmer l\'archivage du marché ?\n\n ' + reference);
+   var mdp = confirm('Confirmer l\'archivage du marchÃ© ?\n\n ' + reference);
    if(mdp) {
    	document.location.href='index.cad?action=suppMarche&id_marche_public=' + id_marche_public + '&retour=' + type_marche;
    }
@@ -83,7 +83,7 @@ function flagMarche(id_marche_public, reference, type_marche) {
 		typeMarche = new TypeMarche();
 		if(info.equals("recherche")) {
 			typeMarche.setId_type_marche("recherche");
-		} else if(info.equals("supprimés")) {
+		} else if(info.equals("supprimÃ©s")) {
 			typeMarche.setId_type_marche("supp");
 		} else {
 			typeMarche.setId_type_marche("tous");
@@ -101,8 +101,8 @@ function flagMarche(id_marche_public, reference, type_marche) {
 	<div>
 		<hr>
 		&nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.cad">Cadastre des Marchés Publics</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Marchés Publics ${typeMarche.type_marche} <% if(info.equals("supprimés")) {%>Archives<% } %></a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.cad">Cadastre des MarchÃ©s Publics</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">MarchÃ©s Publics ${typeMarche.type_marche} <% if(info.equals("supprimÃ©s")) {%>Archives<% } %></a>
 		<hr>
 	</div>
 <div id="principal">
@@ -111,22 +111,22 @@ function flagMarche(id_marche_public, reference, type_marche) {
 	<div id="tableau">
 	<table width="100%">
 	<tr>
-		<td align="left"><h1>Marchés publics ${typeMarche.type_marche} <% if(info.equals("supprimés")) {%>Archives<% } %> <% if(info.equals("recherche")) {%> - Recherche : ${motcle}<% } %></h1> </td>
-		<td align="right"><a href="index.cad?action=telecharger" style="color: black;"><img src="<%= Util.getIcone("fichier.xls") %>" border="0" height="40">&nbsp;Télécharger le listing</a></td>
+		<td align="left"><h1>MarchÃ©s publics ${typeMarche.type_marche} <% if(info.equals("supprimÃ©s")) {%>Archives<% } %> <% if(info.equals("recherche")) {%> - Recherche : ${motcle}<% } %></h1> </td>
+		<td align="right"><a href="index.cad?action=telecharger" style="color: black;"><img src="<%= Util.getIcone("fichier.xls") %>" border="0" height="40">&nbsp;TÃ©lÃ©charger le listing</a></td>
 	</tr>
 	</table>
 		<table width="100%" cellpadding="10">
 			<tr height="50px">
-				<th align="left"><a href="index.cad?action=listeMP&amp;orderBy=intitule&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">Intitulé</a></th>
-				<th align="left"><a href="index.cad?action=listeMP&amp;orderBy=reference&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">Référence</th>
+				<th align="left"><a href="index.cad?action=listeMP&amp;orderBy=intitule&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">IntitulÃ©</a></th>
+				<th align="left"><a href="index.cad?action=listeMP&amp;orderBy=reference&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">RÃ©fÃ©rence</th>
 				<th align="left"><a href="index.cad?action=listeMP&amp;orderBy=adjudicataire&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">Adjudicataire</th>
 				<th><a href="index.cad?action=listeMP&amp;orderBy=date_BP&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">Date BP/CAS</th>
 				<th align="left"><a href="index.cad?action=listeMP&amp;orderBy=adjudicateur&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">P. Adjudicateur</th>
 				<th align="left"><a href="index.cad?action=listeMP&amp;orderBy=id_type_marche&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">Type</th>
-				<th><a href="index.cad?action=listeMP&amp;orderBy=date_debut&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">Date début</th>
+				<th><a href="index.cad?action=listeMP&amp;orderBy=date_debut&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">Date dÃ©but</th>
 				<th><a href="index.cad?action=listeMP&amp;orderBy=date_fin&amp;type=<%= typeMarche.getId_type_marche() %>&amp;motcle=${motcle}" style="text-decoration: none;color: black;">Date fin</th>
 				<% if(privileges.isCadastreMP()) { %>
-				<% if(!info.equals("supprimés")) {%>
+				<% if(!info.equals("supprimÃ©s")) {%>
 				<th></th>
 				<th></th>
 				<% } %>
@@ -152,7 +152,7 @@ function flagMarche(id_marche_public, reference, type_marche) {
 					<td align="center">${marche.date_debutFormat}</td>
 					<td align="center">${marche.date_finFormat}</td>
 					<% if(privileges.isCadastreMP()) { %>
-					<% if(!info.equals("supprimés")) {%>
+					<% if(!info.equals("supprimÃ©s")) {%>
 					<td><a href="index.cad?action=formModifierMP&amp;id_marche_public=${marche.id_marche_public}&amp;retour=${typeMarche.id_type_marche}" style="color: black;"><img src="images/edit.png" border="0" width="20"></a></td>
 					<!-- <td><a href="index.cad?action=suppMarche&amp;id_marche_public=${marche.id_marche_public}&amp;retour=${typeMarche.id_type_marche}" style="color: black;"><img src="images/refuse.png" border="0" width="20"></a></td>  -->
 					<td><a onclick="flagMarche('${marche.id_marche_public}', '${marche.reference}', '${typeMarche.id_type_marche}')" style="color: black;"><img src="images/refuse.png" border="0" width="20"></a></td>

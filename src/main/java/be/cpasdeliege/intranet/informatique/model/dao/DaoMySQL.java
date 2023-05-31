@@ -239,7 +239,7 @@ public class DaoMySQL implements DaoInterface {
 			Object[] parametres = new Object[] { service.getNom(), service.getFax(), service.getLocalite(),
 					service.getNumero(), service.getCodePostal(), service.getRemarque(), service.getEmailService(),
 					service.getLocalisation(), service.getAdresse() };
-			// Th�o
+			// Théo
 			System.out.println("\n update service in DaoMysl ==> name :" + service.getNom());
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
@@ -1769,7 +1769,7 @@ public class DaoMySQL implements DaoInterface {
 		return null;
 	}
 
-	// *****************Th�o***********************************
+	// *****************Théo***********************************
 	@Override
 	public void updateService(DaoService service) {
 		try {

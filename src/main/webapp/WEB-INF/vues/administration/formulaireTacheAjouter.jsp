@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
 <script type="text/javascript">
 <!--
@@ -14,7 +14,7 @@
 </script>
 <script language="JavaScript" src="javascript/calendar_db.js"></script>
 <link rel="stylesheet" href="calendar.css">
-<title>Intranet CPAS de Liège - administration - gestion du
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion du
 	planning</title>
 </head>
 <body class="body">
@@ -28,7 +28,7 @@
 			height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a
 			class="menu_contextuel" href="gestionPlanning.admin">gestion du
 			planning</a> <img height="12px" src="images/fleche_droite.jpg" border="0"
-			alt=" - "><a class="menu_contextuel">ajouter un tâche</a>
+			alt=" - "><a class="menu_contextuel">ajouter un tÃ¢che</a>
 		<hr>
 	</div>
 	<br>
@@ -40,7 +40,7 @@
 			<td>
 				<table>
 					<tr>
-						<td class="titre_tableau">Ajouter une tâche</td>
+						<td class="titre_tableau">Ajouter une tÃ¢che</td>
 						<td></td>
 					</tr>
 				</table>
@@ -68,7 +68,7 @@
 						%>
 						<tr>
 							<td colspan="2">
-								<p>Si cette tâche est ouverte suite à un incident, veuillez
+								<p>Si cette tÃ¢che est ouverte suite Ã  un incident, veuillez
 									cocher la case had hoc et indiquer l'heure effective de
 									l'incident.</p>
 							</td>
@@ -77,7 +77,7 @@
 							<td align="right">incident :</td>
 							<td><INPUT type="checkbox" name="incident"
 								<%if (incident != null && incident.equals("on")) {%> checked
-								<%}%>> à &nbsp; <select name="heureIncident" size="1">
+								<%}%>> Ã  &nbsp; <select name="heureIncident" size="1">
 									<option>-</option>
 									<%
 										for (int i = 0; i < listeHeure.size(); i++) {
@@ -136,7 +136,7 @@
 								</c:forEach> </select></td>
 						</tr>
 						<tr>
-							<td align="right">employé :</td>
+							<td align="right">employÃ© :</td>
 							<td><select name="personnel" size="1" />
 								<option>-</option> <c:forEach items="${listeEmploye}"
 									var="employe">
@@ -167,7 +167,7 @@
 								</c:forEach> </select></td>
 						</tr>
 						<tr>
-							<td align="right">échéance :</td>
+							<td align="right">Ã©chÃ©ance :</td>
 							<td><input type="text" name="echeance"
 								value="${ formulaireTacheAjouter.echeance }" /> <script
 									language="JavaScript">
@@ -192,7 +192,7 @@
 								</c:forEach> </select></td>
 						</tr>
 						<tr>
-							<td align="right">assignée à :</td>
+							<td align="right">assignÃ©e Ã  :</td>
 							<td><select name="personnelInfo" size="1" />
 								<option>-</option> <c:forEach items="${listePersonnelInfo}"
 									var="employe">
@@ -205,7 +205,7 @@
 								value="${ formulaireTacheAjouter.titre }" /></td>
 						</tr>
 						<tr>
-							<td align="right" valign="top">tâche :</td>
+							<td align="right" valign="top">tÃ¢che :</td>
 							<td><textarea cols="60" rows="10" name="travail" />${description}</textarea></td>
 						</tr>
 						<tr>

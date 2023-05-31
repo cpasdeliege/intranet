@@ -1,10 +1,10 @@
 <%@page import="java.util.Base64"%>
 <%@page import="java.io.UnsupportedEncodingException"%>
 <%@page import="java.net.URLEncoder"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-  <%--   <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+  <%--   <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%> --%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -13,15 +13,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion du personnel</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion du personnel</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
 <!-- ********************************************************************************* -->
-	<!--  Théo : 03/05/2021 -->
+	<!--  ThÃ©o : 03/05/2021 -->
 	<%!
 	public static String urlEncode(String value, String charset) throws UnsupportedEncodingException {
 	    return URLEncoder.encode(value, charset);
@@ -74,7 +74,7 @@
 				<c:forEach items="${listeEmployes}" var="employe">
 				<% i++; %>
 				<!-- ------------------------------------  -->
-				<%-- <% String p <%= urlEncode(${employe.prenom} %>, "ISO-8859-1")%>   --%>
+				<%-- <% String p <%= urlEncode(${employe.prenom} %>, "UTF-8")%>   --%>
 			<%-- 	<jsp:useBean id="perso" class="be.cpasdeliege.intranet.informatique.model.Personnel"/>
 					
 			  		<jsp:setProperty name="perso" property="prenom" value="${employe.prenom}"/>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.informatique.model.*" %>
@@ -8,13 +8,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
 <script type="text/javascript">
 <!-- 
 
 function reinitialiserMotDePasse(login) {
-   var mdp = confirm('Confirmer la ré-initialisation du mot de passe ?');
+   var mdp = confirm('Confirmer la rÃ©-initialisation du mot de passe ?');
    if(mdp) {
    	document.location.href='reinitialiserMotDePasse.admin?login=' + login;
    }
@@ -43,7 +43,7 @@ function modifierCodeAS(nom, prenom, codeAS) {
 
 //-->
 </script>
-<title>Intranet CPAS de Liège - administration - gestion des services</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des services</title>
 </head>
 <body class="body">
 <jsp:include page="../../entete.jsp" ></jsp:include>
@@ -89,7 +89,7 @@ Personnel pers = (Personnel)request.getAttribute("personnel");
 				<tr>
 					<% if (pers.getPathPhoto().equals("")) {%>
 					<td align="right">
-						Sélectionner une photo : 
+						SÃ©lectionner une photo : 
 					</td>
 					<td align="left">
 						<form method="post" enctype="multipart/form-data" action="utilsTache.admin">
@@ -160,7 +160,7 @@ Personnel pers = (Personnel)request.getAttribute("personnel");
 					<td class="titre_tableau"><a name="listeServices">Liste des services</a></td>
 					<td align="right">
 						<form method="get" action="formulairePersonnelServiceAssigner.admin">
-							<input type="submit" value="assigner à un service"/>
+							<input type="submit" value="assigner Ã  un service"/>
 							<input type="hidden" name="nom" value="${personnel.nom }"/>
 							<input type="hidden" name="prenom" value="${personnel.prenom }"/>
 						</form>
@@ -183,7 +183,7 @@ Personnel pers = (Personnel)request.getAttribute("personnel");
 					<th>Service</th>
 					<th>Fonction</th>
 					<th></th>
-					<th>Téléphone</th>
+					<th>TÃ©lÃ©phone</th>
 				</tr>
 				<% int i = 0; %>
 				<c:forEach items="${listeService}" var="employe">

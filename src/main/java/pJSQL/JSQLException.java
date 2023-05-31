@@ -1,5 +1,5 @@
 /*
- * Cr�� le 25 janv. 2005
+ * Créé le 25 janv. 2005
  *
  */
 package pJSQL;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * 
  * @version 1.0
- * @author Fr�d�ric Delr�e - frederic@delree.be.tf
+ * @author Frédéric Delrée - frederic@delree.be.tf
  *
  * 
  */
@@ -18,7 +18,7 @@ public class JSQLException extends Exception {
 	private String toPrint;
 
 	public JSQLException() {
-		toPrint = new String("JSQLException de type non pr�cis�");
+		toPrint = new String("JSQLException de type non précisé");
 	}
 
 	public JSQLException(String msg) {

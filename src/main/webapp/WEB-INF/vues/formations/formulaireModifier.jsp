@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="cpas.css" type="text/css">
 </head>
 <body class="body">
@@ -44,7 +44,7 @@
 			<form method="post" name="formulaire">
 			<table>
 				<tr>
-					<td align="right" valign="top">intitulé : </td>
+					<td align="right" valign="top">intitulÃ© : </td>
 					<td><textarea cols="80" rows="3" name="intitule">${ formulaireFormationModifier.intitule }</textarea></td>
 				</tr>
 				<tr>
@@ -70,19 +70,19 @@
 					<td><textarea cols="80" rows="3" name="objectif">${ formulaireFormationModifier.objectif }</textarea></td>
 				</tr>
 				<tr>
-					<td align="right" valign="top">synthèse : </td>
+					<td align="right" valign="top">synthÃ¨se : </td>
 					<td><textarea cols="80" rows="3" name="synthese">${ formulaireFormationModifier.synthese }</textarea></td>
 				</tr>
 				<tr>
-					<td align="right" valign="top">méthodologie : </td>
+					<td align="right" valign="top">mÃ©thodologie : </td>
 					<td><textarea cols="80" rows="3" name="methodologie">${ formulaireFormationModifier.methodologie }</textarea></td>
 				</tr>
 				<tr>
-					<td align="right" valign="top">opérateur : </td>
+					<td align="right" valign="top">opÃ©rateur : </td>
 					<td><textarea cols="80" rows="3" name="operateur">${ formulaireFormationModifier.operateur }</textarea></td>
 				</tr>
 				<tr>
-					<td align="right" valign="top">personne visée : </td>
+					<td align="right" valign="top">personne visÃ©e : </td>
 					<td><textarea cols="80" rows="3" name="personneVisee">${ formulaireFormationModifier.personneVisee }</textarea></td>
 				</tr>
 				<tr>
@@ -90,7 +90,7 @@
 					<td><textarea cols="80" rows="3" name="rapportFormation">${ formulaireFormationModifier.rapportFormation }</textarea></td>
 				</tr>
 				<tr>
-					<td align="right" valign="top">département : </td>
+					<td align="right" valign="top">dÃ©partement : </td>
 					<td><textarea cols="80" rows="3" name="departement">${ formulaireFormationModifier.departement }</textarea></td>
 				</tr>
 				<tr>
@@ -98,7 +98,7 @@
 					<td><textarea cols="80" rows="3" name="service">${ formulaireFormationModifier.service }</textarea></td>
 				</tr>
 				<tr>
-					<td align="right" valign="top">durée : </td>
+					<td align="right" valign="top">durÃ©e : </td>
 					<td><textarea cols="80" rows="3" name="duree">${ formulaireFormationModifier.duree }</textarea></td>
 				</tr>
 				<tr>
@@ -106,7 +106,7 @@
 					<td><textarea cols="80" rows="3" name="lieu">${ formulaireFormationModifier.lieu }</textarea></td>
 				</tr>
 				<tr>
-					<td align="right" valign="top">année : </td>
+					<td align="right" valign="top">annÃ©e : </td>
 					<td><input type="text" maxlength="200" name="annee" value="${ formulaireFormationModifier.annee }"/></td>
 				</tr>
 				<tr>

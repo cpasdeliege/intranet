@@ -1,6 +1,6 @@
 <%@page import="be.cpasdeliege.intranet.DemServInfo.model.DemServInf"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="be.cpasdeliege.intranet.DemServInfo.model.*"%>
 <%@page import="be.cpasdeliege.intranet.informatique.model.*"%>
@@ -8,8 +8,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 </head>
 
@@ -46,12 +46,12 @@
 					<tr>
 						<td align="center"><a class="lien_tableau" href="index.dsi">Demandes
 								en cours</a> - <a class="lien_tableau" href="index.dsi?action=fini">Demandes
-								traitées</a> 
+								traitÃ©es</a> 
 							<%
  							if (privilege.isDsiInfo()) {
  							%> 
- 							- <a class="lien_tableau" href="index.dsi?action=refusees">Demandes refusées</a>
- 							- <a class="lien_tableau" href="index.dsi?action=supprimees">Demandes supprimées</a>
+ 							- <a class="lien_tableau" href="index.dsi?action=refusees">Demandes refusÃ©es</a>
+ 							- <a class="lien_tableau" href="index.dsi?action=supprimees">Demandes supprimÃ©es</a>
  							- <a class="lien_tableau" href="gestionPlanning.admin">GTI</a>
 						
 						<%
@@ -76,9 +76,9 @@
 		<tr height="25">
 			<td></td>
 			<td>
-			<p>Ce tableau permet de spécifier le comportement de l'application DSI quant à la validation des demandes par la direction.</p> 
-			<p><li> Les types de demande signalés en <span style="color: red;font-weight: bold;">"auto"</span> seront validés automatiquement lors de leur passage au niveau de la direction (D).</p>
-			<p><li> Les types de demande signalés en <span style="color: green;font-weight: bold;">"manuel"</span> devront être validés manuellement par la direction (D).</p>
+			<p>Ce tableau permet de spÃ©cifier le comportement de l'application DSI quant Ã  la validation des demandes par la direction.</p> 
+			<p><li> Les types de demande signalÃ©s en <span style="color: red;font-weight: bold;">"auto"</span> seront validÃ©s automatiquement lors de leur passage au niveau de la direction (D).</p>
+			<p><li> Les types de demande signalÃ©s en <span style="color: green;font-weight: bold;">"manuel"</span> devront Ãªtre validÃ©s manuellement par la direction (D).</p>
 			</td>
 			<td></td>
 		</tr>

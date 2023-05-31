@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion du personnel</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion du personnel</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -16,7 +16,7 @@
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.admin">administration</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="gestionPersonnels.admin">gestion du personnel</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="gestionPersonnel.admin?nom=${personnel.nom }&amp;prenom=${personnel.prenom }">${personnel.nom } ${personnel.prenom }</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" >modifier privilèges informatique</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" >modifier privilÃ¨ges informatique</a>
 <hr>
 </div>
 <br>
@@ -26,7 +26,7 @@
 		<td>
 			<table>
 				<tr>
-					<td class="titre_tableau">Modifier les privilèges informatique</td>
+					<td class="titre_tableau">Modifier les privilÃ¨ges informatique</td>
 					<td>
 					</td>
 				</tr>
@@ -58,7 +58,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="right">téléphonie : </td>
+					<td align="right">tÃ©lÃ©phonie : </td>
 					<td>
 						<c:choose>
 							<c:when test='${formulairePrivilegeInformatique.telephonie == true }'>
@@ -102,7 +102,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="right">dsi chef dép. : </td>
+					<td align="right">dsi chef dï¿½p. : </td>
 					<td>
 						<c:choose>
 							<c:when test='${formulairePrivilegeInformatique.dsiChef == true }'>
@@ -207,7 +207,7 @@
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
-					<td align="right">accès au GPI : </td>
+					<td align="right">accÃ¨s au GPI : </td>
 					<td>
 						<c:choose>
 							<c:when test='${formulairePrivilegeInformatique.gpi == true }'>

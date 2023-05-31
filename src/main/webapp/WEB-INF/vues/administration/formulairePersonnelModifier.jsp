@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%--  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%--  <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%> --%>
     <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion du personnel</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion du personnel</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -29,7 +29,7 @@
 		<td>
 			<table>
 				<tr>
-					<td class="titre_tableau">Modification d'un employé</td>
+					<td class="titre_tableau">Modification d'un employÃ©</td>
 					<td>
 					</td>
 				</tr>
@@ -52,7 +52,7 @@
 					<td><input disabled="disabled" type="text" maxlength="200" name="nomx" value="${ formulairePersonnelModifier.nom }"/></td>
 				</tr>
 				<tr>
-					<td align="right">prénom : </td>
+					<td align="right">prÃ©nom : </td>
 					<td><input disabled="disabled" type="text" maxlength="200" name="prenomx" value="${ formulairePersonnelModifier.prenom }"/></td>
 				</tr>
 				<tr>
@@ -100,7 +100,7 @@
 					<td><input type="text" maxlength="200" name="emailAlias" value="${ formulairePersonnelModifier.emailAlias }"/></td>
 				</tr>
 				<tr>
-					<td align="right">accès wifi : </td>
+					<td align="right">accÃ¨s wifi : </td>
 					<td>
 						<select name="wifi" size="1" />
 						<c:choose>

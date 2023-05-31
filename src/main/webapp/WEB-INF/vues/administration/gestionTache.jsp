@@ -204,7 +204,7 @@ ${erreurFormulaireTacheModifier}
 				<tr>
 					 <td>
 						<form method="get" action="utilsTache.admin">
-							<input type="submit" value="notif � Juan"/>
+							<input type="submit" value="notif à Juan"/>
 							<input type="hidden" name="mail" value="juan"/>
 							<input type="hidden" name="idPlanning" value="${formulaireTacheModifier.idPlanning }"/>
 							<input type="hidden" name="action" value="envoiemail">
@@ -226,7 +226,7 @@ ${erreurFormulaireTacheModifier}
 					<%		
 						}
 					%>
-							<input type="submit" value="notif � ${formulaireTacheModifier.personnelInfo}"/>
+							<input type="submit" value="notif à ${formulaireTacheModifier.personnelInfo}"/>
 							<input type="hidden" name="mail" value="assign"/>
 							<input type="hidden" name="idPlanning" value="${formulaireTacheModifier.idPlanning }"/>
 							<input type="hidden" name="action" value="envoiemail">
@@ -235,7 +235,7 @@ ${erreurFormulaireTacheModifier}
 					</td>   
 					<td align="left">
 						<form  method="get" action="utilsTache.admin">
-							Notifi� � &nbsp;
+							Notifié à &nbsp;
 							<select name="pers" size="1" />
 							<option>-</option>
 							<c:forEach items="${listePersInfo}" var="pers">

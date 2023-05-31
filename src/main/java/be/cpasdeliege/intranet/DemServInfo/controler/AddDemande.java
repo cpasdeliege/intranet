@@ -94,7 +94,7 @@ public class AddDemande implements Controller {
 						demande.setValidationChef("oui");
 						demande.setDateExecSouhaiteeChef(demande.getDateExecSouhaitee());
 						int id = daoDsi.addDemande(demande);
-						// si accord DG non n�cessaire passage � l'�tape suivante
+						// si accord DG non nécessaire passage à l'étape suivante
 						if(!dao.isAccordDG_DSI(demande.getTypeDemande())) {
 							DemServInf demandeModif = daoDsi.getDemande(id);
 							demandeModif.setValidationSecr("oui");
@@ -104,7 +104,7 @@ public class AddDemande implements Controller {
 							tmp.setNom("Message automatique");
 							tmp.setPrenom("");
 							System.out.println("TRACEEEEEEEEE 2");
-							ajoutRemarque(""+demandeModif.getIdDemandes(), tmp, "Validation implicite de la demande du D � oui");
+							ajoutRemarque(""+demandeModif.getIdDemandes(), tmp, "Validation implicite de la demande du D à oui");
 							mailValidDGInfo(demandeModif);
 						}
 						uploadFile(request, id);
@@ -133,7 +133,7 @@ public class AddDemande implements Controller {
 						demande.setValidationChef("oui");
 						demande.setDateExecSouhaiteeChef(demande.getDateExecSouhaitee());
 						int id = daoDsi.addDemande(demande);
-						// si DG ou si accord DG non n�cessaire passage � l'�tape suivante
+						// si DG ou si accord DG non nécessaire passage à l'étape suivante
 						if(privilege.isDsiDirection()) {
 							demande.setValidationSecr("oui");
 							demande.setDateExecSouhaiteeSecr(demande.getDateExecSouhaitee());
@@ -146,7 +146,7 @@ public class AddDemande implements Controller {
 							Utilisateur tmp = new Utilisateur();
 							tmp.setNom("Message automatique");
 							tmp.setPrenom("");
-							ajoutRemarque(""+demandeModif.getIdDemandes(), tmp, "Validation implicite de la demande du D � oui");
+							ajoutRemarque(""+demandeModif.getIdDemandes(), tmp, "Validation implicite de la demande du D à oui");
 							mailValidDGInfo(demandeModif);
 						}
 						uploadFile(request, id);
@@ -197,22 +197,22 @@ public class AddDemande implements Controller {
 		System.out.println(tmpPrenom);
 		/*
 		 * ============================================================= transfert du
-		 * validateur mis le 15-04-2021 par Th�o
+		 * validateur mis le 15-04-2021 par Théo
 		 * 
 		 */
 		/*
-		 * System.out.println(" donn�e du chef *********************");
+		 * System.out.println(" donnée du chef *********************");
 		 * System.out.println(chef);
-		 * System.out.println(" donn�es de l'utilisateur demandeur ********************"
+		 * System.out.println(" données de l'utilisateur demandeur ********************"
 		 * ); System.out.println(utilisateur.getNom()+ " "+ utilisateur.getPrenom() );
 		 * 
 		 * if(tmpNom.trim().equals("Nuda") && tmpPrenom.trim().equals("Delphine")) {
-		 * System.out.println("Changement du validateur"); tmpNom="Fran�ois";
+		 * System.out.println("Changement du validateur"); tmpNom="François";
 		 * tmpPrenom="Geoffrey"; }
 		 * 
-		 * // Assigner un validateur � une dsi en fonction de l'utilisateur
+		 * // Assigner un validateur à une dsi en fonction de l'utilisateur
 		 * if(utilisateur.getNom().trim().equals("Nzaramba") &&
-		 * utilisateur.getPrenom().trim().equals("Th�odore")) { tmpNom ="Hernandez";
+		 * utilisateur.getPrenom().trim().equals("Théodore")) { tmpNom ="Hernandez";
 		 * tmpPrenom ="Juan"; }
 		 * 
 		 */
@@ -351,7 +351,7 @@ public class AddDemande implements Controller {
 		}
 		String echeanceSouhaitee = request.getParameter("echeanceSouhaitee");
 		if (echeanceSouhaitee == null && echeanceSouhaitee.equals("")) {
-			request.setAttribute("erreur", "Vous devez mettre une �ch�ance");
+			request.setAttribute("erreur", "Vous devez mettre une échéance");
 			return false;
 		}
 
@@ -370,7 +370,7 @@ public class AddDemande implements Controller {
 
 		} catch (NullPointerException e) {
 			// TODO Auto-generated catch block
-			request.setAttribute("erreur", "La date d'�ch�ance doit �tre d�finie : AAAA-MM-JJ");
+			request.setAttribute("erreur", "La date d'échéance doit être définie : AAAA-MM-JJ");
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			request.setAttribute("erreur", "La date n'est pas au bon format : AAAA-MM-JJ");
@@ -401,11 +401,11 @@ public class AddDemande implements Controller {
 			// email.setSSLOnConnect(true);
 			// email.setTLS(true);
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
-			email.setSubject("Nouvelle demande : n�" + demande.getIdDemandes() + " (" + demande.getTitre() + ")");
-			email.setMsg("Bonjour,\n\nLa demande n�" + demande.getIdDemandes() + " (" + demande.getTitre()
-					+ "), a �t� valid�e implicitement par le DG.\n\n"
+			email.setSubject("Nouvelle demande : n°" + demande.getIdDemandes() + " (" + demande.getTitre() + ")");
+			email.setMsg("Bonjour,\n\nLa demande n°" + demande.getIdDemandes() + " (" + demande.getTitre()
+					+ "), a été validée implicitement par le DG.\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 //			List<DaoPersonnel> listeInfo = metier.getPersonnelDsiInfo();
 //			for (DaoPersonnel info : listeInfo) {
 //				email.addTo(info.getEmail());

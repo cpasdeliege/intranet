@@ -1,10 +1,10 @@
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.net.URLEncoder"%>
- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%> 
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%> 
   
-  <%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>--%>
+  <%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>--%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.informatique.model.*" %>
@@ -13,14 +13,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> -->
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
 <script type="text/javascript">
 
 
 function reinitialiserMotDePasse(login) {
-   var mdp = confirm('Confirmer la ré-initialisation du mot de passe ?');
+   var mdp = confirm('Confirmer la rÃ©-initialisation du mot de passe ?');
    if(mdp) {
    	document.location.href='reinitialiserMotDePasse.admin?login=' + login;
    }
@@ -45,7 +45,7 @@ function supprimerPhoto(nom, prenom) {
 
 //-->
 </script>
-<title>Intranet CPAS de Liège - administration - gestion des services</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des services</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -62,7 +62,7 @@ function supprimerPhoto(nom, prenom) {
 List listeSer = (List)request.getAttribute("listeService");
 List listeOrdi = (List)request.getAttribute("listeOrdinateur");
 Utilisateur utilisateur = (Utilisateur)request.getAttribute("comteUtilisateur");
-PrivilegeInformatique privilegeInformatique = (PrivilegeInformatique)request.getAttribute("privilègeInformatique");
+PrivilegeInformatique privilegeInformatique = (PrivilegeInformatique)request.getAttribute("privilÃ¨geInformatique");
 Personnel pers = (Personnel)request.getAttribute("personnel");
 %>
 <%
@@ -142,7 +142,7 @@ int width = 40;
 								<td class="texte_cadre_gestion"><!-- ${personnel.mdpPublilink } --></td>
 							</tr>
 							<tr>
-								<td align="right">accès wifi : </td>
+								<td align="right">accÃ¨s wifi : </td>
 								<td class="texte_cadre_gestion">
 									<c:choose>
 			                            <c:when test="${personnel.wifi == 0}">
@@ -209,7 +209,7 @@ int width = 40;
 					<td class="titre_tableau"><a name="listeServices">Liste des services</a></td>
 					<td align="right">
 						<form method="get" action="formulairePersonnelServiceAssigner.admin">
-							<input type="submit" value="assigner à un service"/>
+							<input type="submit" value="assigner Ã  un service"/>
 							<input type="hidden" name="nom" value="${personnel.nom }"/>
 							<input type="hidden" name="prenom" value="${personnel.prenom }"/>
 						</form>
@@ -232,7 +232,7 @@ int width = 40;
 					<th>Service</th>
 					<th>Fonction</th>
 					<th></th>
-					<th>Téléphone</th>
+					<th>TÃ©lÃ©phone</th>
 					<th>Ext VOIP</th>
 				</tr>
 				<% int i = 0; %>
@@ -241,7 +241,7 @@ int width = 40;
 				<%-- <%! String url ;
 					String serv ; 
 				%>
-					 <% url = "donnée à  ù"; 
+					 <% url = "donnÃ©e ï¿½  ï¿½"; 
 					 	
 					 %> 
 					
@@ -252,7 +252,7 @@ int width = 40;
 							out.println(encodedurl);
 							out.println("decode url ==>" + url + " === serviuce ==>"+serv);
 							out.println(URLDecoder.decode(encodedurl,"UTF-8"));
-							out.println("données service **********************"); 
+							out.println("donnÃ©es service **********************"); 
 						
 						}catch(Exception e){
 							out.println(e);
@@ -356,7 +356,7 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="45px"><img src="images/administration/intranet.png" border="0" width="<%= width %>"></td>
-					<td class="titre_tableau"><a name="accesIntranet">Accès intranet</a></td>
+					<td class="titre_tableau"><a name="accesIntranet">AccÃ¨s intranet</a></td>
 					<td align="right">
 						
 							<%
@@ -364,14 +364,14 @@ int width = 40;
 							%>
 								
 								<form method="get" action="ajouterUtilisateurIntranet.admin">
-									<input type="submit" value="ajouter accès intranet"/>
+									<input type="submit" value="ajouter accÃ¨s intranet"/>
 									<input type="hidden" name="nom" value="${personnel.nom }"/>
 									<input type="hidden" name="prenom" value="${personnel.prenom }"/>
 								</form>
 							<%
 							} else {
 							%>
-								<input type="submit" value="supprimer accès intranet" onclick="supprimerUtilisateur('<%= utilisateur.getLogin() %>')"/>
+								<input type="submit" value="supprimer accÃ¨s intranet" onclick="supprimerUtilisateur('<%= utilisateur.getLogin() %>')"/>
 							<%
 							}
 							%>
@@ -393,7 +393,7 @@ int width = 40;
 			<%
 			if(utilisateur == null) {
 			%>
-				<p align="center">Pas d'accès privilégié</p>
+				<p align="center">Pas d'accÃ¨s privilÃ©giÃ©</p>
 			<%
 			} else {
 			%>
@@ -406,7 +406,7 @@ int width = 40;
 							${comteUtilisateur.login }
 						</td>
 						<td> 
-							<input type="submit" value="réinitialiser mot de passe" onclick="reinitialiserMotDePasse('<%= utilisateur.getLogin() %>')"/>
+							<input type="submit" value="rÃ©initialiser mot de passe" onclick="reinitialiserMotDePasse('<%= utilisateur.getLogin() %>')"/>
 						</td>
 						<td width="5%" align="center" <% if(utilisateur.isActif()){%> bgcolor="green" <%} else {%> bgcolor="red" <%}%>>
 							<form method="get" action="activationAccesIntranet.admin">
@@ -415,7 +415,7 @@ int width = 40;
 								<input type="hidden" name="acces" value="true"/>
 							</form>
 							<form method="get" action="activationAccesIntranet.admin">
-								<input type="submit" value="désactiver"  <% if(!utilisateur.isActif()){%> disabled="disabled" <%}%>/>
+								<input type="submit" value="dÃ©sactiver"  <% if(!utilisateur.isActif()){%> disabled="disabled" <%}%>/>
 								<input type="hidden" name="login" value="<%= utilisateur.getLogin() %>"/>
 								<input type="hidden" name="acces" value="false"/>
 							</form>
@@ -435,7 +435,7 @@ int width = 40;
 									<td><input disabled type="checkbox" <% if(privilegeInformatique.isAdministrateur()){%> checked="checked" <%}%>/></td>
 								</tr>
 								<tr>
-									<td align="right">téléphonie : </td>
+									<td align="right">tÃ©lÃ©phonie : </td>
 									<td><input disabled type="checkbox" <% if(privilegeInformatique.isTelephonie()){%> checked="checked" <%}%>/></td>
 								</tr>
 								<tr>
@@ -467,7 +467,7 @@ int width = 40;
 									<td><input disabled type="checkbox" <% if(privilegeInformatique.isDsiUser()){%> checked="checked" <%}%>/></td>
 								</tr>
 								<tr>
-									<td align="right">chef dép. : </td>
+									<td align="right">chef dï¿½p. : </td>
 									<td><input disabled type="checkbox" <% if(privilegeInformatique.isDsiChef()){%> checked="checked" <%}%>/></td>
 								</tr>
 								<tr>
@@ -494,7 +494,7 @@ int width = 40;
 					</tr>
 					<tr>
 						<td>
-							Cadastre Marchés Publics : 
+							Cadastre MarchÃ©s Publics : 
 						</td>
 						<td valign="top" class="texte_cadre_gestion" align="right">
 							<table>
@@ -557,7 +557,7 @@ int width = 40;
 						<td align="center">
 							<form method="get" action="formulaireModifierPrivilegeInformatique.admin">
 							<input type="submit" value="modifier"/>
-							<input type="hidden" name="login" value="${privilègeInformatique.login }"/>
+							<input type="hidden" name="login" value="${privilÃ¨geInformatique.login }"/>
 							</form>
 						</td>
 					</tr>
@@ -592,10 +592,10 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/tache.png" border="0" width="<%= width %>"></td>
-					<td class="titre_tableau"><a name="listeTache">Liste des tâches à effectuer</a></td>
+					<td class="titre_tableau"><a name="listeTache">Liste des tÃ¢ches Ã  effectuer</a></td>
 					<td align="right">
 						<form method="get" action="formulaireTacheAjouter.admin">
-							<input type="submit" value="ajouter une tâche"/>
+							<input type="submit" value="ajouter une tÃ¢che"/>
 							<input type="hidden" name="nomFormulaire" value="${personnel.nom }">
 							<input type="hidden" name="prenomFormulaire" value="${personnel.prenom }">
 							<input type="hidden" name="ordinateurFormulaire" value="${ordinateurDefaultTache.ordinateur }">
@@ -621,8 +621,8 @@ int width = 40;
 					<th align="center">titre</th>
 					<th align="center"><a href="gestionPersonnel.admin?nom=${personnel.nom}&amp;prenom=${personnel.prenom}&amp;triEnCours=ordinateur#listeTache">ordinateur</a></th>
 					<th align="center"><a href="gestionPersonnel.admin?nom=${personnel.nom}&amp;prenom=${personnel.prenom}&amp;triEnCours=service#listeTache">service</a></th>
-					<th align="center"><a href="gestionPersonnel.admin?nom=${personnel.nom}&amp;prenom=${personnel.prenom}&amp;triEnCours=echeance#listeTache">echéance</a></th>
-					<th align="center"><a href="gestionPersonnel.admin?nom=${personnel.nom}&amp;prenom=${personnel.prenom}&amp;triEnCours=nomInfo#listeTache">assigné à</a></th>
+					<th align="center"><a href="gestionPersonnel.admin?nom=${personnel.nom}&amp;prenom=${personnel.prenom}&amp;triEnCours=echeance#listeTache">echÃ©ance</a></th>
+					<th align="center"><a href="gestionPersonnel.admin?nom=${personnel.nom}&amp;prenom=${personnel.prenom}&amp;triEnCours=nomInfo#listeTache">assignÃ© Ã </a></th>
 				</tr>
 				<% i = 0; %>
 				<c:forEach items="${listeTacheEnCours}" var="tache">
@@ -681,7 +681,7 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/tache.png" border="0" width="50px"></td>
-					<td class="titre_tableau"><a name="enAttente">Liste des tâches en attente</a></td>
+					<td class="titre_tableau"><a name="enAttente">Liste des tÃ¢ches en attente</a></td>
 					<td align="right">
 					</td>
 				</tr>
@@ -704,7 +704,7 @@ int width = 40;
 					<th align="center"><a href="gestionPlanning.admin?triEnAttente=ordinateur#enAttente">ordinateur</a></th>
 					<th align="center"><a href="gestionPlanning.admin?triEnAttente=service#enAttente">service</a></th>
 					<th align="center">contact</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnAttente=echeance#enAttente">echéance</a></th>
+					<th align="center"><a href="gestionPlanning.admin?triEnAttente=echeance#enAttente">echÃ©ance</a></th>
 				</tr>
 				<% int i3 = 0; %>
 				<c:forEach items="${listeTacheEnAttente}" var="tache">
@@ -754,7 +754,7 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/tacheFinie.png" border="0" width="<%= width %>"></td>
-					<td class="titre_tableau"><a name="fini">Liste des tâches effectuées</a></td>
+					<td class="titre_tableau"><a name="fini">Liste des tÃ¢ches effectuÃ©es</a></td>
 					<td align="right">
 						
 					</td>

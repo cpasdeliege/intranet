@@ -1,6 +1,6 @@
 <%@page import="be.cpasdeliege.intranet.DemServInfo.model.DemServInf"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.DemServInfo.*" %>
 <%@ page import="be.cpasdeliege.intranet.DemServInfo.model.*" %>
@@ -9,8 +9,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 <style type="text/css">
 #stat td {
@@ -55,7 +55,7 @@ StatDem stat = (StatDem) request.getAttribute("StatDem");
 		<td>
 			<table width="100%">
 				<tr>
-					<td align="center"><a class="lien_tableau" href="index.dsi">Demandes en cours</a> - <a class="lien_tableau" href="index.dsi?action=fini">Demandes traitées</a></td>
+					<td align="center"><a class="lien_tableau" href="index.dsi">Demandes en cours</a> - <a class="lien_tableau" href="index.dsi?action=fini">Demandes traitÃ©es</a></td>
 				</tr>
 			</table>
 		</td>
@@ -119,7 +119,7 @@ StatDem stat = (StatDem) request.getAttribute("StatDem");
 		<td>
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
-					<th><a href="index.dsi?orderby=idDemandes#nouvelles">n°</a></th>
+					<th><a href="index.dsi?orderby=idDemandes#nouvelles">nÂ°</a></th>
 					<th><a href="index.dsi?orderby=typeDemande#nouvelles">Type</a></th>
 					<th>Titre</th>
 					<th><a href="index.dsi?orderby=nom#nouvelles">Auteur Demande</a></th>
@@ -208,7 +208,7 @@ StatDem stat = (StatDem) request.getAttribute("StatDem");
 		<td>
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
-					<th><a href="index.dsi?orderby=idDemandes#validUser">n°</a></th>
+					<th><a href="index.dsi?orderby=idDemandes#validUser">nÂ°</a></th>
 					<th><a href="index.dsi?orderby=typeDemande#validUser">Type</a></th>
 					<th>Titre</th>
 					<th><a href="index.dsi?orderby=nom#validUser">Auteur Demande</a></th>
@@ -278,7 +278,7 @@ StatDem stat = (StatDem) request.getAttribute("StatDem");
 							border="0" width="35px">
 						</td>
 						<td class="titre_tableau"><a name="validInfo">Liste des
-								demandes en attente d'une action extérieure (<%=validUserEnAttente.size()%>)</a>
+								demandes en attente d'une action extÃ©rieure (<%=validUserEnAttente.size()%>)</a>
 						</td>
 						<td align="right"></td>
 					</tr>
@@ -297,7 +297,7 @@ StatDem stat = (StatDem) request.getAttribute("StatDem");
 			<td>
 				<table class="tableau_liste" cellspacing="0">
 					<tr class="titre_colonne_tableau_liste">
-						<th><a href="index.dsi?orderby=idDemandes#validInfo">n°</a>
+						<th><a href="index.dsi?orderby=idDemandes#validInfo">nÂ°</a>
 						</th>
 						<th><a href="index.dsi?orderby=typeDemande#validInfo">Type</a>
 						</th>
@@ -398,7 +398,7 @@ StatDem stat = (StatDem) request.getAttribute("StatDem");
 			<table width="100%">
 				<tr>
 					<td width="30px"><img src="images/accepte.png" border="0" width="35px"></td>
-					<td class="titre_tableau"><a name="acceptees">Liste des demandes acceptées (<%= acceptees.size() %>)</a></td>
+					<td class="titre_tableau"><a name="acceptees">Liste des demandes acceptÃ©es (<%= acceptees.size() %>)</a></td>
 					<td align="right">
 						
 					</td>
@@ -417,13 +417,13 @@ StatDem stat = (StatDem) request.getAttribute("StatDem");
 		<td>
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
-					<th><a href="index.dsi?orderby=idDemandes#acceptees">n°</a></th>
+					<th><a href="index.dsi?orderby=idDemandes#acceptees">nÂ°</a></th>
 					<!-- <th><a href="index.dsi?orderby=typeDemande#acceptees">Type</a></th>  -->
 					<th>Titre</th>
 					<th><a href="index.dsi?orderby=nom#acceptees">Auteur Demande</a></th>
 					<th><a href="index.dsi?orderby=service#acceptees">Service</a></th>
 					<!-- <th><a href="index.dsi?orderby=nomChef#acceptees">Responsable</a></th> -->
-					<th><a href="index.dsi?orderby=dateExecSouhaiteeSecrConf#acceptees">Date Echéance</a></th>
+					<th><a href="index.dsi?orderby=dateExecSouhaiteeSecrConf#acceptees">Date EchÃ©ance</a></th>
 				</tr>
 				<% int j = 0; %>
 				<c:forEach items="${listeDsiAcceptees}" var="dsi">

@@ -99,7 +99,7 @@ public class IndexControler implements Controller {
 		        }
 				OutputStream os = response.getOutputStream();
 				response.setContentType("application/pdf");
-				response.addHeader("Content-Disposition", "attachment; filename=Certificat_m�dical.pdf");
+				response.addHeader("Content-Disposition", "attachment; filename=Certificat_médical.pdf");
 				int count;
 				byte buf[] = new byte[4096];
 				while((count = is.read(buf))>1) {
@@ -128,10 +128,10 @@ public class IndexControler implements Controller {
 				InputStream is;
 				File tmp = new File("c:\\fop");
 		        if(!tmp.exists()) {
-		        	//is = new FileInputStream("/opt/fop/Promo fin 2022 Pouvoir d�achat Liège CPAS.pdf");
+		        	//is = new FileInputStream("/opt/fop/Promo fin 2022 Pouvoir dachat Liège CPAS.pdf");
 		        	is = new FileInputStream(config.getPdfPromoEthias());
 		        } else {
-		        	//is = new FileInputStream("c:\\fop\\Promo fin 2022 Pouvoir d�achat Liège CPAS.pdf");
+		        	//is = new FileInputStream("c:\\fop\\Promo fin 2022 Pouvoir dachat Liège CPAS.pdf");
 		        	is = new FileInputStream(config.getPdfPromoEthias());
 		        }
 				OutputStream os = response.getOutputStream();
@@ -147,7 +147,7 @@ public class IndexControler implements Controller {
 				InputStream is = new FileInputStream(config.getPdf_vmMado());
 				OutputStream os = response.getOutputStream();
 				response.setContentType("application/pdf");
-				response.addHeader("Content-Disposition", "attachment; filename=Vade-Mecum_Maintien_�_Domicile.pdf");
+				response.addHeader("Content-Disposition", "attachment; filename=Vade-Mecum_Maintien_à_Domicile.pdf");
 				int count;
 				byte buf[] = new byte[4096];
 				while((count = is.read(buf))>1) {
@@ -272,7 +272,7 @@ public class IndexControler implements Controller {
 					InputStream is;
 					File tmp = new File("c:\\fop");
 			        if(!tmp.exists()) {
-//			        	byte[] isoByte = fichier.getBytes("ISO-8859-1"); 
+//			        	byte[] isoByte = fichier.getBytes("UTF-8"); 
 //						String utf8String = new String(isoByte, "UTF8");
 			        	is = new FileInputStream("/opt/fop/GTI/" + idPlanning + "/" + fichier);
 			        } else {
@@ -293,13 +293,13 @@ public class IndexControler implements Controller {
 				InputStream is;
 				File tmp = new File("c:\\fop");
 		        if(!tmp.exists()) {
-		        	is = new FileInputStream("/opt/fop/Intervention en faveur d'un enfant handicap�.pdf");
+		        	is = new FileInputStream("/opt/fop/Intervention en faveur d'un enfant handicapé.pdf");
 		        } else {
-		        	is = new FileInputStream("c:\\fop\\Intervention en faveur d'un enfant handicap�.pdf");
+		        	is = new FileInputStream("c:\\fop\\Intervention en faveur d'un enfant handicapé.pdf");
 		        }
 				OutputStream os = response.getOutputStream();
 				response.setContentType("application/pdf");
-				response.addHeader("Content-Disposition", "attachment; filename=\"Intervention en faveur d'un enfant handicap�.pdf\"");
+				response.addHeader("Content-Disposition", "attachment; filename=\"Intervention en faveur d'un enfant handicapé.pdf\"");
 				int count;
 				byte buf[] = new byte[4096];
 				while((count = is.read(buf))>1) {
@@ -313,13 +313,13 @@ public class IndexControler implements Controller {
 				InputStream is;
 				File tmp = new File("c:\\fop");
 		        if(!tmp.exists()) {
-		        	is = new FileInputStream("/opt/fop/N� 776 Avantages offerts aux agents gr�ce � l'affiliation au SSC de l'ORPSS.pdf");
+		        	is = new FileInputStream("/opt/fop/N° 776 Avantages offerts aux agents grâce à l'affiliation au SSC de l'ORPSS.pdf");
 		        } else {
-		        	is = new FileInputStream("c:\\fop\\N� 776 Avantages offerts aux agents gr�ce � l'affiliation au SSC de l'ORPSS.pdf");
+		        	is = new FileInputStream("c:\\fop\\N° 776 Avantages offerts aux agents grâce à l'affiliation au SSC de l'ORPSS.pdf");
 		        }
 				OutputStream os = response.getOutputStream();
 				response.setContentType("application/pdf");
-				response.addHeader("Content-Disposition", "attachment; filename=\"N� 776 Avantages offerts aux agents gr�ce � l'affiliation au SSC de l'ORPSS.pdf\"");
+				response.addHeader("Content-Disposition", "attachment; filename=\"N° 776 Avantages offerts aux agents grâce à l'affiliation au SSC de l'ORPSS.pdf\"");
 				int count;
 				byte buf[] = new byte[4096];
 				while((count = is.read(buf))>1) {
@@ -350,13 +350,13 @@ public class IndexControler implements Controller {
 				InputStream is;
 				File tmp = new File("c:\\fop");
 		        if(!tmp.exists()) {
-		        	is = new FileInputStream("/opt/fop/Prime de mise � la pension.pdf");
+		        	is = new FileInputStream("/opt/fop/Prime de mise à la pension.pdf");
 		        } else {
-		        	is = new FileInputStream("c:\\fop\\Prime de mise � la pension.pdf");
+		        	is = new FileInputStream("c:\\fop\\Prime de mise à la pension.pdf");
 		        }
 				OutputStream os = response.getOutputStream();
 				response.setContentType("application/pdf");
-				response.addHeader("Content-Disposition", "attachment; filename=\"Prime de mise � la pension.pdf\"");
+				response.addHeader("Content-Disposition", "attachment; filename=\"Prime de mise à la pension.pdf\"");
 				int count;
 				byte buf[] = new byte[4096];
 				while((count = is.read(buf))>1) {
@@ -386,13 +386,13 @@ public class IndexControler implements Controller {
 				InputStream is;
 				File tmp = new File("c:\\fop");
 		        if(!tmp.exists()) {
-		        	is = new FileInputStream("/opt/fop/Proc�dureViolationDCP - 1er d�clarant.pdf");
+		        	is = new FileInputStream("/opt/fop/ProcédureViolationDCP - 1er déclarant.pdf");
 		        } else {
-		        	is = new FileInputStream("c:\\fop\\Proc�dureViolationDCP - 1er d�clarant.pdf");
+		        	is = new FileInputStream("c:\\fop\\ProcédureViolationDCP - 1er déclarant.pdf");
 		        }
 				OutputStream os = response.getOutputStream();
 				response.setContentType("application/pdf");
-				response.addHeader("Content-Disposition", "attachment; filename=\"Proc�dureViolationDCP - 1er d�clarant.pdf\"");
+				response.addHeader("Content-Disposition", "attachment; filename=\"ProcédureViolationDCP - 1er déclarant.pdf\"");
 				int count;
 				byte buf[] = new byte[4096];
 				while((count = is.read(buf))>1) {
@@ -478,13 +478,13 @@ public class IndexControler implements Controller {
 				InputStream is;
 				File tmp = new File("c:\\fop");
 		        if(!tmp.exists()) {
-		        	is = new FileInputStream("/opt/fop/N�900NvellePersonneDeContactSSC.pdf");
+		        	is = new FileInputStream("/opt/fop/N°900NvellePersonneDeContactSSC.pdf");
 		        } else {
-		        	is = new FileInputStream("c:\\fop\\N�900NvellePersonneDeContactSSC.pdf");
+		        	is = new FileInputStream("c:\\fop\\N°900NvellePersonneDeContactSSC.pdf");
 		        }
 				OutputStream os = response.getOutputStream();
 				response.setContentType("application/pdf");
-				response.addHeader("Content-Disposition", "attachment; filename=\"N�990NvellePersonneDeContactSSC.pdf\"");
+				response.addHeader("Content-Disposition", "attachment; filename=\"N°990NvellePersonneDeContactSSC.pdf\"");
 				int count;
 				byte buf[] = new byte[4096];
 				while((count = is.read(buf))>1) {

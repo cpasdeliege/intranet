@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion du planning</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion du planning</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -62,8 +62,8 @@
 					<th align="center">titre</th>
 					<th align="center"><a href="gestionPlanning.admin?action=incidents&amp;triOuvert=service">service</a></th>
 					<th align="center">contact</th>
-					<th align="center"><a href="gestionPlanning.admin?action=incidents&amp;triOuvert=echeance">echéance</a></th>
-					<th align="center"><a href="gestionPlanning.admin?action=incidents&amp;triOuvert=nomInfo">assigné à</a></th>
+					<th align="center"><a href="gestionPlanning.admin?action=incidents&amp;triOuvert=echeance">echÃ©ance</a></th>
+					<th align="center"><a href="gestionPlanning.admin?action=incidents&amp;triOuvert=nomInfo">assignÃ© Ã </a></th>
 				</tr>
 				<% i = 0; %>
 				<c:forEach items="${incidentsOuverts}" var="tache">
@@ -127,7 +127,7 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/kthememgr.png" border="0" width="50px"></td>
-					<td class="titre_tableau"><a name="enAttente">Liste des incidents fermés (<%= nbreTache3 %>)</a></td>
+					<td class="titre_tableau"><a name="enAttente">Liste des incidents fermÃ©s (<%= nbreTache3 %>)</a></td>
 					<td align="right">
 					</td>
 				</tr>

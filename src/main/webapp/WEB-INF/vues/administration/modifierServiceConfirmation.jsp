@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion des services</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des services</title>
 </head>
 <%@ page import="be.cpasdeliege.intranet.informatique.controler.formulaire.*" %>
 <%
@@ -54,7 +54,7 @@ FormulaireService service = (FormulaireService)request.getAttribute("formulaireS
 					<td class="texte_tableau_confirmation">${ formulaireServiceModifier.adresse }</td>
 				</tr>
 				<tr>
-					<td align="right">numéro : </td>
+					<td align="right">numÃ©ro : </td>
 					<td class="texte_tableau_confirmation">${ formulaireServiceModifier.numero }</td>
 				</tr>
 				<tr>
@@ -62,7 +62,7 @@ FormulaireService service = (FormulaireService)request.getAttribute("formulaireS
 					<td class="texte_tableau_confirmation">${ formulaireServiceModifier.codePostal }</td>
 				</tr>
 				<tr>
-					<td align="right">localité : </td>
+					<td align="right">localitÃ© : </td>
 					<td class="texte_tableau_confirmation">${ formulaireServiceModifier.localite }</td>
 				</tr>
 				<tr>

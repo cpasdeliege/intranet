@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
     <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.informatique.model.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="annuaire.css" type="text/css">
 <script type="text/javascript">
 //-----------------------
@@ -31,7 +31,7 @@ document.oncontextmenu = new Function("return false");
 <hr>
 &nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.annuaire">annuaire interne</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">recherche par ordre alphabétique</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">recherche par ordre alphabÃ©tique</a>
 <hr>
 </div>
 <table align="center" cellpadding="0" cellspacing="0">
@@ -42,7 +42,7 @@ document.oncontextmenu = new Function("return false");
 	</tr>
 	<tr>
 		<td background="images/annuaire/cadre/area_left.gif"></td>
-		<td align="center"><a class="lien_navigation"  href="recherche.annuaire">recherche par mot-clé</a> - <a class="lien_navigation" href="services.annuaire">service</a> - <a class="lien_navigation_actif">ordre alphabétique</a></td>
+		<td align="center"><a class="lien_navigation"  href="recherche.annuaire">recherche par mot-clÃ©</a> - <a class="lien_navigation" href="services.annuaire">service</a> - <a class="lien_navigation_actif">ordre alphabÃ©tique</a></td>
 		<td background="images/annuaire/cadre/area_right.gif"></td>
 	</tr>
 	<tr height="25">
@@ -119,12 +119,12 @@ document.oncontextmenu = new Function("return false");
 					<th width="20px"></th>
 					<th width="60px"></th>
 					<th>Nom</th>
-					<th>Prénom</th>
+					<th>PrÃ©nom</th>
 					<th>Code Agent</th>
 					<th>Service</th>
 					<th>Fonction</th>
 					<th width="60px" align="center">Extension VOIP</th>
-					<th align="right">Numéro Externe</th>
+					<th align="right">NumÃ©ro Externe</th>
 				</tr>
 				<% 
 					int i = 0; 

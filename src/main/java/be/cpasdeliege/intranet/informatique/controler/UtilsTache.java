@@ -67,19 +67,19 @@ public class UtilsTache implements Controller {
 		 */
 		if(action.equals("envoiemail")) {
 			String maila = request.getParameter("pers");
-			String nom = URLDecoder.decode(maila.split(",")[0],"ISO-8859-1");
+			String nom = URLDecoder.decode(maila.split(",")[0],"UTF-8");
 			//String nom = Utils.replaceAccentedCharacters(maila.split(",")[0]);
-			String prenom = URLDecoder.decode(maila.split(",")[1],"ISO-8859-1");
+			String prenom = URLDecoder.decode(maila.split(",")[1],"UTF-8");
 			//String prenom = Utils.replaceAccentedCharacters(maila.split(",")[1]);
 
 			System.out.println("CA PLANTE ???? 2");
 			System.out.println(prenom);
-			//System.out.println(new String(nom, "ISO-8859-1").getBytes("UTF-8"));
-			//System.out.println(new String(prenom.getBytes("ISO-8859-1"), "UTF-8"));
+			//System.out.println(new String(nom, "UTF-8").getBytes("UTF-8"));
+			//System.out.println(new String(prenom.getBytes("UTF-8"), "UTF-8"));
 			/*
 			System.out.println("Béatrice......");
 			System.out.println(new String("Béatrice......".getBytes(),"UTF-8"));
-			System.out.println(new String("Béatrice......".getBytes(),"ISO-8859-1"));
+			System.out.println(new String("Béatrice......".getBytes(),"UTF-8"));
 			*/
 
 			Utilisateur utilisateur = (Utilisateur)request.getSession().getAttribute("utilisateur");
@@ -464,7 +464,7 @@ public class UtilsTache implements Controller {
 				HashMap modele = new HashMap();
 				modele.put("retour", "index.cad");
 				modele.put("typeMarche", getFormulaireType(request));
-				response.sendRedirect("index.cad?action=formAjouterType&erreur=Intitul�vide&type_marche=" + request.getParameter("id_type_marche"));
+				response.sendRedirect("index.cad?action=formAjouterType&erreur=Intitulévide&type_marche=" + request.getParameter("id_type_marche"));
 //				return new ModelAndView("formulaireAjouterType", modele);
 			}
 			//request.getRequestDispatcher("/gestionTache.admin?idplanning=" + idPlanning).forward(request, response);
@@ -506,7 +506,7 @@ public class UtilsTache implements Controller {
 				HashMap modele = new HashMap();
 				modele.put("retour", "index.cad");
 				modele.put("typeMarche", daoCadastre.getTypeMarche(request.getParameter("id_type_marche")));
-				response.sendRedirect("index.cad?action=formAjouterType&amp;erreur=Intitul� vide&amp;type_marche=" + request.getParameter("id_type_marche"));
+				response.sendRedirect("index.cad?action=formAjouterType&amp;erreur=Intitulé vide&amp;type_marche=" + request.getParameter("id_type_marche"));
 //				return new ModelAndView("formulaireModifierType", modele);
 			}
 			//request.getRequestDispatcher("/gestionTache.admin?idplanning=" + idPlanning).forward(request, response);
@@ -525,7 +525,7 @@ public class UtilsTache implements Controller {
 		 * notifDG
 		 */
 		} else if(action.equals("notifDG")) {
-			//TI 8608 : � supprimer
+			//TI 8608 : à supprimer
 			notifDG(request);
 			response.sendRedirect("afficherDemande.dsi?idDemandes=" + request.getParameter("idDemande"));
 		/**
@@ -574,7 +574,7 @@ public class UtilsTache implements Controller {
 	private boolean verifFormulaireTypeMarche(HttpServletRequest request) {
 		String type_marche = request.getParameter("type_marche");
 		if (type_marche.equals("")) {
-			request.setAttribute("erreur", "Vous devez indiquer un intitul�");
+			request.setAttribute("erreur", "Vous devez indiquer un intitulé");
 			return false;
 		}
 		return true;
@@ -620,7 +620,7 @@ public class UtilsTache implements Controller {
 		String idDemande = request.getParameter("idDemande");
 		Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
 		DemServInf demande = daoDsi.getDemande(idDemande);
-		ajoutRemarque(idDemande, utilisateur, "Avis au service informatique demand�.");
+		ajoutRemarque(idDemande, utilisateur, "Avis au service informatique demandé.");
 
 		try {
 			Email email = new SimpleEmail();
@@ -631,11 +631,11 @@ public class UtilsTache implements Controller {
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
 
 			email.setSubject(
-					"Demande d'avis sur la demande n� " + demande.getIdDemandes() + " : " + demande.getTitre());
-			email.setMsg("Bonjour,\n\nVotre attention est demand�e sur la demande n�" + demande.getIdDemandes() + " ("
+					"Demande d'avis sur la demande n° " + demande.getIdDemandes() + " : " + demande.getTitre());
+			email.setMsg("Bonjour,\n\nVotre attention est demandée sur la demande n°" + demande.getIdDemandes() + " ("
 					+ demande.getTitre() + ") " + "\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 			email.addTo("juan.hernandez@cpasdeliege.be");
 			email.send();
 		} catch (EmailException e) {
@@ -656,7 +656,7 @@ public class UtilsTache implements Controller {
 		Utilisateur tmp = new Utilisateur();
 		tmp.setNom("Message automatique");
 		tmp.setPrenom("");
-		ajoutRemarque("" + demande.getIdDemandes(), tmp, "Validation implicite de la demande du D � oui");
+		ajoutRemarque("" + demande.getIdDemandes(), tmp, "Validation implicite de la demande du D à oui");
 		daoDsi.updateDemande(demande);
 	}
 
@@ -685,12 +685,12 @@ public class UtilsTache implements Controller {
 
 			email.setFrom("no-reply@cpasdeliege.be", "DSI - Intranet");
 
-			email.setSubject("Notification sur la demande n� " + demande.getIdDemandes() + " : " + demande.getTitre());
-			email.setMsg("Bonjour,\n\nVotre attention est demand�e sur la demande n�" + demande.getIdDemandes() + " ("
-					+ demande.getTitre() + ") " + "\n\n" + "Voici la derni�re remarque : \n\n"
+			email.setSubject("Notification sur la demande n° " + demande.getIdDemandes() + " : " + demande.getTitre());
+			email.setMsg("Bonjour,\n\nVotre attention est demandée sur la demande n°" + demande.getIdDemandes() + " ("
+					+ demande.getTitre() + ") " + "\n\n" + "Voici la dernière remarque : \n\n"
 					+ dernirereRemarque.getTexte() + "\n\n\n"
 					+ "Voir la demande sur l'intranet : http://intranet/afficherDemande.dsi?idDemandes="
-					+ demande.getIdDemandes() + "\n\nBonne journ�e.");
+					+ demande.getIdDemandes() + "\n\nBonne journée.");
 			// email.addTo("frederic.delree@gmail.com");
 			email.addTo("jmjalhay@cpasdeliege.be");
 			email.send();
@@ -742,17 +742,17 @@ public class UtilsTache implements Controller {
 		 * List<TicketItem> listticket =
 		 * (List<TicketItem>)dao.getListeTicketItem(tache.getIdPlanning()); TicketItem
 		 * rem = listticket.get(listticket.size()-1); String subject =
-		 * "Notification sur la t�che : " + tache.getIdPlanning() + " - " +
+		 * "Notification sur la tâche : " + tache.getIdPlanning() + " - " +
 		 * tache.getTitre();
 		 * 
 		 * 
 		 * 
 		 * if(from.getNom().equals("Hernandez")) { String message =
-		 * "Bonjour,\n\nNotification sur la t�che n�" + tache.getIdPlanning() + " (" +
+		 * "Bonjour,\n\nNotification sur la tâche n°" + tache.getIdPlanning() + " (" +
 		 * tache.getTitre() + ") " + "\n\n" + "Voici le dernier ticket : \n\n" +
 		 * rem.getTexte() + "\n\n\n" +
-		 * "Voir la t�che sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
-		 * + tache.getIdPlanning() +"\n\nBonne journ�e."; try { //
+		 * "Voir la tâche sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
+		 * + tache.getIdPlanning() +"\n\nBonne journée."; try { //
 		 * response.sendRedirect("https://mail.cpasdeliege.be/?to=" + dest+
 		 * "&view=compose&body=" + message + "&subject=" + subject + "#1");
 		 * response.sendRedirect("https://mail.cpasdeliege.be/?to=" + dest+
@@ -760,11 +760,11 @@ public class UtilsTache implements Controller {
 		 * URLEncoder.encode(subject, "UTF8") + "#1"); } catch (IOException e) {
 		 * e.printStackTrace();
 		 * 
-		 * } } else { String message = "Bonjour,\n\nNotification sur la t�che n�" +
+		 * } } else { String message = "Bonjour,\n\nNotification sur la tâche n°" +
 		 * tache.getIdPlanning() + " (" + tache.getTitre() + ") " + "\n\n" +
 		 * "Voici le dernier ticket : \n\n" + rem.getTexte() + "\n\n\n" +
-		 * "Voir la t�che sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
-		 * + tache.getIdPlanning() +"\n\nBonne journ�e."; try {
+		 * "Voir la tâche sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
+		 * + tache.getIdPlanning() +"\n\nBonne journée."; try {
 		 * 
 		 * Email email = new SimpleEmail(); email.setHostName("mail.cpasdeliege.be");
 		 * email.setSmtpPort(25); email.setAuthenticator(new

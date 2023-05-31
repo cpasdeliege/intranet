@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - rapports &amp; statistiques</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - rapports &amp; statistiques</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -53,7 +53,7 @@
 							</tr>
 							<tr>
 								<td width="60px" align="center"><img src="images/agent.png" border="0" width="40px"></td>
-								<td><a class="texte_menu_statistiques" href="rapports.admin?requete=logRues">logs répartition et code des rues de Liège</a></td>
+								<td><a class="texte_menu_statistiques" href="rapports.admin?requete=logRues">logs rÃ©partition et code des rues de LiÃ¨ge</a></td>
 							</tr>
 							<tr>
 								<td width="60px" align="center"><img src="images/formation.png" border="0" width="40px"></td>
@@ -98,11 +98,11 @@
 						<table  border="0">
 							<tr>
 								<td width="60px" align="center"><img src="images/telephone.png" border="0" width="40px"></td>
-								<td><a class="texte_menu_statistiques" href="rapports.admin?requete=statsAnnuaire">annuaire téléphonique</a></td>
+								<td><a class="texte_menu_statistiques" href="rapports.admin?requete=statsAnnuaire">annuaire tÃ©lÃ©phonique</a></td>
 							</tr>
 							<tr>
 								<td width="60px" align="center"><img src="images/agent.png" border="0" width="40px"></td>
-								<td><a class="texte_menu_statistiques" href="rapports.admin?requete=statsRues">répartition et code des rues de Liège</a></td>
+								<td><a class="texte_menu_statistiques" href="rapports.admin?requete=statsRues">rÃ©partition et code des rues de LiÃ¨ge</a></td>
 							</tr>
 							<tr>
 								<td width="60px" align="center"><img src="images/formation.png" border="0" width="40px"></td>
@@ -163,7 +163,7 @@
 							</tr>
 							<tr>
 								<td width="60px" align="center"><img src="images/administration/admin.png" border="0" width="40px"></td>
-								<td><a class="texte_menu_statistiques" href="rapports.admin?requete=logAdmin">logs informatique &amp; téléphonie</a></td>
+								<td><a class="texte_menu_statistiques" href="rapports.admin?requete=logAdmin">logs informatique &amp; tÃ©lÃ©phonie</a></td>
 							</tr>
 							<tr>
 								<td width="60px" align="center"><img src="images/administration/stop.png" border="0" width="40px"></td>

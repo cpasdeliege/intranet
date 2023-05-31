@@ -106,7 +106,7 @@ public class Domain implements DomainInterface {
 		if (dao.getListeServices(service.getNom()).size() == 0) {
 			dao.addService(formulaireServiceToDaoService(service));
 		} else {
-			throw new DomainException("ce service (" + service.getNom() + ") existe d�j�");
+			throw new DomainException("ce service (" + service.getNom() + ") existe déjà");
 		}
 	}
 
@@ -446,7 +446,7 @@ public class Domain implements DomainInterface {
 			dao.addPersonnel(formulairePersonnelToDaoPersonnel(employe));
 		} else {
 			throw new DomainException(
-					"cette personne (" + employe.getNom() + ", " + employe.getPrenom() + ") existe d�j�");
+					"cette personne (" + employe.getNom() + ", " + employe.getPrenom() + ") existe déjà");
 		}
 	}
 
@@ -684,7 +684,7 @@ public class Domain implements DomainInterface {
 	}
 
 	public synchronized void supprimerPersonnel(String nom, String prenom) {
-		// TODO traitement de deuxi�me plan : ordi, etc ...
+		// TODO traitement de deuxième plan : ordi, etc ...
 		desassignerOrdinateurPersonnel("%", nom, prenom);
 		desassignerPersonnelService("%", nom, prenom);
 		supprimerUtilisateur(nom, prenom);
@@ -695,7 +695,7 @@ public class Domain implements DomainInterface {
 		if (dao.getListeOrdinateurs(formulaireOrdinateur.getNom(), "%").size() == 0) {
 			dao.addOrdinateur(formulaireOrdinateurToDaoOrdinateur(formulaireOrdinateur));
 		} else {
-			throw new DomainException("cet ordinateur (" + formulaireOrdinateur.getNom() + ") existe d�j�");
+			throw new DomainException("cet ordinateur (" + formulaireOrdinateur.getNom() + ") existe déjà");
 		}
 	}
 
@@ -1006,7 +1006,7 @@ public class Domain implements DomainInterface {
 		if (dao.getListeImprimante(imprimante.getNumeroSerie(), "%").size() == 0) {
 			dao.addImprimante(imprimante);
 		} else {
-			throw new DomainException("cette imprimante (" + imprimante.getNumeroSerie() + ") existe d�j�");
+			throw new DomainException("cette imprimante (" + imprimante.getNumeroSerie() + ") existe déjà");
 		}
 
 	}
@@ -1026,7 +1026,7 @@ public class Domain implements DomainInterface {
 			dao.desassignerImprimante("%", imprimante.getNumeroSerie());
 		}
 		dao.addImprimante(imprimante);
-//		 TODO traitement de deuxi�me plan : ordi distant, etc ...
+//		 TODO traitement de deuxième plan : ordi distant, etc ...
 	}
 
 	public synchronized Imprimante getImprimante(String numeroSerie) {
@@ -1336,7 +1336,7 @@ public class Domain implements DomainInterface {
 			 * TypeFonction(); temp.setFonction("A.S. en chef f.f.");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } temp = new
-			 * TypeFonction(); temp.setFonction("Gradu�e sp�cifique en chef");
+			 * TypeFonction(); temp.setFonction("Graduée spécifique en chef");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } temp = new
 			 * TypeFonction(); temp.setFonction("Chef de service");
@@ -1345,7 +1345,7 @@ public class Domain implements DomainInterface {
 			 * TypeFonction(); temp.setFonction("Chef de bureau administratif");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } temp = new
-			 * TypeFonction(); temp.setFonction("Chef de bureau sp�cifique f.f.");
+			 * TypeFonction(); temp.setFonction("Chef de bureau spécifique f.f.");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } temp = new
 			 * TypeFonction(); temp.setFonction("Responsable");
@@ -1369,7 +1369,7 @@ public class Domain implements DomainInterface {
 			 * TypeFonction(); temp.setFonction("Directrice");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } temp = new
-			 * TypeFonction(); temp.setFonction("Secr�taire de cabinet");
+			 * TypeFonction(); temp.setFonction("Secrétaire de cabinet");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } temp = new
 			 * TypeFonction(); temp.setFonction("Receveur");
@@ -1381,10 +1381,10 @@ public class Domain implements DomainInterface {
 			 * TypeFonction(); temp.setFonction("Directrice de l'Action sociale");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } temp = new
-			 * TypeFonction(); temp.setFonction("Secr�taire f.f.");
+			 * TypeFonction(); temp.setFonction("Secrétaire f.f.");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } temp = new
-			 * TypeFonction(); temp.setFonction("Pr�sident");
+			 * TypeFonction(); temp.setFonction("Président");
 			 * if(listeFonction.contains(temp)) { int index = listeFonction.indexOf(temp);
 			 * listeFonction.remove(index); listeFonction.add(0, temp); } for(int k = 0; k <
 			 * listeFonction.size(); k++) { Element fonction =

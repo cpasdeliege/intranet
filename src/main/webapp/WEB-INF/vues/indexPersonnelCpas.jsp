@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -12,8 +12,8 @@ if(privilege == null) {
 %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 <style type="text/css">
 #gauche {
@@ -66,11 +66,11 @@ if(privilege == null) {
 			<table width="100%">
 				<tr>
 					<td width="60px"><a href="index.regTrav?param=lots"><img src="images/strategique.png" border="0" width="60px"></a></td>
-					<td><a class="texte_menu_principal">Plan Stratégique</a></td>
+					<td><a class="texte_menu_principal">Plan StratÃ©gique</a></td>
 					<td width="70%">
 						<!-- <p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=etat" target="_blank">Etat des lieux (mai 2013)</a></p>-->
 						<!--  <p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=tableau" target="_blank">Tableau de bord (juillet 2013)</a></p>-->
-						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=presentation" target="_blank">Plan stratégique 2019-24</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=presentation" target="_blank">Plan stratÃ©gique 2019-24</a></p>
 						<p class="texte_informatif_menu_principal"></p>
 						
 					</td>
@@ -103,16 +103,16 @@ if(privilege == null) {
 			<table width="100%">
 				<tr>
 					<td width="60px"><a href="index.regTrav?param=lots"><img src="images/travail.png" border="0" width="60px"></a></td>
-					<td><a class="texte_menu_principal">Règlement de travail du personnel<br></a></td>
+					<td><a class="texte_menu_principal">RÃ¨glement de travail du personnel<br></a></td>
 					<td>
 						<p class="texte_informatif_menu_principal">
-							<img src="./images/pdf.png" width="30px"></img><a class="texte_menu_principal" href="index.regTrav?param=lots" target="_blank">Télécharger le Règlement de Travail</a>
+							<img src="./images/pdf.png" width="30px"></img><a class="texte_menu_principal" href="index.regTrav?param=lots" target="_blank">TÃ©lÃ©charger le RÃ¨glement de Travail</a>
 						</p>
 						<!-- <p class="texte_informatif_menu_principal">
-							<a class="texte_menu_principal" href="index.htm?rep=rtcite">Nouveau Règlement de travail (entre en application le 01/01/2023)</a>
+							<a class="texte_menu_principal" href="index.htm?rep=rtcite">Nouveau RÃ¨glement de travail (entre en application le 01/01/2023)</a>
 						</p> -->
 						<p>
-							Si votre ordinateur n'est pas équipé d'une version suffisamment récente d'acrobat reader, veuillez utiliser le lien suivant: <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=normal" target="_blank">Télécharger</a>
+							Si votre ordinateur n'est pas Ã©quipÃ© d'une version suffisamment rÃ©cente d'acrobat reader, veuillez utiliser le lien suivant: <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=normal" target="_blank">TÃ©lÃ©charger</a>
 						</p>
 						<p class="texte_informatif_menu_principal">
 							
@@ -144,19 +144,19 @@ if(privilege == null) {
 			<table width="100%">
 				<tr>
 					<td width="60px"><a href="index.regTrav?param=lots"><img src="images/RGPD.jpg" border="0" width="60px"></a></td>
-					<td><a class="texte_menu_principal">Règlement général sur la protection des données<br></a></td>
+					<td><a class="texte_menu_principal">RÃ¨glement gÃ©nÃ©ral sur la protection des donnÃ©es<br></a></td>
 					<td>
 						<p class="texte_informatif_menu_principal">
 							<img src="./images/pdf.png" width="30px"></img>
-							<a class="texte_menu_principal" href="index.regTrav?param=rgpdPPDCP" target="_blank">Politique de protection de vos données personnelles</a>
+							<a class="texte_menu_principal" href="index.regTrav?param=rgpdPPDCP" target="_blank">Politique de protection de vos donnÃ©es personnelles</a>
 						</p>
 						<p class="texte_informatif_menu_principal">
 							<img src="./images/pdf.png" width="30px"></img>
-							<a class="texte_menu_principal" href="index.regTrav?param=rgpdPVDCP" target="_blank">Procédure à suivre en cas de violation de vos données personnelles</a>
+							<a class="texte_menu_principal" href="index.regTrav?param=rgpdPVDCP" target="_blank">ProcÃ©dure Ã  suivre en cas de violation de vos donnÃ©es personnelles</a>
 						</p>
 						<p class="texte_informatif_menu_principal">
 							<img src="./images/pdf.png" width="30px"></img>
-							<a class="texte_menu_principal" href="index.regTrav?param=rgpdFED" target="_blank">Formulaire de demande d'exercice des droits sur vos données personnelles</a>
+							<a class="texte_menu_principal" href="index.regTrav?param=rgpdFED" target="_blank">Formulaire de demande d'exercice des droits sur vos donnÃ©es personnelles</a>
 						</p>
 						
 						<p class="texte_informatif_menu_principal"></p>
@@ -192,14 +192,14 @@ if(privilege == null) {
 					<td width="60px"><img src="images/SSC.png" border="0" width="60px"></td>
 					<td><a class="texte_menu_principal">Service social collectif</a></td>
 					<td  width="70%">
-					<!-- <p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=sscNS" target="_blank">Note de service n°776</a></p> -->
-						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=sscNSC" target="_blank">Note de service n°900: changement de personne de contact</a></p>
+					<!-- <p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=sscNS" target="_blank">Note de service nÂ°776</a></p> -->
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=sscNSC" target="_blank">Note de service nÂ°900: changement de personne de contact</a></p>
 						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=sscPSSC" target="_blank">Les primes du Service social collectif</a></p>
-						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=sscPAR" target="_blank">«Mon SSC » : la plateforme d''avantages et de réductions</a></p>
-						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="https://www.sscgsd.fgov.be/fr/beneficiary/Document%20Management/Handicap.pdf" target="blank">Intervention en faveur d'un enfant handicapé</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=sscPAR" target="_blank">ï¿½Mon SSC ï¿½ : la plateforme d''avantages et de rÃ©ductions</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="https://www.sscgsd.fgov.be/fr/beneficiary/Document%20Management/Handicap.pdf" target="blank">Intervention en faveur d'un enfant handicapÃ©</a></p>
 						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="https://www.sscgsd.fgov.be/fr/beneficiary/Document%20Management/MariageCohabitation.pdf" target="_blank">Prime de mariage et de cohabitation</a></p>
 						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="https://www.sscgsd.fgov.be/fr/beneficiary/Document%20Management/NaissanceAdoption.pdf" target="_blank">Prime de naissance et adoption</a></p>
-						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="https://www.sscgsd.fgov.be/fr/beneficiary/Document%20Management/Pension.pdf" target="_blank">Prime de mise à la pension</a></p>
+						<p>- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="https://www.sscgsd.fgov.be/fr/beneficiary/Document%20Management/Pension.pdf" target="_blank">Prime de mise Ã  la pension</a></p>
 						
 						<p class="texte_informatif_menu_principal">
 							
@@ -247,7 +247,7 @@ if(privilege == null) {
 					<td><a class="texte_menu_principal">Ressources</a></td>
 					<td  width="70%">
 						<p>
-							- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=certificat" target="_blank">Certificat médical</a>
+							- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=certificat" target="_blank">Certificat mÃ©dical</a>
 						</p>
 						<p>
 							- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmIAS" target="_blank">Vade-Mecum : Action Sociale</a>
@@ -271,7 +271,7 @@ if(privilege == null) {
 							<% } %>
 						</p>
 						<p>
-							- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmMado" target="_blank">Vade-Mecum : Maintien à Domicile</a>
+							- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmMado" target="_blank">Vade-Mecum : Maintien Ã  Domicile</a>
 							<% if(privilege.isAdmVM()) { %>
 							<form method="post" enctype="multipart/form-data" action="utilsTache.admin">
 								<input type="hidden" name="action" value="modifierVMMaintien">
@@ -314,7 +314,7 @@ if(privilege == null) {
 			<table width="100%">
 				<tr>
 					<td width="60px"><a href="file:///P:/Infor%20Jeunes/info.html"><img src="images/infoJ.png" border="0" width="60px"></a></td>
-					<td><a class="texte_menu_principal" target="_blank" href="file:///P:/Infor%20Jeunes/info.html">Les Fiches Infor Jeunes</a> (nécéssite Internet Explorer)</td>
+					<td><a class="texte_menu_principal" target="_blank" href="file:///P:/Infor%20Jeunes/info.html">Les Fiches Infor Jeunes</a> (nÃ©cÃ©ssite Internet Explorer)</td>
 					<td><p class="texte_informatif_menu_principal"></p></td>
 					<td align="right" valign="bottom"></td>
 				</tr>
@@ -375,7 +375,7 @@ if(privilege == null) {
 <br>
 
 <!--  ********************************************* -->
-<!-- ajoute par Théo le 2021-02-19 -->
+<!-- ajoute par ThÃ©o le 2021-02-19 -->
 
 <table class="tabIndex" align="center" cellpadding="0" cellspacing="0">
 	<tr height="25">

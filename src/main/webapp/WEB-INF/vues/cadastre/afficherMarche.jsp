@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@page import="be.cpasdeliege.intranet.informatique.model.PrivilegeInformatique"%>
 <%@page import="be.cpasdeliege.intranet.cadastre.model.*"%>
@@ -8,8 +8,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 <style type="text/css">
 #gauche {
@@ -76,8 +76,8 @@ if(privileges == null) {
 	<div>
 		<hr>
 		&nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.cad">Cadastre des Marchés Publics</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Afficher Marché Public</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.cad">Cadastre des MarchÃ©s Publics</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Afficher MarchÃ© Public</a>
 		<hr>
 	</div>
 <div id="principal">
@@ -111,7 +111,7 @@ if(privileges == null) {
 					<td>${marche.typeMarche}</td>
 				</tr>
 				<tr>
-					<td style="font-weight: bold;" align="right">Référence : </td>
+					<td style="font-weight: bold;" align="right">RÃ©fÃ©rence : </td>
 					<td>${marche.reference}</td>
 				</tr>
 				<tr>
@@ -141,7 +141,7 @@ if(privileges == null) {
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td style="font-weight: bold;" align="right">Date de début : </td>
+					<td style="font-weight: bold;" align="right">Date de dÃ©but : </td>
 					<td>
 						${marche.date_debutFormat}
 					</td>
@@ -203,7 +203,7 @@ if(privileges == null) {
 										<input type="hidden" name="action" value="ajouterLienCadastre">
 										<input type="hidden" name="id_marche_public" value="${marche.id_marche_public}">
 										<input type="hidden" name="retour" value="${type}">
-										nom à afficher : 
+										nom Ã  afficher : 
 										<input type="text" name="nom"><br>
 										lien web : 
 										<input type="text" name="lien" size="100"/>
@@ -262,7 +262,7 @@ if(privileges == null) {
 										<input type="hidden" name="action" value="ajouterAnnexeCadastre">
 										<input type="hidden" name="id_marche_public" value="${marche.id_marche_public}">
 										<input type="hidden" name="retour" value="${type}">
-										nom à afficher : 
+										nom Ã  afficher : 
 										<input type="text" name="nom"><br>
 										<input type="file" name="annexe" />
 										<input type="submit" value="Ajouter"/>

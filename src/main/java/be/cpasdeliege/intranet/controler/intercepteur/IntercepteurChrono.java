@@ -25,7 +25,7 @@ public class IntercepteurChrono implements HandlerInterceptor {
 	public void postHandle(HttpServletRequest request, HttpServletResponse arg1, Object arg2, ModelAndView arg3)
 			throws Exception {
 		GregorianCalendar date = new GregorianCalendar();
-		SimpleDateFormat sdf = new SimpleDateFormat("EEEE dd MMMM yyyy '�' HH:mm");
+		SimpleDateFormat sdf = new SimpleDateFormat("EEEE dd MMMM yyyy 'à' HH:mm");
 		time = new GregorianCalendar().getTimeInMillis() - time;
 		DecimalFormat df = new DecimalFormat("0.000");
 		double temp = time;

@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion du personnel</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion du personnel</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -16,7 +16,7 @@
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.admin">administration</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="gestionOrdinateurs.admin">gestion des ordinateurs</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="gestionOrdinateur.admin?ordinateur=${ordi.nom }">${ordi.nom }</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" >assigner un employé</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" >assigner un employÃ©</a>
 <hr>
 </div>
 <br>
@@ -26,7 +26,7 @@
 		<td>
 			<table>
 				<tr>
-					<td class="titre_tableau">Assigner un employé</td>
+					<td class="titre_tableau">Assigner un employÃ©</td>
 					<td>
 					</td>
 				</tr>
@@ -45,7 +45,7 @@
 			<form method="post">
 			<table>
 				<tr>
-					<td align="right">employé : </td>
+					<td align="right">employÃ© : </td>
 					<td>
 						<select name="employe" size="1" />
 							<c:forEach items="${listePersonnel}" var="personnel">

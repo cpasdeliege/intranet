@@ -21,7 +21,7 @@ public class FormulairePersonnelAjouter extends SimpleFormController {
 		 * String(((FormulairePersonnel)formulaire).getPrenom().getBytes(),"UTF-8"));
 		 */
 		System.out.println("submit ajout formulaire nom=" + ((FormulairePersonnel) formulaire).getNom());
-		System.out.println("submit ajout formulaire pr�nom=" + ((FormulairePersonnel) formulaire).getPrenom());
+		System.out.println("submit ajout formulaire prénom=" + ((FormulairePersonnel) formulaire).getPrenom());
 		return super.onSubmit(request, response, formulaire, arg3);
 	}
 

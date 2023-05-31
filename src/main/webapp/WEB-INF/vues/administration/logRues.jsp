@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - rapports &amp; statistiques</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - rapports &amp; statistiques</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -16,7 +16,7 @@
 &nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.admin">administration</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="rapports.admin?requete=accueil">rapports &amp; statistiques</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">logs répartition et code des rues de Liège</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">logs rÃ©partition et code des rues de LiÃ¨ge</a>
 <hr>
 </div>
 <br>
@@ -27,7 +27,7 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/console.png" border="0" width="50px"></td>
-					<td class="titre_tableau">Logs répartition et code des rues de Liège</td>
+					<td class="titre_tableau">Logs rÃ©partition et code des rues de LiÃ¨ge</td>
 					<td align="right">
 						
 					</td>

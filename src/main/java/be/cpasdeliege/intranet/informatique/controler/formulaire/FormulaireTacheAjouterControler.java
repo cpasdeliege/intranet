@@ -122,15 +122,15 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 				dsigti.setIdPlanning("" + idPlanning);
 				daoDsi.addDsigti(dsigti);
 
-				// ajout remarque avec num�ro de tache dans DSI
+				// ajout remarque avec numéro de tache dans DSI
 				//
 				// Remarque rem = new Remarque();
 				// GregorianCalendar now = new GregorianCalendar();
 				// SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				// rem.setIdDemande(idDemande);
 				// rem.setTexte("/!\\&nbsp;&nbsp;/!\\&nbsp;&nbsp;<a
-				// href=\"gestionTache.admin?idPlanning=" + idPlanning + "\">T�che informatique
-				// n�" + idPlanning + "</a>");
+				// href=\"gestionTache.admin?idPlanning=" + idPlanning + "\">Tâche informatique
+				// n°" + idPlanning + "</a>");
 				// rem.setUser(utilisateur.getPrenom() + " " + utilisateur.getNom());
 				// rem.setDate(sdf.format(now.getTime()));
 				//
@@ -169,7 +169,7 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 					}
 				}
 
-				// mail � celui � qui est destin�e la t�ches
+				// mail à celui à qui est destinée la tâches
 				Tache tache = (Tache) formulaire;
 				tache.setIdPlanning(idPlanning);
 				String[] tmpEmployeInfo = tache.getPersonnelInfo().split(", ");
@@ -180,7 +180,7 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 				}
 
 			} else {
-				// t�che non DSI --> envoi mail � juan si pas juan qui l'a encod�
+				// tâche non DSI --> envoi mail à juan si pas juan qui l'a encodé
 				DaoPersonnel from = ((List<DaoPersonnel>) dao.getListePersonnels(utilisateur.getNom(),
 						utilisateur.getPrenom())).get(0);
 				Tache tache = (Tache) formulaire;
@@ -192,7 +192,7 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 					// mailNouvelleTache(tache, "theodore.nzaramba@cpasdeliege.be",from);
 				}
 
-				// mail � celui � qui est destin�e la t�ches si c'est pas lui que la cr�e
+				// mail à celui à qui est destinée la tâches si c'est pas lui que la crée
 				String[] tmpEmployeInfo = tache.getPersonnelInfo().split(", ");
 				if (!utilisateur.getNom().equals(tmpEmployeInfo[0])
 						&& !utilisateur.getPrenom().equals(tmpEmployeInfo[1])) {
@@ -225,11 +225,11 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 			// email.setSSLOnConnect(true);
 			// email.setTLS(true);
 			email.setFrom("juan.hernandez@cpasdeliege.be", "Juan Hernandez");
-			email.setSubject("DSI - nouvelle t�che");
-			email.setMsg("Bonjour,\n\nMerci de bien vouloir t'occuper de la t�che n�" + tache.getIdPlanning() + " ("
-					+ tache.getTitre() + ") " + "et de me pr�venir d�s qu'elle est achev�e.\n\n"
-					+ "Voir la t�che sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
-					+ tache.getIdPlanning() + "\n\nBonne journ�e.");
+			email.setSubject("DSI - nouvelle tâche");
+			email.setMsg("Bonjour,\n\nMerci de bien vouloir t'occuper de la tâche n°" + tache.getIdPlanning() + " ("
+					+ tache.getTitre() + ") " + "et de me prévenir dès qu'elle est achevée.\n\n"
+					+ "Voir la tâche sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
+					+ tache.getIdPlanning() + "\n\nBonne journée.");
 			email.addTo(adresse);
 			email.send();
 		} catch (EmailException e) {
@@ -249,10 +249,10 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 			// email.setTLS(true);ww
 			email.setFrom(from.getEmail(), from.getPrenom() + " " + from.getNom());
 			email.setSubject("TI " + tache.getIdPlanning() + " ** 1.CREATION** - " + tache.getTitre());
-			email.setMsg("Bonjour,\n\nNotification de la cr�ation de la t�che n�" + tache.getIdPlanning() + " ("
+			email.setMsg("Bonjour,\n\nNotification de la création de la tâche n°" + tache.getIdPlanning() + " ("
 					+ tache.getTitre() + ") " + "\n\n"
-					+ "Voir la t�che sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
-					+ tache.getIdPlanning() + "\n\nBonne journ�e.");
+					+ "Voir la tâche sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
+					+ tache.getIdPlanning() + "\n\nBonne journée.");
 			email.addTo(dest);
 			email.send();
 		} catch (EmailException e) {
@@ -380,7 +380,7 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 		Tache tache = (Tache) formulaire;
 		if (tache.getService().equals("-")) {
 			request.getSession().setAttribute("erreurFormulaireTacheAjouter",
-					"Il faut que la t�che soit associ�e � un service !");
+					"Il faut que la tâche soit associée à un service !");
 			return false;
 		} else if (tache.getIncident().equals("1")
 				&& (tache.getHeureIncident().equals("-") || tache.getMinuteIncident().equals("-"))) {

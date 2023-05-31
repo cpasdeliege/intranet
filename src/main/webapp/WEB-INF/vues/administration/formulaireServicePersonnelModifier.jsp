@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion du personnel</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion du personnel</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -17,7 +17,7 @@
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.admin">administration</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="gestionServices.admin">gestion des services</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="gestionService.admin?service=${ fn:escapeXml(ser.nom) }">${ser.nom }</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" >modifier un employé</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" >modifier un employÃ©</a>
 <hr>
 </div>
 <br>
@@ -27,7 +27,7 @@
 		<td>
 			<table>
 				<tr>
-					<td class="titre_tableau">Modifier un employé</td>
+					<td class="titre_tableau">Modifier un employÃ©</td>
 					<td>
 					</td>
 				</tr>
@@ -46,7 +46,7 @@
 			<form method="post">
 			<table>
 				<tr>
-					<td align="right">employé : </td>
+					<td align="right">employÃ© : </td>
 					<td>
 						<select disabled="disabled" name="" size="1" />
 							<option >${nom}, ${prenom}</option>
@@ -76,7 +76,7 @@
 					<td><input type="text" maxlength="200" name="rem" value="${ formulaireServicePersonnelModifier.rem }"/></td>
 				</tr>
 				<tr>
-					<td align="right">téléphone : </td>
+					<td align="right">tÃ©lÃ©phone : </td>
 					<td><input type="text" maxlength="200" name="telephone" value="${ formulaireServicePersonnelModifier.telephone }"/></td>
 				</tr>
 				<tr>

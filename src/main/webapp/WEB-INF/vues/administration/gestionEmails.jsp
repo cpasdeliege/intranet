@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - liste des accès internet</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - liste des accÃ¨s internet</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -15,7 +15,7 @@
 <hr>
 &nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.admin">administration</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">liste des accès internet</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">liste des accÃ¨s internet</a>
 <hr>
 </div>
 <br>
@@ -26,7 +26,7 @@
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/email.png" border="0" width="50px"></td>
-					<td class="titre_tableau">Liste des accès internet</td>
+					<td class="titre_tableau">Liste des accÃ¨s internet</td>
 					<td align="right">
 						
 					</td>
@@ -46,7 +46,7 @@
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
 					<th>Nom</th>
-					<th>Prénom</th>
+					<th>PrÃ©nom</th>
 					<th>Email</th>
 					<th>mdp</th>
 					<th>alias Email</th>
@@ -108,18 +108,18 @@
 				<tr height="25">
 					<td>
 						<form method="get" action="formulaireEmailGeneriqueAjouter.admin">
-							<input type="submit" value="ajouter un email générique"/>
+							<input type="submit" value="ajouter un email gÃ©nÃ©rique"/>
 						</form>
 					</td>
 					<td align="right">
 						<form method="get" action="supprimerEmailGenerique.admin">
 							<select name=email size="1" />
-							<option>selectionner l'email à supprimer</option>
+							<option>selectionner l'email Ã  supprimer</option>
 							<c:forEach items="${listeEmailGenerique}" var="email">
 								<option>${email.email}</option>
 							</c:forEach>
 							</select>
-							<input type="submit" value="supprimer un email générique"/>
+							<input type="submit" value="supprimer un email gÃ©nÃ©rique"/>
 						</form>	
 					</td>
 				</tr>

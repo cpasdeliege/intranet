@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion des services</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des services</title>
 </head>
 <body class="body">
 <jsp:include page="../../entete.jsp" ></jsp:include>
@@ -91,9 +91,9 @@ Pole pole = (Pole)request.getAttribute("pole");
 							<tr>
 								<td>
 									<%	if(liste.size() > 1) { %>														
-											<%= liste.size() %> employés
+											<%= liste.size() %> employÃ©s
 									<%	} else { %>
-											<%= liste.size() %> employé
+											<%= liste.size() %> employÃ©
 									<%	} %>
 								</td>
 							</tr>
@@ -124,7 +124,7 @@ Pole pole = (Pole)request.getAttribute("pole");
 					<td class="titre_tableau"><a name="listePersonnel">Liste du personnel</a></td>
 					<td align="right">
 						<form method="get" action="formulaireServicePersonnelAssigner.admin">
-							<input type="submit" value="assigner un employé"/>
+							<input type="submit" value="assigner un employÃ©"/>
 							<input type="hidden" name="service" value="${ fn:escapeXml(service.nom) }"/>
 						</form>
 					</td>
@@ -144,10 +144,10 @@ Pole pole = (Pole)request.getAttribute("pole");
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
 					<th>Nom</th>
-					<th>Prénom</th>
+					<th>PrÃ©nom</th>
 					<th>Fonction</th>
 					<th></th>
-					<th>Téléphone</th>
+					<th>TÃ©lÃ©phone</th>
 				</tr>
 				<% int i = 0; %>
 				<c:forEach items="${listePersonnel}" var="employe">

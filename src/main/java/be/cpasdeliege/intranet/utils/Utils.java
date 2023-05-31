@@ -30,7 +30,7 @@ public class Utils {
 		int size = list.size();
 		String csv = "";
 
-		// on �crit le header
+		// on écrit le header
 		if (size > 0) {
 			TacheListe o = (TacheListe) list.get(0);
 			Class c = o.getClass();

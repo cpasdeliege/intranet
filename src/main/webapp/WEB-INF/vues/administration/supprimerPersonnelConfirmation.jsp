@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion des services</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des services</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -14,7 +14,7 @@
 &nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.admin">administration</a>
 <img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="gestionPersonnels.admin">gestion du personnel</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">suppression d'un employé</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">suppression d'un employÃ©</a>
 <hr>
 </div>
 <br>
@@ -24,7 +24,7 @@
 		<td>
 			<table>
 				<tr>
-					<td class="titre_tableau">Confirmation - Suppression d'un employé</td>
+					<td class="titre_tableau">Confirmation - Suppression d'un employÃ©</td>
 					<td>
 					</td>
 				</tr>
@@ -46,7 +46,7 @@
 					<td class="texte_tableau_confirmation">${ personnel.nom }</td>
 				</tr>
 				<tr>
-					<td align="right">prénom : </td>
+					<td align="right">prÃ©nom : </td>
 					<td class="texte_tableau_confirmation">${ personnel.prenom }</td>
 				</tr>
 				<tr>

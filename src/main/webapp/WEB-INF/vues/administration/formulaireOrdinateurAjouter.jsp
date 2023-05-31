@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.informatique.model.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
 <script type="text/javascript">
 <!--
 
 //-->
 </script>
-<title>Intranet CPAS de Liège - administration - gestion des ordinateurs</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des ordinateurs</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -73,15 +73,15 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="right">numéro prise : </td>
+					<td align="right">numÃ©ro prise : </td>
 					<td><input type="text" maxlength="200" name="prise" value="${ formulaireOrdinateurAjouter.prise }"/></td>
 				</tr>
 				<tr>
-					<td align="right">numéro CPAS2000 : </td>
+					<td align="right">numÃ©ro CPAS2000 : </td>
 					<td><input type="text" maxlength="200" name="numCpas2000" value="${ formulaireOrdinateurAjouter.numCpas2000 }"/></td>
 				</tr>
 				<tr>
-					<td align="right">système d'exlpoitation : </td>
+					<td align="right">systÃ¨me d'exlpoitation : </td>
 					<td>
 						<select name="systemeExploitation" size="1" />
 							<c:forEach items="${typeOS}" var="type">
@@ -98,7 +98,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="right">carte mère : </td>
+					<td align="right">carte mÃ¨re : </td>
 					<td><input type="text" maxlength="200" name="carteMere" value="${ formulaireOrdinateurAjouter.carteMere }"/></td>
 				</tr>
 				<tr>
@@ -106,7 +106,7 @@
 					<td><input type="text" maxlength="200" name="processeur" value="${ formulaireOrdinateurAjouter.processeur }"/></td>
 				</tr>
 				<tr>
-					<td align="right">mémoire ram : </td>
+					<td align="right">mÃ©moire ram : </td>
 					<td><input type="text" maxlength="200" name="memoireRam" value="${ formulaireOrdinateurAjouter.memoireRam }"/></td>
 				</tr>
 				<tr>
@@ -135,11 +135,11 @@
 					</td>
 				</tr>
 				<tr>
-					<td align="right">carte réseau : </td>
+					<td align="right">carte rÃ©seau : </td>
 					<td><input type="text" maxlength="200" name="carteReseau" value="${ formulaireOrdinateurAjouter.carteReseau }"/></td>
 				</tr>
 				<tr>
-					<td align="right">écran : </td>
+					<td align="right">Ã©cran : </td>
 					<td>
 						<select name="ecran" size="1" />
 							<c:forEach items="${typeEcran}" var="ecran">

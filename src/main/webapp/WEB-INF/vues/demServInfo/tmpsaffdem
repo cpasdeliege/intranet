@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.DemServInfo.*" %>
 <%@page import="be.cpasdeliege.intranet.DemServInfo.model.DemServInf"%>
@@ -9,7 +9,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Intranet CPAS de Liège</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 
@@ -59,7 +59,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 			<form method="post" name="formulaire">
 			<table>
 				<tr>
-					<td align="right">n� Demande : </td>
+					<td align="right">n° Demande : </td>
 					<%-- <td><input disabled="disabled" type="text" size="80" maxlength="200" name="titre" value="${dsi.idDemandes}"/></td> --%>
 					<td>${dsi.idDemandes}</td>
 				</tr>
@@ -93,7 +93,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 					<%-- <td>${dsi.typeDemande}</td> --%>
 				</tr>
 				<tr>
-					<td align="right">service concern� : </td>
+					<td align="right">service concerné : </td>
 					<td>
 						<select disabled="disabled" name="service" size="1" />
 								<option >${dsi.service}</option>
@@ -102,7 +102,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 					<%-- <td>${dsi.typeDemande}</td> --%>
 				</tr>
 				<tr>
-					<td align="right">�ch�ance souhait�e: </td>
+					<td align="right">échéance souhaitée: </td>
 					<td>
 						<input disabled="disabled" type="text" name="echeanceSouhaitee" value="${dsi.dateExecSouhaitee}"/>
 						<!-- <script language="JavaScript">
@@ -196,7 +196,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 						</td>
 					</tr>
 					<tr>
-						<td align="right">�ch�ance direction : </td>
+						<td align="right">échéance direction : </td>
 						<td>
 							<input <% if(!privilege.isDsiDirection()) { %> disabled <% } %>
 								 type="text" name="dateExecSouhaiteeSecr" value="${dsi.dateExecSouhaiteeSecr}"/>
@@ -254,7 +254,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 						</td>
 					</tr>
 					<tr>
-						<td align="right">�ch�ance direction : </td>
+						<td align="right">échéance direction : </td>
 						<td>
 							<input <% if(!privilege.isDsiDirection()) { %> disabled <% } %>
 								 type="text" name="dateExecSouhaiteeSecr" value="${dsi.dateExecSouhaiteeSecr}"/>
@@ -290,7 +290,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 						</td>
 					</tr>
 					<tr>
-						<td align="right">�ch�ance informatique : </td>
+						<td align="right">échéance informatique : </td>
 						<td>
 							<input <% if(!privilege.isDsiInfo()) { %> disabled <% } %>
 								type="text" name="dateExecPrevue" value="${dsi.dateExecPrevue}"/>
@@ -327,7 +327,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 					</tr>
 					
 					<tr>
-						<td align="right">�ch�ance : </td>
+						<td align="right">échéance : </td>
 						<td>
 							<input <% if(!privilege.isDsiDirection()) { %> disabled <% } %>
 								type="text" name="dateExecSouhaiteeSecrConf" value="${dsi.dateExecSouhaiteeSecrConf}"/>
@@ -347,7 +347,7 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 					<% if(dsi.getValidationSecrConf().equals("oui")) { %>
 					<% if(dsi.getDateExecEffective() != null || privilege.isDsiInfo()) { %>
 					<tr>
-						<td align="right">ex�cution effective : </td>
+						<td align="right">exécution effective : </td>
 						<td>
 							<input <% if(!privilege.isDsiInfo()) { %> disabled <% } %>
 								type="text" name="dateExecEffective" value="${dsi.dateExecEffective}"/>
@@ -419,11 +419,11 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 							<%
 								if(i == liste.size()-1) {
 							%>
-							<a name="fin">ajout�</a>
+							<a name="fin">ajouté</a>
 							<%
 								} else {
 							%>
-							ajout�
+							ajouté
 							<%											
 								}
 							%>

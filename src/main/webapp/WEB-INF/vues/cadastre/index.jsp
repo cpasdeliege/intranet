@@ -1,6 +1,6 @@
 <%@page import="be.cpasdeliege.intranet.informatique.model.PrivilegeInformatique"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@page import="be.cpasdeliege.*"%>
 <%@page import="be.cpasdeliege.intranet.cadastre.model.*"%>
@@ -8,8 +8,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 <style type="text/css">
 #gauche {
@@ -49,7 +49,7 @@ function supprimerMail(id_mail, adresse) {
 }
 
 function supprimerDenomination(id_denomination_reference, denomination) {
-   var mdp = confirm('Confirmer la suppression de la dénomination ?\n\n ' + denomination );
+   var mdp = confirm('Confirmer la suppression de la dÃ©nomination ?\n\n ' + denomination );
    if(mdp) {
    	document.location.href='index.cad?action=suppDenomination&id_denomination_reference=' + id_denomination_reference;
    }
@@ -63,7 +63,7 @@ function supprimerFormulaire(id_formulaire, nom) {
 }
 
 function supprimerTypeMP(id_type_marche, nom) {
-   var mdp = confirm('Confirmer la suppression du type de marché public ?\n\n ' + nom );
+   var mdp = confirm('Confirmer la suppression du type de marchÃ© public ?\n\n ' + nom );
    if(mdp) {
    	document.location.href='index.cad?action=suppType&id_type_marche=' + id_type_marche;
    }
@@ -88,7 +88,7 @@ if(privileges == null) {
 	<div>
 		<hr>
 		&nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Cadastre des Marchés Publics</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Cadastre des MarchÃ©s Publics</a>
 		<hr>
 	</div>
 <div id="principal">
@@ -105,14 +105,14 @@ if(privileges == null) {
 				<table width="100%">
 					<tr>
 						<td width="45px"><img src="images/listing_cadastre.jpg" border="0" width="40"></td>
-						<td class="titre_tableau">Listing des Marchés Publics</td>
+						<td class="titre_tableau">Listing des MarchÃ©s Publics</td>
 						<td align="right">
 						<% if(privileges.isCadastreMP()) { %>
 							<form method="post" action="index.cad?action=formAjouterMP">
-								<input type="submit" value="Ajouter un Marché Public"/>
+								<input type="submit" value="Ajouter un MarchÃ© Public"/>
 							</form>
 							<form method="post" action="index.cad?action=formAjouterType">
-								<input type="submit" value="Ajouter un type de Marché Public"/>
+								<input type="submit" value="Ajouter un type de MarchÃ© Public"/>
 							</form>
 						<% } %>
 						</td>
@@ -151,7 +151,7 @@ if(privileges == null) {
 					<form method="post" action="index.cad">
 						<input type="hidden" name="action" value="listeMP">
 						<input type="hidden" name="type" value="recherche">
-						recherche par mot clé ou référence : 
+						recherche par mot clÃ© ou rÃ©fÃ©rence : 
 						<input type="text" name="motcle">
 						<input type="submit" value="Rechercher"/>
 					</form>
@@ -181,7 +181,7 @@ if(privileges == null) {
 				<table width="100%">
 					<tr>
 						<td width="45px"><img src="images/cadastre_telech.png" border="0" width="40"></td>
-						<td class="titre_tableau">Télécharger les formulaires de commande </td>
+						<td class="titre_tableau">TÃ©lÃ©charger les formulaires de commande </td>
 						<td align="right">
 							
 						</td>
@@ -220,7 +220,7 @@ if(privileges == null) {
 				<h4>Ajouter un fichier</h4>
 				<form method="post" enctype="multipart/form-data" action="utilsTache.admin">
 					<input type="hidden" name="action" value="ajouterFormulaireCadastre">
-					nom à afficher : 
+					nom Ã  afficher : 
 					<input type="text" name="nom"><br>
 					<input type="file" name="annexe" />
 					<input type="submit" value="Ajouter"/>
@@ -267,7 +267,7 @@ if(privileges == null) {
 				<table width="100%">
 					<tr>
 						<td width="45px"><img src="images/mail.png" border="0" width="40"></td>
-						<td class="titre_tableau">Adresses mail à notifier en cas de fin proche d'un marché</td>
+						<td class="titre_tableau">Adresses mail Ã  notifier en cas de fin proche d'un marchÃ©</td>
 						<td align="right">
 							
 						</td>

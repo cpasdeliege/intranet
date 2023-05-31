@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,9 +17,9 @@ function reinitialiserMotDePasse(nomOrdi) {
 ""
 //-->
 </script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion des ordinateurs</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des ordinateurs</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -67,7 +67,7 @@ int width = 40;
 					<!--  <td align="right">
 					 	<input type="submit" value="renommer l'ordinateur" onclick="reinitialiserMotDePasse('${ordinateur.nom }')"/>
 					</td>
-					²
+					ï¿½
 					<td align="right" width="180px">
 						<form method="get" action="formulaireOrdinateurModifier.admin">
 							<input type="submit" value="modifier l'ordinateur"/>
@@ -97,19 +97,19 @@ int width = 40;
 								<td class="texte_cadre_gestion" ><a class="lien_tableau" href="gestionService.admin?service=${ordinateur.service}#listeOrdinateurs">${ordinateur.service }</a></td>
 							</tr>
 							<tr>
-								<td align="right">numéro de prise : </td>
+								<td align="right">numÃ©ro de prise : </td>
 								<td class="texte_cadre_gestion">${ordinateur.numeroPrise }</td>
 							</tr>
 							<tr>
-								<td align="right">numéro CPAS2000 : </td>
+								<td align="right">numÃ©ro CPAS2000 : </td>
 								<td class="texte_cadre_gestion">${ordinateur.numCpas2000 }</td>
 							</tr>
 							<tr>
-								<td align="right">système : </td>
+								<td align="right">systÃ¨me : </td>
 								<td class="texte_cadre_gestion">${ordinateur.systemeExploitation }</td>
 							</tr>
 							<tr>
-								<td align="right">carte mère : </td>
+								<td align="right">carte mÃ¨re : </td>
 								<td class="texte_cadre_gestion">${ordinateur.carteMere }</td>
 							</tr>
 							<tr>
@@ -117,7 +117,7 @@ int width = 40;
 								<td class="texte_cadre_gestion">${ordinateur.processeur }</td>
 							</tr>
 							<tr>
-								<td align="right">mémoire ram : </td>
+								<td align="right">mÃ©moire ram : </td>
 								<td class="texte_cadre_gestion">${ordinateur.memoireRam }</td>
 							</tr>
 							<tr>
@@ -133,11 +133,11 @@ int width = 40;
 								<td class="texte_cadre_gestion">${ordinateur.graveur }</td>
 							</tr>
 							<tr>
-								<td align="right">carte réseau : </td>
+								<td align="right">carte rÃ©seau : </td>
 								<td class="texte_cadre_gestion">${ordinateur.carteReseau }</td>
 							</tr>
 							<tr>
-								<td align="right">écran : </td>
+								<td align="right">Ã©cran : </td>
 								<td class="texte_cadre_gestion">${ordinateur.ecran }</td>
 							</tr>
 						</table>
@@ -150,9 +150,9 @@ int width = 40;
 							<tr>
 								<td>
 									<%	if(listePers.size() > 1) { %>														
-											<%= listePers.size() %> employés
+											<%= listePers.size() %> employÃ©s
 									<%	} else { %>
-											<%= listePers.size() %> employé
+											<%= listePers.size() %> employÃ©
 									<%	} %>
 								</td>
 							</tr>
@@ -168,9 +168,9 @@ int width = 40;
 							<tr>
 								<td>
 									<%	if(listeImprRes.size() > 1) { %>														
-											<%= listeImprRes.size() %> imprimantes réseau
+											<%= listeImprRes.size() %> imprimantes rÃ©seau
 									<%	} else { %>
-											<%= listeImprRes.size() %> imprimante réseau
+											<%= listeImprRes.size() %> imprimante rÃ©seau
 									<%	} %>
 								</td>
 							</tr>
@@ -202,7 +202,7 @@ int width = 40;
 					<td class="titre_tableau"><a name="listePersonnel">Liste du personnel</a></td>
 					<td align="right">
 						<form method="get" action="formulaireOrdinateurPersonnelAssigner.admin">
-							<input type="submit" value="assigner un employé"/>
+							<input type="submit" value="assigner un employÃ©"/>
 							<input type="hidden" name="ordinateur" value="${ordinateur.nom }"/>
 						</form>
 					</td>
@@ -222,7 +222,7 @@ int width = 40;
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
 					<th>Nom</th>
-					<th>Prénom</th>
+					<th>PrÃ©nom</th>
 				</tr>
 				<% int i = 0; %>
 				<c:forEach items="${listePersonnel}" var="employe">
@@ -283,7 +283,7 @@ int width = 40;
 		<td>
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
-					<th>Numéro de Série</th>
+					<th>NumÃ©ro de SÃ©rie</th>
 					<th>Type</th>
 				</tr>
 				<%  i = 0; %>
@@ -321,10 +321,10 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="45px"><img src="images/administration/imprimanteReseau.png" border="0" width="<%= width %>"></td>
-					<td class="titre_tableau"><a name="imprimantesReseau">Liste des imprimantes en réseau</a></td>
+					<td class="titre_tableau"><a name="imprimantesReseau">Liste des imprimantes en rÃ©seau</a></td>
 					<td align="right">
 						<form method="get" action="formulaireOrdinateurImprimanteAssigner.admin">
-							<input type="submit" value="assigner une imprimante réseau"/>
+							<input type="submit" value="assigner une imprimante rÃ©seau"/>
 							<input type="hidden" name="ordinateur" value="${ordinateur.nom }"/>
 						</form>
 					</td>
@@ -343,7 +343,7 @@ int width = 40;
 		<td>
 			<table class="tableau_liste" cellspacing="0">
 				<tr class="titre_colonne_tableau_liste">
-					<th>Numéro de Série</th>
+					<th>NumÃ©ro de SÃ©rie</th>
 					<th>Type</th>
 					<th>Ordinateur distant</th>
 				</tr>
@@ -390,10 +390,10 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="45px"><img src="images/administration/tache.png" border="0" width="<%= width %>"></td>
-					<td class="titre_tableau"><a name="listeTache">Liste des tâches à effectuer</a></td>
+					<td class="titre_tableau"><a name="listeTache">Liste des tÃ¢ches Ã  effectuer</a></td>
 					<td align="right">
 						<form method="get" action="formulaireTacheAjouter.admin">
-							<input type="submit" value="ajouter une tâche"/>
+							<input type="submit" value="ajouter une tÃ¢che"/>
 							<input type="hidden" name="ordinateurFormulaire" value="${ordinateur.nom }">
 							<input type="hidden" name="serviceFormulaire" value="${ordinateur.service }">
 							<input type="hidden" name="prenomFormulaire" value="${personnelDefaultTache.prenom }">
@@ -419,8 +419,8 @@ int width = 40;
 					<th align="center">titre</th>
 					<th align="center"><a href="gestionOrdinateur.admin?ordinateur=${ordinateur.nom}&amp;triEnCours=service#listeTache">service</a></th>
 					<th align="center">contact</th>
-					<th align="center"><a href="gestionOrdinateur.admin?ordinateur=${ordinateur.nom}&amp;triEnCours=echeance#listeTache">echéance</a></th>
-					<th align="center"><a href="gestionOrdinateur.admin?ordinateur=${ordinateur.nom}&amp;triEnCours=nomInfo#listeTache">assigné à</a></th>
+					<th align="center"><a href="gestionOrdinateur.admin?ordinateur=${ordinateur.nom}&amp;triEnCours=echeance#listeTache">echÃ©ance</a></th>
+					<th align="center"><a href="gestionOrdinateur.admin?ordinateur=${ordinateur.nom}&amp;triEnCours=nomInfo#listeTache">assignÃ© Ã </a></th>
 				</tr>
 				<% i = 0; %>
 				<c:forEach items="${listeTacheEnCours}" var="tache">
@@ -468,7 +468,7 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/tache.png" border="0" width="50px"></td>
-					<td class="titre_tableau"><a name="enAttente">Liste des tâches en attente</a></td>
+					<td class="titre_tableau"><a name="enAttente">Liste des tÃ¢ches en attente</a></td>
 					<td align="right">
 						
 					</td>
@@ -492,7 +492,7 @@ int width = 40;
 					<th align="center"><a href="gestionPlanning.admin?triEnAttente=ordinateur#enAttente">ordinateur</a></th>
 					<th align="center"><a href="gestionPlanning.admin?triEnAttente=service#enAttente">service</a></th>
 					<th align="center">contact</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnAttente=echeance#enAttente">echéance</a></th>
+					<th align="center"><a href="gestionPlanning.admin?triEnAttente=echeance#enAttente">echÃ©ance</a></th>
 				</tr>
 				<% int i3 = 0; %>
 				<c:forEach items="${listeTacheEnAttente}" var="tache">
@@ -543,7 +543,7 @@ int width = 40;
 			<table width="100%">
 				<tr>
 					<td width="45px"><img src="images/administration/tacheFinie.png" border="0" width="<%= width %>"></td>
-					<td class="titre_tableau"><a name="fini">Liste des tâches effectuées</a></td>
+					<td class="titre_tableau"><a name="fini">Liste des tÃ¢ches effectuÃ©es</a></td>
 					<td align="right">
 						
 					</td>

@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@ page import="java.net.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="annuaire.css" type="text/css">
 <script type="text/javascript">
 <!--
@@ -40,7 +40,7 @@ function setFocus()
 				</tr>
 				<tr>
 					<td background="images/annuaire/cadre/area_left.gif"></td>
-					<td>Recherche par mot-clé :</td>
+					<td>Recherche par mot-clÃ© :</td>
 					<td background="images/annuaire/cadre/area_right.gif"></td>
 				</tr>
 				<tr>
@@ -60,7 +60,7 @@ function setFocus()
 				</tr>
 				<tr>
 					<td background="images/annuaire/cadre/area_left.gif"></td>
-					<td>Recherche par ordre alphabétique :</td>
+					<td>Recherche par ordre alphabÃ©tique :</td>
 					<td background="images/annuaire/cadre/area_right.gif"></td>
 				</tr>
 				<tr>
@@ -165,7 +165,7 @@ function setFocus()
 								</td>
 							</tr>
 							<tr>
-								<td colspan="3" align="right">(*) service en téléphonie VOIP </td>
+								<td colspan="3" align="right">(*) service en tÃ©lÃ©phonie VOIP </td>
 							</tr>
 						</table>
 					</td>

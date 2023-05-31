@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@page import="be.cpasdeliege.intranet.formations.model.Formation"%><html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="cpas.css" type="text/css">
 </head>
 <body class="body">
@@ -62,19 +62,19 @@
 					<td><%= ((Formation)request.getAttribute("formation")).getObjectif().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
-					<td align="right" style="font-weight: bold" valign="top"><nobr>synthèse :&nbsp;&nbsp;</nobr></td>
+					<td align="right" style="font-weight: bold" valign="top"><nobr>synthÃ¨se :&nbsp;&nbsp;</nobr></td>
 					<td><%= ((Formation)request.getAttribute("formation")).getSynthese().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
-					<td align="right" style="font-weight: bold" valign="top"><nobr>méthodologie :&nbsp;&nbsp;</nobr></td>
+					<td align="right" style="font-weight: bold" valign="top"><nobr>mÃ©thodologie :&nbsp;&nbsp;</nobr></td>
 					<td><%= ((Formation)request.getAttribute("formation")).getMethodologie().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
-					<td align="right" style="font-weight: bold" valign="top"><nobr>opérateur :&nbsp;&nbsp;</nobr></td>
+					<td align="right" style="font-weight: bold" valign="top"><nobr>opÃ©rateur :&nbsp;&nbsp;</nobr></td>
 					<td><%= ((Formation)request.getAttribute("formation")).getOperateur().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
-					<td align="right" style="font-weight: bold" valign="top"><nobr>personne visée :&nbsp;&nbsp;</nobr></td>
+					<td align="right" style="font-weight: bold" valign="top"><nobr>personne visÃ©e :&nbsp;&nbsp;</nobr></td>
 					<td><%= ((Formation)request.getAttribute("formation")).getPersonneVisee().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
@@ -82,7 +82,7 @@
 					<td><%= ((Formation)request.getAttribute("formation")).getRapportFormation().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
-					<td align="right" style="font-weight: bold" valign="top"><nobr>département :&nbsp;&nbsp;</nobr></td>
+					<td align="right" style="font-weight: bold" valign="top"><nobr>dÃ©partement :&nbsp;&nbsp;</nobr></td>
 					<td><%= ((Formation)request.getAttribute("formation")).getDepartement().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
@@ -90,7 +90,7 @@
 					<td><%= ((Formation)request.getAttribute("formation")).getService().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
-					<td align="right" style="font-weight: bold" valign="top"><nobr>durée :&nbsp;&nbsp;</nobr></td>
+					<td align="right" style="font-weight: bold" valign="top"><nobr>durÃ©e :&nbsp;&nbsp;</nobr></td>
 					<td><%= ((Formation)request.getAttribute("formation")).getDuree().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
@@ -98,7 +98,7 @@
 					<td><%= ((Formation)request.getAttribute("formation")).getLieu().replaceAll("\n", "<br>") %></td>
 				</tr>
 				<tr>
-					<td align="right" style="font-weight: bold" valign="top"><nobr>année :&nbsp;&nbsp;</nobr></td>
+					<td align="right" style="font-weight: bold" valign="top"><nobr>annÃ©e :&nbsp;&nbsp;</nobr></td>
 					<td><%= ((Formation)request.getAttribute("formation")).getAnnee().replaceAll("\n", "<br>") %></td>
 				</tr>
 			<tr>
@@ -129,7 +129,7 @@
 		<table width="100%">
 			<tr>
 				<td class="titre_tableau"><a name="listeServices">Liste des
-				services concernés par la formation</a></td>
+				services concernÃ©s par la formation</a></td>
 				<td align="right"></td>
 			</tr>
 		</table>

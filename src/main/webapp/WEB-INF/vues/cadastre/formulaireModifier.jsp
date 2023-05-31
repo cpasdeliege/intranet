@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@page import="be.cpasdeliege.intranet.cadastre.model.*"%>
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 
 <script type="text/javascript">
@@ -60,8 +60,8 @@ Marche marche = (Marche)request.getAttribute("marche");
 	<div>
 		<hr>
 		&nbsp;<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.htm">accueil</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.cad">Cadastre des Marchés Publics</a>
-<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Modifier Marché Public</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel" href="index.cad">Cadastre des MarchÃ©s Publics</a>
+<img height="12px" src="images/fleche_droite.jpg" border="0" alt=" - "><a class="menu_contextuel">Modifier MarchÃ© Public</a>
 		<hr>
 	</div>
 <div id="principal">
@@ -76,7 +76,7 @@ ${erreur}
 		<td>
 			<table>
 				<tr>
-					<td class="titre_tableau">Modifier un marché public</td>
+					<td class="titre_tableau">Modifier un marchÃ© public</td>
 					<td>
 					</td>
 				</tr>
@@ -118,11 +118,11 @@ ${erreur}
 					</td>
 				</tr>
 				<tr>
-					<td align="right">Intitulé : </td>
+					<td align="right">IntitulÃ© : </td>
 					<td><input type="text" size="100" maxlength="100" name="intitule" value="${marche.intitule}"/></td>
 				</tr>
 				<tr>
-					<td align="right">Référence : </td>
+					<td align="right">RÃ©fÃ©rence : </td>
 					<td><input disabled="disabled" type="text" size="100" maxlength="100" name="" value="${marche.reference}"/></td>
 				</tr>
 				<tr>
@@ -155,7 +155,7 @@ ${erreur}
 					<td><textarea cols="75" rows="5" name="description"/>${marche.description}</textarea></td>
 				</tr>
 				<tr>
-					<td align="right">Date de début : </td>
+					<td align="right">Date de dÃ©but : </td>
 					<td>
 						<input type="text" name="date_debut" value="${marche.date_debut}"/>
 						<script language="JavaScript">

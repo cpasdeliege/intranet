@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.security.*" %>
@@ -7,8 +7,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège - administration</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge - administration</title>
 <link rel="stylesheet" href="cpas.css" type="text/css">
 </head>
 <body class="body">
@@ -131,7 +131,7 @@
 				<tr>
 					<td width="60px" align="center"><img src="images/administration/email.png" border="0" width="50px"></td>
 					<td>
-						<a class="texte_menu_principal" href="gestionEmails.admin">Liste des Accès Internet</a>
+						<a class="texte_menu_principal" href="gestionEmails.admin">Liste des AccÃ¨s Internet</a>
 						
 					</td>
 				</tr>
@@ -154,10 +154,10 @@
 				<tr>
 					<td width="60px" align="center"><img src="images/administration/pdf.png" border="0" width="50px"></td>
 					<td>
-						<span class="texte_menu_principal">Générer PDF Annuaire Interne</span>
+						<span class="texte_menu_principal">GÃ©nÃ©rer PDF Annuaire Interne</span>
 						<br><a target="_blank" class="texte_menu_principal" href="genererPDF.admin?type=service&saut=false">service</a>
 						<a style="font-size: small" target="_blank" class="texte_menu_principal" href="genererPDF.admin?type=service&saut=true">(avec saut de page)</a> / 
-						<a target="_blank" class="texte_menu_principal" href="genererPDF.admin?type=alpha&saut=false">alphabétique</a>
+						<a target="_blank" class="texte_menu_principal" href="genererPDF.admin?type=alpha&saut=false">alphabÃ©tique</a>
 						<a style="font-size: small" target="_blank" class="texte_menu_principal" href="genererPDF.admin?type=alpha&saut=true">(avec saut de page)</a>
 					</td>
 				</tr>

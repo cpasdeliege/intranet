@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@page import="be.cpasdeliege.intranet.DemServInfo.model.*"%>
 <%@page import="be.cpasdeliege.intranet.informatique.model.*"%>
@@ -8,8 +8,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Intranet CPAS de Liège</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intranet CPAS de LiÃ¨ge</title>
 <link rel="stylesheet" href="site.css" type="text/css">
 <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 <script language="JavaScript" src="javascript/calendar_db.js"></script>
@@ -217,7 +217,7 @@ ${erreur}
 					</td>
 				</tr> --%>
 				<tr>
-					<td align="right">service concerné : </td>
+					<td align="right">service concernÃ© : </td>
 					<td>
 						<select name="service" size="1" />
 								<option >choisir un service</option>
@@ -238,7 +238,7 @@ ${erreur}
 					</td>
 				</tr>
 				<tr>
-					<td align="right">échéance souhaitée: </td>
+					<td align="right">Ã©chÃ©ance souhaitÃ©e: </td>
 					<td>
 						<input type="text" name="echeanceSouhaitee" value="${echeanceSouhaitee}"/>
 						<script language="JavaScript">
@@ -259,7 +259,7 @@ ${erreur}
 					<td><textarea cols="80" rows="20" name="description"/>${description}</textarea></td>
 				</tr>
 				<tr>
-					<td align="right">remarques sur échéance : </td>
+					<td align="right">remarques sur Ã©chÃ©ance : </td>
 					<td><textarea cols="80" rows="5" name="remarqueEcheance"/>${remarqueEcheance}</textarea></td>
 				</tr>
 				
@@ -303,4 +303,4 @@ ${erreur}
 
 <jsp:include page="../basDePage.jsp" ></jsp:include>
 </body>
-</html>
+</html>     

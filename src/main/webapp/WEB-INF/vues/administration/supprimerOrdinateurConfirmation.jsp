@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="cpas.css" type="text/css">
-<title>Intranet CPAS de Liège - administration - gestion des ordinateurs</title>
+<title>Intranet CPAS de LiÃ¨ge - administration - gestion des ordinateurs</title>
 </head>
 <body class="body">
 <jsp:include page="../entete.jsp" ></jsp:include>
@@ -50,15 +50,15 @@
 					<td class="texte_tableau_confirmation">${ ordinateur.service }</td>
 				</tr>
 				<tr>
-					<td align="right">numéro prise : </td>
+					<td align="right">numÃ©ro prise : </td>
 					<td class="texte_tableau_confirmation">${ ordinateur.numeroPrise }</td>
 				</tr>
 				<tr>
-					<td align="right">système d'exlpoitation : </td>
+					<td align="right">systÃ¨me d'exlpoitation : </td>
 					<td class="texte_tableau_confirmation">${ ordinateur.systemeExploitation }</td>
 				</tr>
 				<tr>
-					<td align="right">carte mère : </td>
+					<td align="right">carte mÃ¨re : </td>
 					<td class="texte_tableau_confirmation">${ ordinateur.carteMere }</td>
 				</tr>
 				<tr>
@@ -66,7 +66,7 @@
 					<td class="texte_tableau_confirmation">${ ordinateur.processeur }</td>
 				</tr>
 				<tr>
-					<td align="right">mémoire ram : </td>
+					<td align="right">mÃ©moire ram : </td>
 					<td class="texte_tableau_confirmation">${ ordinateur.memoireRam }</td>
 				</tr>
 				<tr>
@@ -82,11 +82,11 @@
 					<td class="texte_tableau_confirmation">${ ordinateur.graveur }</td>
 				</tr>
 				<tr>
-					<td align="right">carte réseau : </td>
+					<td align="right">carte rÃ©seau : </td>
 					<td class="texte_tableau_confirmation">${ ordinateur.carteReseau }</td>
 				</tr>
 				<tr>
-					<td align="right">écran : </td>
+					<td align="right">Ã©cran : </td>
 					<td class="texte_tableau_confirmation">${ ordinateur.ecran }</td>
 				</tr>
 				<tr>
