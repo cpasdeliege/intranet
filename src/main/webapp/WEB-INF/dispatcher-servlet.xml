@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO_8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
 
@@ -67,7 +67,7 @@
 		</property>
 	</bean>
 	
-	<!-- les contrôleurs de l'application-->
+	<!-- les contrÃ´leurs de l'application-->
 		
 	<bean id="IndexControler" 
 		class="be.cpasdeliege.intranet.controler.Index">
@@ -121,7 +121,7 @@
 		</property>
 	</bean>
 	
-	<!-- le résolveur de vues -->
+	<!-- le rÃ©solveur de vues -->
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass">

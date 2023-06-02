@@ -47,6 +47,7 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 		 */
 
 		System.out.println("-------------- DEBUG PIERRE BEFORE FORM -----------");
+		System.out.println(formulaire);
 		System.out.println(new String(((Tache) formulaire).getTitre().getBytes(),"UTF-8"));
 
 		((Tache) formulaire).setIncident(((Tache) formulaire).getIncident());

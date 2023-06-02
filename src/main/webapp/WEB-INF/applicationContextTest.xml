@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO_8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans SYSTEM "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
 
@@ -84,7 +84,7 @@
 	<!-- WIN -->
 	
 		<!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-		<!--  partie que j'ai ajouté -->
+		<!--  partie que j'ai ajoutï¿½ -->
 		<!--  ================================================================== 
 		<bean id="dao" class="be.cpasdeliege.intranet.informatique.model.dao.DaoMySQL">
 		<property name="driver">				
