@@ -16,6 +16,7 @@ import be.cpasdeliege.intranet.DemServInfo.model.Dsigti;
 import be.cpasdeliege.intranet.DemServInfo.model.Remarque;
 import be.cpasdeliege.intranet.DemServInfo.model.StatDem;
 import be.cpasdeliege.intranet.informatique.model.dao.DaoException;
+import be.cpasdeliege.intranet.utils.Utils;
 
 public class DaoDemServInf {
 
@@ -451,7 +452,7 @@ public class DaoDemServInf {
 					"********************************************************************************************");
 			ResultSet rs = (ResultSet) bd.executeQuery(
 					"select * from demandes where validationSecrConf like 'oui' and dateExecEffective is null and nomChef like '"
-							+ nom + "' and prenomChef like '" + prenom + "' order by " + orderby);
+							+ Utils.escapeCharacters(nom) + "' and prenomChef like '" + Utils.escapeCharacters(prenom) + "' order by " + orderby);
 			try {
 				while (rs.next()) {
 					System.out.println(rs.getInt("iddemandes"));

@@ -17,30 +17,31 @@
 <script type="text/javascript">
 function refresh(url, id) {
 	$.ajax({ 
-	url: url,
-	type: "GET",
-	success:
-	function(retour){
-	$(id).html(retour);
-	},
-	error: function (xhr, ajaxOptions, thrownError) {
-	alert(xhr.status);
-	alert(thrownError);
-	}
+		url: url,
+		type: "GET",
+		success:
+		function(retour){
+			$(id).html(retour);
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			alert(xhr.status);
+			alert(thrownError);
+		},
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8"
 	});
-	}
+}
 
 function afficheChoix2() {
 	var choix1 = $('#choix1 option:selected').val();
-	refresh("ajax.dsi?choix1=" + escape(choix1), "#TRchoix2" );
-	refresh("ajax.dsi?action=vide", "#TRchoix3" );
+	refresh("ajax.dsi?choix1=" + choix1, "#TRchoix2" );
+	refresh("ajax.dsi?action=vide", "#TRchoix3" ); 
 	
 }
 
 function afficheChoix3() {
 	var choix1 = $('#choix1 option:selected').val();
 	var choix2 = $('#choix2 option:selected').val();
-	refresh("ajax.dsi?choix2=" + escape(choix1) + "-" + escape(choix2), "#TRchoix3" );
+	refresh("ajax.dsi?choix2=" + choix1 + "-" + choix2, "#TRchoix3" );
 }
 </script>
 </head>

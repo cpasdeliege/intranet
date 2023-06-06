@@ -18,14 +18,14 @@ if(privilege == null) {
 #gauche {
 	float: left; /* Le cadre sort du flux */
 	/* border: 2px solid #DAA520; */ 
-	background-color: #DAA520;
+	/*background-color: #DAA520;*/
 	width: 595px;
 }
 
 #droite {
 	float: right; /* ou margin-left:202px;  */
 	/* border: 2px solid gray; */ 
-	background-color: gray;
+	/*background-color: gray;*/
 	width: 595px;
 }
 
@@ -34,7 +34,7 @@ if(privilege == null) {
 	/* border: 2px solid gray; background-color : green; */
 	margin-left: auto;
 	margin-right: auto;
-	background-color: green;
+	/*background-color: green;*/
 }
 
 .tabIndex {

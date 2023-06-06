@@ -32,7 +32,7 @@ function refresh(url, id) {
 
 function afficheChoix2() {
 	var choix1 = $('#choix1 option:selected').val();
-	refresh("ajax.dsi?choix1=" + escape(choix1), "#TRchoix2" );
+	refresh("ajax.dsi?choix1=" + choix1, "#TRchoix2" );
 	refresh("ajax.dsi?action=vide", "#TRchoix3" );
 	
 }
@@ -40,7 +40,7 @@ function afficheChoix2() {
 function afficheChoix3() {
 	var choix1 = $('#choix1 option:selected').val();
 	var choix2 = $('#choix2 option:selected').val();
-	refresh("ajax.dsi?choix2=" + escape(choix1) + "-" + escape(choix2), "#TRchoix3" );
+	refresh("ajax.dsi?choix2=" + choix1 + "-" + choix2, "#TRchoix3" );
 }
 </script>
 </head>

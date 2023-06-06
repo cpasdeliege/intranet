@@ -48,6 +48,7 @@ public class Index implements Controller {
 			daoDsi.deleteDemande(request.getParameter("idDemandes"));
 		} 
 
+		System.out.println("DSI BEFORE IF");
 		if(action.equals("fini")) {
 			if(privilege.isDsiUser()) {
 				Utilisateur utilisateur = (Utilisateur)request.getSession().getAttribute("utilisateur");
@@ -154,6 +155,7 @@ public class Index implements Controller {
 				modele.put("listeDsiAcceptees", daoDsi.getDemandesAccepteesChef(nom, prenom, orderbyAccept));
 				modele.put("listeDsiExecutees", daoDsi.getDemandesExecuteesChef(nom, prenom, orderby));
 				modele.put("listeDsiRefusees", daoDsi.getDemandesRefuseesChef(nom, prenom, orderby));
+				
 				return new ModelAndView("indexChefDep", modele);
 			} else {
 				String nom = "%";

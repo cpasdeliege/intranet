@@ -10,6 +10,20 @@ import java.text.Normalizer;
 
 public class Utils {
 
+	public static String escapeCharacters(String input) {
+		StringBuilder output = new StringBuilder();
+		
+		for (char c : input.toCharArray()) {
+			if (c == '\'') {
+				output.append("\\'");
+			} else {
+				output.append(c);
+			}
+		}
+		
+		return output.toString();
+	}
+
 	public static String replaceAccentedCharacters(String s) {
 		s = Normalizer.normalize(s, Normalizer.Form.NFD);
 		s = s.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
