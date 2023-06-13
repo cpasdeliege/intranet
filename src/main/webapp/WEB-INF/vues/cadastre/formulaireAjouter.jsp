@@ -21,15 +21,13 @@
 <style type="text/css">
 #gauche {
 	float: left; /* Le cadre sort du flux */
-	/* border: 2px solid #DAA520; */ //
-	background-color: #DAA520;
+	/* border: 2px solid #DAA520; */
 	width: 595px;
 }
 
 #droite {
 	float: right; /* ou margin-left:202px;  */
-	/* border: 2px solid gray; */ //
-	background-color: gray;
+	/* border: 2px solid gray; */
 	width: 595px;
 }
 
