@@ -154,8 +154,6 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 
 			tache.setDsi(oldTache.isDsi());
 
-			System.out.println("-------------- DEBUG PIERRE BEFORE UPDATE -----------");
-			System.out.println(tache.getTitre());
 			metier.updateTache(tache);
 			request.getSession().setAttribute("formulaireTacheModifier", null);
 			response.sendRedirect(

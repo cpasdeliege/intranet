@@ -720,15 +720,12 @@ public class UtilsTache implements Controller {
 		List<TicketItem> listticket = (List<TicketItem>) dao.getListeTicketItem(tache.getIdPlanning());
 		TicketItem rem = listticket.get(listticket.size() - 1);
 		String subject = "TI " + tache.getIdPlanning() + " ** 2.NOTIFICATION** -" + tache.getTitre();
-
+		String tacheUrl = "http://intranet/gestionTache.admin?idPlanning=" + tache.getIdPlanning();
 		String message = "Bonjour,\n\nNotification sur la tâche n°" + tache.getIdPlanning() + " (" + tache.getTitre()
 				+ ") " + "\n\n" + "Voici le dernier ticket : \n\n" + rem.getTexte() + "\n\n\n"
-				+ "Voir la tâche sur l'intranet : http://intranet/gestionTache.admin?idPlanning="
-				+ tache.getIdPlanning() + "\n\nBonne journée.";
+				+ "Voir la tâche sur l'intranet : " + tacheUrl + "\r"
+				+ "Bonne journée.";
 		try {
-			System.out.println("-------------- DEST ---------------");
-			System.out.println(dest);
-			System.out.println(URLEncoder.encode(dest, "UTF8"));
 //			response.sendRedirect("https://mail.cpasdeliege.be/?to=" + dest+ "&view=compose&body=" + message + "&subject=" + subject + "#1");
 			//https://outlook.office.com/mail/deeplink/compose?body=Hello%20World&subject=Test%20Email&to=test@example.com&cc=testcc@example.com
 			response.sendRedirect("https://outlook.office.com/mail/deeplink/compose?to=" + Utils.replaceAccentedCharacters(URLEncoder.encode(dest, "UTF8")) + "&body="
