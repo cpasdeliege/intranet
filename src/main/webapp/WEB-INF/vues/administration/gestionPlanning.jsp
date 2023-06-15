@@ -20,8 +20,6 @@
 </div>
 <br>
 
-
-
 <%
 	List tmpMesTaches = (List)request.getAttribute("listeMesTaches");
 	int nbreMesTache = tmpMesTaches.size();
@@ -129,37 +127,19 @@
 		<td background="images/administration/cadre/area_bottom.gif"></td>
 		<td background="images/administration/cadre/area_bottom_right.gif"></td>
 	</tr>
-	
-	
 	<tr height="25">
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<%
-		List tmp = (List)request.getAttribute("listeTacheEnCours");
-		int nbreTache = tmp.size();
-	%>
+
 	<tr height="25">
 		<td></td>
 		<td>
 			<table width="100%">
 				<tr>
 					<td width="60px"><img src="images/administration/tache.png" border="0" width="50px"></td>
-					<td class="titre_tableau">Liste des tâches à effectuer (<%= nbreTache %>)</td>
+					<td class="titre_tableau"><a href="gestionPlanningToDo.admin">Liste des tâches à effectuer</a></td>
 					<td align="right">
 						
 					</td>
@@ -168,98 +148,25 @@
 		</td>
 		<td></td>
 	</tr>
+	
+
 	<tr height="25">
-		<td width="22" background="images/administration/cadre/area_top_left.gif"></td>
-		<td background="images/administration/cadre/area_top.gif"></td>
-		<td width="22" background="images/administration/cadre/area_top_right.gif"></td>
-	</tr>
-	<tr>
-		<td background="images/administration/cadre/area_left.gif"></td>
+		<td></td>
 		<td>
-			<table class="tableau_liste" cellspacing="0">
-				<tr class="titre_colonne_tableau_liste">
-					<th></th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=idPlanning">num</a></th>
-					<th align="center">titre</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=ordinateur">ordinateur</a></th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=service">service</a></th>
-					<th align="center">contact</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=echeance">echéance</a></th>
-					<th align="center"><a href="gestionPlanning.admin?triEnCours=nomInfo">assigné à</a></th>
-				</tr>
-				<% i = 0; %>
-				<c:forEach items="${listeTacheEnCours}" var="tache">
-				<% i++; %>
-				<% if(i%2 == 0) {  %>
-					<tr class="ligne_paire" onmouseover="this.className='ligne_survol'" onmouseout="this.className='ligne_paire'">
-				<% } else { %>
-					<tr class="ligne_impaire" onmouseover="this.className='ligne_survol'" onmouseout="this.className='ligne_impaire'">
-				<% } %>
-						<td>
-							<c:choose>
-								<c:when test="${tache.incident == '1'}">
-									<img src="images/administration/incident.png" border="0" width="20px">
-								</c:when>
-								<c:otherwise>
-									
-								</c:otherwise>
-							</c:choose>						
-						</td>
-						<td><a class="lien_tableau" href="gestionTache.admin?idPlanning=${tache.idPlanning}" name="${tache.idPlanning}">${tache.idPlanning}</a></td>
-						<td><a class="lien_tableau" href="gestionTache.admin?idPlanning=${tache.idPlanning}">${tache.titre}</a></td>
-						<td>
-							<c:choose>
-								<c:when test="${tache.ordinateur == '-'}">
-									
-								</c:when>
-								<c:otherwise>
-									${tache.ordinateur}
-								</c:otherwise>
-							</c:choose>
+			<table width="100%">
+				<tr>
+					<td width="60px"><img src="images/administration/tacheFinie.png" border="0" width="50px"></td>
+					<td class="titre_tableau"><a href="gestionPlanningAllDone.admin">Liste des tâches effectuées</a></td>
+					<td align="right">
 						
-						</td>
-						<td><span>${tache.service}</span></td>
-						<td>${tache.nom}</td>
-						<td>${tache.echeance}</td>
-						<c:choose>
-                            <c:when test="${tache.dsi == true}">
-                                <td align="right" style="color: red;">${tache.nomInfo}</td>
-                            </c:when>
-                            <c:otherwise>
-                                <td align="right">${tache.nomInfo}</td>
-                            </c:otherwise>
-                        </c:choose>
-					</tr>
-				</c:forEach>
+					</td>
+				</tr>
 			</table>
 		</td>
-		<td background="images/administration/cadre/area_right.gif"></td>
-	</tr>
-	<tr height="25">
-		<td background="images/administration/cadre/area_bottom_left.gif"></td>
-		<td background="images/administration/cadre/area_bottom.gif"></td>
-		<td background="images/administration/cadre/area_bottom_right.gif"></td>
-	</tr>
-	
-	
-	<tr height="25">
-		<td></td>
-		<td></td>
 		<td></td>
 	</tr>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<%
+</table>
+<%
 	List tmp3 = (List)request.getAttribute("listeTacheEnAttente");
 	int nbreTache3 = tmp3.size();
 %>
@@ -342,98 +249,13 @@
 		<td background="images/administration/cadre/area_bottom_right.gif"></td>
 	</tr>
 	
-	
 	<tr height="25">
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr>
 	
-<%
-	List tmp2 = (List)request.getAttribute("listeTachesFinies");
-	int nbreTFinie= tmp2.size();
-%>
-	
-	<tr height="25">
-		<td></td>
-		<td>
-			<table width="100%">
-				<tr>
-					<td width="60px"><img src="images/administration/tacheFinie.png" border="0" width="50px"></td>
-					<td class="titre_tableau"><a name="fini">Liste des tâches effectuées (<%= nbreTFinie %>)</a></td>
-					<td align="right">
-						
-					</td>
-				</tr>
-			</table>
-		</td>
-		<td></td>
-	</tr>
-	<tr height="25">
-		<td width="22" background="images/administration/cadre/area_top_left.gif"></td>
-		<td background="images/administration/cadre/area_top.gif"></td>
-		<td width="22" background="images/administration/cadre/area_top_right.gif"></td>
-	</tr>
-	<tr>
-		<td background="images/administration/cadre/area_left.gif"></td>
-		<td>
-			<table class="tableau_liste" cellspacing="0">
-				<tr class="titre_colonne_tableau_liste">
-					<th></th>
-					<th align="center"><a href="gestionPlanning.admin?triEnFini=idPlanning#fini">num</a></th>
-					<th align="center">titre</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnFini=ordinateur#fini">ordinateur</a></th>
-					<th align="center"><a href="gestionPlanning.admin?triEnFini=service#fini">service</a></th>
-					<th align="center">contact</th>
-					<th align="center"><a href="gestionPlanning.admin?triEnFini=dateFin#fini">date fin</a></th>
-				</tr>
-				<% i = 0; %>
-				<c:forEach items="${listeTachesFinies}" var="tache">
-				<% i++; %>
-				<% if(i%2 == 0) {  %>
-					<tr class="ligne_paire" onmouseover="this.className='ligne_survol'" onmouseout="this.className='ligne_paire'">
-				<% } else { %>
-					<tr class="ligne_impaire" onmouseover="this.className='ligne_survol'" onmouseout="this.className='ligne_impaire'">
-				<% } %>
-						<td>
-							<c:choose>
-								<c:when test="${tache.incident == '1'}">
-									<img src="images/administration/incident.png" border="0" width="20px">
-								</c:when>
-								<c:otherwise>
-									
-								</c:otherwise>
-							</c:choose>						
-						</td>
-						<td><a class="lien_tableau" href="gestionTache.admin?idPlanning=${tache.idPlanning}"  name="${tache.idPlanning}">${tache.idPlanning}</a></td>
-						<td><a class="lien_tableau" href="gestionTache.admin?idPlanning=${tache.idPlanning}">${tache.titre}</a></td>
-						<td>
-							<c:choose>
-								<c:when test="${tache.ordinateur == '-'}">
-									
-								</c:when>
-								<c:otherwise>
-									${tache.ordinateur}
-								</c:otherwise>
-							</c:choose>
-						
-						</td>
-						<td>${tache.service}</td>
-						<td>${tache.nom}</td>
-						<td>${tache.dateFin}</td>
-					</tr>
-				</c:forEach>
-			</table>
-		</td>
-		<td background="images/administration/cadre/area_right.gif"></td>
-	</tr>
-	<tr height="25">
-		<td background="images/administration/cadre/area_bottom_left.gif"></td>
-		<td background="images/administration/cadre/area_bottom.gif"></td>
-		<td background="images/administration/cadre/area_bottom_right.gif"></td>
-	</tr>
 </table>
-
 <jsp:include page="../basDePage.jsp" ></jsp:include>
 </body>
 </html>

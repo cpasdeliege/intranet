@@ -117,6 +117,8 @@
 				<prop key="/supprimerEmailGenerique.admin">SupprimerEmailGeneriqueControler</prop>
 				
 				<prop key="/gestionPlanning.admin">GestionPlanningControler</prop>
+				<prop key="/gestionPlanningAllDone.admin">GestionPlanningAllDoneControler</prop>
+				<prop key="/gestionPlanningToDo.admin">GestionPlanningToDoControler</prop>
 				<prop key="/ajouterTicketItem.admin">AjouterTicketItemControler</prop>
 				<prop key="/gestionTache.admin">GestionTacheControler</prop>
 				<prop key="/formulaireTacheAjouter.admin">FormulaireTacheAjouterControler</prop>
@@ -286,6 +288,26 @@
 	
 	<bean id="GestionPlanningControler" 
 		class="be.cpasdeliege.intranet.informatique.controler.GestionPlanning">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="dao">
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionPlanningAllDoneControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionPlanningAllDone">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+		<property name="dao">
+			<ref bean="dao"/>
+		</property>
+	</bean>
+	
+	<bean id="GestionPlanningToDoControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.GestionPlanningToDo">
 		<property name="metier">
 			<ref bean="domain"/>
 		</property>

@@ -55,26 +55,14 @@ public class GestionPlanning implements Controller {
 			String triEnAttente = arg0.getParameter("triEnAttente");
 			String triEnFini = arg0.getParameter("triEnFini");
 			
-			if(triEnCours == null) {
-				triEnCours = "idPlanning";
-			}
 			if(triEnAttente == null) {
 				triEnAttente = "idPlanning";
 			}
-			if(triEnFini == null) {
-				triEnFini = "dateFin";
-			}
-//			List<TacheListe> tmp = metier.getListeTacheEnCours("%", "%", "%", "%", triEnCours);
-//			
-//			for (TacheListe object : tmp) {
-//				System.out.println(object.toString());
-//			}
 			
 			Utilisateur utilisateur = (Utilisateur)arg0.getSession().getAttribute("utilisateur");
 			
 			String tachePerso = arg0.getParameter("tachePerso");
 			String titreMesTaches = "";
-			
 			
 			if(tachePerso == null) {
 				tachePerso = (String)arg0.getSession().getAttribute("tachePerso");
@@ -94,9 +82,9 @@ public class GestionPlanning implements Controller {
 			List listeMesTaches = dao.getListeMesTaches("%", "%", "%", "%", triEnCours + ", idPlanning", tachePerso);
 			
 			modele.put("listeMesTaches", listeMesTaches);
-			modele.put("listeTacheEnCours", metier.getListeTacheEnCours("%", "%", "%", "%", triEnCours + ", idPlanning"));
+			//modele.put("listeTacheEnCours", metier.getListeTacheEnCours("%", "%", "%", "%", triEnCours + ", idPlanning"));
 			modele.put("listeTacheEnAttente", metier.getListeTacheEnAttente("%", "%", "%", "%", triEnAttente));
-			modele.put("listeTachesFinies", metier.getListeTacheFinie("%", "%", "%", "%", triEnFini));
+			//modele.put("listeTachesFinies", metier.getListeTacheFinie("%", "%", "%", "%", triEnFini));
 			
 			arg0.getSession().setAttribute("retour", "gestionPlanning.admin");
 			
