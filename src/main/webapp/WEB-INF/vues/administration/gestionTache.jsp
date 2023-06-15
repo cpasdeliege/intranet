@@ -2,6 +2,7 @@
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.informatique.model.*" %>
+<%@page import="org.apache.commons.lang3.StringEscapeUtils" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -435,7 +436,7 @@ ${erreurFormulaireTacheModifier}
 				<tr>
 					<td align="right">titre : </td>
 					<td>
-							<input type="text" size="60" name="titre" value="${ formulaireTacheModifier.titre }"/>
+							<input type="text" size="60" name="titre" value="${ StringEscapeUtils.escapeHtml4(formulaireTacheModifier.titre) }"/>
 					</td>
 					<td>
 						

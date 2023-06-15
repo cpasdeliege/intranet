@@ -46,9 +46,7 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 		 * String(((Tache) formulaire).getType().getBytes(),"UTF-8"));
 		 */
 
-		System.out.println("-------------- DEBUG PIERRE BEFORE FORM -----------");
-		System.out.println(formulaire);
-		System.out.println(new String(((Tache) formulaire).getTitre().getBytes(),"UTF-8"));
+		System.out.println("-------------- DEBUG PIERRE BEFORE TASK FORM -----------");
 
 		((Tache) formulaire).setIncident(((Tache) formulaire).getIncident());
 		((Tache) formulaire).setPersonnel(((Tache) formulaire).getPersonnel());
@@ -65,9 +63,6 @@ public class FormulaireTacheModifierControler extends SimpleFormController {
 		if (testFormulaire(request, formulaire)) {
 
 			Tache tache = (Tache) formulaire;
-
-			System.out.println("-------------- DEBUG PIERRE FIRST -----------");
-			System.out.println(tache.getTitre());
 
 			Tache oldTache = metier.getTache("" + tache.getIdPlanning());
 			((Tache) formulaire).setIncident(oldTache.getIncident());
