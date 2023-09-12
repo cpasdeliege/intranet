@@ -492,6 +492,26 @@ public class IndexControler implements Controller {
 				}
 				is.close();
 				os.close();
+			} else if(param.equals("memoCite")) {
+				// changement de personne de contact
+				// 
+				InputStream is;
+				File tmp = new File("c:\\fop");
+		        if(!tmp.exists()) {
+		        	is = new FileInputStream("/opt/fop/memo_cite_administrative.pdf");
+		        } else {
+		        	is = new FileInputStream("c:\\fop\\memo_cite_administrative.pdf");
+		        }
+				OutputStream os = response.getOutputStream();
+				response.setContentType("application/pdf");
+				response.addHeader("Content-Disposition", "attachment; filename=\"Memo_Cite_Administrative.pdf\"");
+				int count;
+				byte buf[] = new byte[4096];
+				while((count = is.read(buf))>1) {
+					os.write(buf,0, count);
+				}
+				is.close();
+				os.close();
 			}
 		}
 		return null;

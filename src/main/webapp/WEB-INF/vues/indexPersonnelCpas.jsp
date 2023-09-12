@@ -256,6 +256,9 @@ if(privilege == null) {
 							</form>
 							<% } %>
 						</p>
+						<p>
+							- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=memoCite" target="_blank">Mémo utilisateur Cité Administrative</a>
+						</p>
 						<!--
 						<p>
 							- <img src="./images/pdf.png" width="20px"></img><a style="color: black;" href="index.regTrav?param=vmAideSociale" target="_blank">Vade-Mecum : Aide Sociale</a>

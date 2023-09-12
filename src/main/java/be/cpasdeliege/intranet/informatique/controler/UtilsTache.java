@@ -722,9 +722,9 @@ public class UtilsTache implements Controller {
 		String subject = "TI " + tache.getIdPlanning() + " ** 2.NOTIFICATION** -" + tache.getTitre();
 		String tacheUrl = "http://intranet/gestionTache.admin?idPlanning=" + tache.getIdPlanning();
 		String message = "Bonjour,\n\nNotification sur la tâche n°" + tache.getIdPlanning() + " (" + tache.getTitre()
-				+ ") " + "\n\n" + "Voici le dernier ticket : \n\n" + rem.getTexte() + "\n\n\n"
-				+ "Voir la tâche sur l'intranet : " + tacheUrl + "\r"
-				+ "Bonne journée.";
+				+ ") " + "\n\n" + rem.getTexte() + "\n\n"
+				+ tacheUrl + "\n\n"
+				+ "Bonne journée,";
 		try {
 //			response.sendRedirect("https://mail.cpasdeliege.be/?to=" + dest+ "&view=compose&body=" + message + "&subject=" + subject + "#1");
 			//https://outlook.office.com/mail/deeplink/compose?body=Hello%20World&subject=Test%20Email&to=test@example.com&cc=testcc@example.com
