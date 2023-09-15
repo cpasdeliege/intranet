@@ -51,14 +51,13 @@ public class AddDemande implements Controller {
 		modele.put("listeType", dao.getTypeDemandeDSI());
 		modele.put("listeTypeChoix1", dao.getTypeChoix1DemandeDSI());
 		
-		
 		Utilisateur utilisateur = (Utilisateur)request.getSession().getAttribute("utilisateur");
 		String service = ((List<DaoPersonnelService>)metier.getListePersonnelService("%", utilisateur.getNom(), utilisateur.getPrenom())).get(0).getService();
 //		modele.put("service", service);
 		request.setAttribute("service", service);
 		
 		Config config = daoDsi.getconfig(privilege.getLogin());
-		request.setAttribute("chef", config.getNom() + " " + config.getPrenom());
+		request.setAttribute("chef", config.getNom() + "_" + config.getPrenom());
 		
 		if(privilege.isDsiUser()) {
 			
@@ -103,7 +102,6 @@ public class AddDemande implements Controller {
 							Utilisateur tmp = new Utilisateur();
 							tmp.setNom("Message automatique");
 							tmp.setPrenom("");
-							System.out.println("TRACEEEEEEEEE 2");
 							ajoutRemarque(""+demandeModif.getIdDemandes(), tmp, "Validation implicite de la demande du D à oui");
 							mailValidDGInfo(demandeModif);
 						}
@@ -138,7 +136,6 @@ public class AddDemande implements Controller {
 							demande.setValidationSecr("oui");
 							demande.setDateExecSouhaiteeSecr(demande.getDateExecSouhaitee());
 						} else if(!dao.isAccordDG_DSI(demande.getTypeDemande())) {
-							System.out.println("TRACEEEEEEEEE 1");
 							DemServInf demandeModif = daoDsi.getDemande(id);
 							demandeModif.setValidationSecr("oui");
 							demandeModif.setDateExecSouhaiteeSecr(demande.getDateExecSouhaitee());
@@ -177,6 +174,7 @@ public class AddDemande implements Controller {
 		String echeanceSouhaitee = request.getParameter("echeanceSouhaitee");
 		String description = request.getParameter("description");
 		String chef = request.getParameter("chef");
+
 		String service = request.getParameter("service");
 		String remarqueEcheance = request.getParameter("remarqueEcheance");
 		DemServInf dem = new DemServInf();
@@ -191,10 +189,10 @@ public class AddDemande implements Controller {
 			dem.setTypeDemande(typeDemande1 + "-" + typeDemande2 + "-" + typeDemande3);
 		}
 
-		String tmpNom = chef.split(" ")[0];
-		String tmpPrenom = chef.substring(tmpNom.length() + 1);
-
+		String tmpNom = chef.split("_")[0];
+		String tmpPrenom = chef.split("_")[1];
 		System.out.println(tmpPrenom);
+		System.out.println(tmpNom);
 		/*
 		 * ============================================================= transfert du
 		 * validateur mis le 15-04-2021 par Théo
@@ -385,8 +383,8 @@ public class AddDemande implements Controller {
 		Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
 		Config tmp = daoDsi.getconfig(utilisateur.getLogin());
 		// tmp.setLogin(utilisateur.getLogin());
-		tmp.setNom(chef.split(" ")[0]);
-		tmp.setPrenom(chef.split(" ")[1]);
+		tmp.setNom(chef.split("_")[0]);
+		tmp.setPrenom(chef.split("_")[1]);
 		daoDsi.updateConfig(tmp);
 		return true;
 	}

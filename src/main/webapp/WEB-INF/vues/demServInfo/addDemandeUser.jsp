@@ -133,11 +133,11 @@ ${erreur}
 							for(int i = 0; i < listeChefs.size(); i++) {
 								if((listeChefs.get(i).getNom() + " " + listeChefs.get(i).getPrenom()).equals(chef)) {
 						%>		
-								<option selected><%= listeChefs.get(i).getNom() + " " + listeChefs.get(i).getPrenom() %></option>
+								<option value='<%= listeChefs.get(i).getNom() + "_" + listeChefs.get(i).getPrenom() %>' selected><%= listeChefs.get(i).getNom() + " " + listeChefs.get(i).getPrenom() %></option>
 						<%
 								} else {
 						%>
-								<option ><%= listeChefs.get(i).getNom() + " " + listeChefs.get(i).getPrenom() %></option>
+								<option value='<%= listeChefs.get(i).getNom() + "_" + listeChefs.get(i).getPrenom() %>' ><%= listeChefs.get(i).getNom() + " " + listeChefs.get(i).getPrenom() %></option>
 						<%
 								}
 							}

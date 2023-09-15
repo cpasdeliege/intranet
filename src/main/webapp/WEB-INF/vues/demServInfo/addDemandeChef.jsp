@@ -122,28 +122,9 @@ ${erreur}
 				<tr id="TRchoix3">
 					
 				</tr>
-				<input type="hidden" name="chef" value="<%= utilisateur.getNom() + " " + utilisateur.getPrenom() %>"/>
-				<%-- <tr>
-					<td align="right">responsable : </td>
-					<td>
-						<select name="chef" size="1" />
-							<option >choisir un responsable</option>
-						<%
-							for(int i = 0; i < listeChefs.size(); i++) {
-								if((listeChefs.get(i).getNom() + " " + listeChefs.get(i).getPrenom()).equals(chef)) {
-						%>		
-								<option selected><%= listeChefs.get(i).getNom() + " " + listeChefs.get(i).getPrenom() %></option>
-						<%
-								} else {
-						%>
-								<option ><%= listeChefs.get(i).getNom() + " " + listeChefs.get(i).getPrenom() %></option>
-						<%
-								}
-							}
-						%>
-						</select>
-					</td>
-				</tr> --%>
+				
+				<input type="hidden" name="chef" value='<%= utilisateur.getNom() + "_" + utilisateur.getPrenom() %>'/>
+
 				<tr>
 					<td align="right">service concerné : </td>
 					<td>

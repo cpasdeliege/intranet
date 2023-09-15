@@ -815,7 +815,6 @@ public class DaoMySQL implements DaoInterface {
 			List lst = (List<DaoService>) bd.executeQueryDB(requete, parametres, new BeanListHandler(DaoService.class));
 			for (int i = 0; i < lst.size(); i++) {
 				DaoService ds = (DaoService) lst.get(i);
-				System.out.println("\n id service ==>" + ds.getId_service() + "Nom ==>" + ds.getNom());
 			}
 
 			/*************************************/
