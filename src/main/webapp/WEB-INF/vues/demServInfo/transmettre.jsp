@@ -10,14 +10,10 @@
 </head>
 <body>
 
-<% 
-
+<% /*
 DemServInf dsi = (DemServInf)request.getAttribute("dsi");
-
 response.sendRedirect("https://mail.cpasdeliege.be/?view=compose&body=" + URLEncoder.encode(dsi.getDescription(), "UTF-8") + "&amp;subject=" + URLEncoder.encode(dsi.getTitre(), "UTF-8")); 
-
-
-%>
+*/ %>
 
 </body>
 </html>
