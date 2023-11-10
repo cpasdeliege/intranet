@@ -42,7 +42,6 @@ public class AfficherDemande implements Controller {
 		PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().getAttribute("privilegeInformatique");
 		DemServInf demande = daoDsi.getDemande(Integer.parseInt(request.getParameter("idDemandes")));
 		Utilisateur utilisateur = (Utilisateur)request.getSession().getAttribute("utilisateur");
-		//System.out.println("Freeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeed : on load");
 		if(remarque != null) {
 			daoDsi.addRemarque(getFormulaireRemarque(request));
 			/**
@@ -121,17 +120,8 @@ public class AfficherDemande implements Controller {
 				String dateExecEffective = request.getParameter("dateExecEffective");
 				
 				String enAttente = request.getParameter("enAttente");
-				System.out.println("===========> " + enAttente);
-
-								System.out.println("validationSecr : " + validationSecr);
-								System.out.println("dateExecSouhaiteeSecr :--" + dateExecSouhaiteeSecr + "--");
-								System.out.println("validationInfor : " + validationInfor);
-								System.out.println("dateExecPrevue : " + dateExecPrevue);
-								System.out.println("validationSecrConf : " + validationSecrConf);
-								System.out.println("dateExecEffective : " + dateExecEffective);
-
+				
 				if(privilege.isDsiChef()) {
-					System.out.println("dateExecSouhaiteeChef: " + dateExecSouhaiteeChef);
 					if(verifDate(request, dateExecSouhaiteeChef) && demande.getValidationChef().equals("none")){
 
 						if(validationChef != null) {
@@ -152,7 +142,6 @@ public class AfficherDemande implements Controller {
 					} 
 				}
 				if(privilege.isDsiDirection()) {
-					System.out.println("dateExecSouhaiteeSecr: " + dateExecSouhaiteeSecr);
 					if(verifDate(request, dateExecSouhaiteeSecr) && verifDate(request, dateExecSouhaiteeSecrConf)){
 						if(demande.getValidationSecr().equals("none")) {
 
@@ -173,9 +162,6 @@ public class AfficherDemande implements Controller {
 					}
 				}
 				if(privilege.isDsiInfo()) {
-					System.out.println("dateExecPrevue: " + dateExecPrevue);
-					System.out.println("dateExecEffective: " + dateExecEffective);
-					
 					if(verifDate(request, dateExecPrevue) && verifDate(request, dateExecEffective)){
 						if(demande.getValidationInfor().equals("none")) {
 
@@ -222,7 +208,6 @@ public class AfficherDemande implements Controller {
 				}
 			} else if(action.equals("Modifier échéance")) {
 				String dateModif = request.getParameter("dateModifEcheance");
-				System.out.println("dateModif: " + dateModif);
 				
 				if(verifDate(request, dateModif)){
 					if(!dateModif.equals(demande.getDateExecSouhaiteeSecrConf()) && !dateModif.equals("")) {
@@ -512,7 +497,6 @@ public class AfficherDemande implements Controller {
 
 	private void mailValidDGInfo(DemServInf demande) {
 		try {
-			System.out.println("mailValidDGInfo");
 			Email email = new SimpleEmail();
 			email.setHostName("mail.cpasdeliege.be");
 			email.setSmtpPort(25);
@@ -532,7 +516,6 @@ public class AfficherDemande implements Controller {
 			email.addTo("notif.dsi@cpasdeliege.be");
 			// email.addTo("lionel.rose@cpasdeliege.be");
 			email.send();
-			System.out.println("mailValidDGInfo: SEND");
 		} catch (EmailException e) {
 			System.out.println("EmailException: " + e.getMessage());
 			e.printStackTrace();
@@ -616,7 +599,6 @@ public class AfficherDemande implements Controller {
 	}
 
 	private boolean verifDate(HttpServletRequest request, String date) {
-		System.out.println("date: " + date);
 		boolean verif = false;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		try {

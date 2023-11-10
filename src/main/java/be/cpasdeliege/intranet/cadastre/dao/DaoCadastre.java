@@ -99,7 +99,6 @@ public class DaoCadastre {
 			return res.getInt(1);
 
 		} catch (JSQLException e) {
-			System.out.println("message = " + e.getMessage());
 			throw new DaoException(e.getMessage());
 		} catch (SQLException e) {
 			throw new DaoException(e.getMessage());
@@ -113,7 +112,6 @@ public class DaoCadastre {
 			Object[] parametres = new Object[] { annexe.getId_marche_public(), annexe.getNom(), annexe.getPath() };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
-			System.out.println("message = " + e.getMessage());
 			throw new DaoException(e.getMessage());
 		}
 	}
@@ -125,7 +123,6 @@ public class DaoCadastre {
 			Object[] parametres = new Object[] { lien.getId_marche_public(), lien.getNom(), lien.getLien() };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
-			System.out.println("message = " + e.getMessage());
 			throw new DaoException(e.getMessage());
 		}
 	}
@@ -137,7 +134,6 @@ public class DaoCadastre {
 			Object[] parametres = new Object[] { adresseMail.getAdresse() };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
-			System.out.println("message = " + e.getMessage());
 			throw new DaoException(e.getMessage());
 		}
 	}
@@ -149,7 +145,6 @@ public class DaoCadastre {
 			Object[] parametres = new Object[] { formulaire.getNom(), formulaire.getPath() };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
-			System.out.println("message = " + e.getMessage());
 			throw new DaoException(e.getMessage());
 		}
 	}
@@ -161,7 +156,6 @@ public class DaoCadastre {
 			Object[] parametres = new Object[] { typeMarche.getType_marche(), typeMarche.getPathImage() };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
-			System.out.println("message = " + e.getMessage());
 			throw new DaoException(e.getMessage());
 		}
 	}
@@ -173,7 +167,6 @@ public class DaoCadastre {
 			Object[] parametres = new Object[] { denomitationReference.getDenomination() };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
-			System.out.println("message = " + e.getMessage());
 			throw new DaoException(e.getMessage());
 		}
 	}

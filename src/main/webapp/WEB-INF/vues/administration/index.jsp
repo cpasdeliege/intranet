@@ -77,7 +77,7 @@
 				
 				String date = new SimpleDateFormat("yyyyMMdd").format(new GregorianCalendar().getTime());
 				String tmp = date + "psswrd";
-//				System.out.println(tmp);
+
 				 byte[] hash;
 			        try {
 			            hash = MessageDigest.getInstance("MD5").digest(tmp.getBytes("UTF-8"));

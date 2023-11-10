@@ -68,19 +68,7 @@ public class UtilsTache implements Controller {
 		if(action.equals("envoiemail")) {
 			String maila = request.getParameter("pers");
 			String nom = URLDecoder.decode(maila.split(",")[0],"UTF-8");
-			//String nom = Utils.replaceAccentedCharacters(maila.split(",")[0]);
 			String prenom = URLDecoder.decode(maila.split(",")[1],"UTF-8");
-			//String prenom = Utils.replaceAccentedCharacters(maila.split(",")[1]);
-
-			System.out.println("CA PLANTE ???? 2");
-			System.out.println(prenom);
-			//System.out.println(new String(nom, "UTF-8").getBytes("UTF-8"));
-			//System.out.println(new String(prenom.getBytes("UTF-8"), "UTF-8"));
-			/*
-			System.out.println("Béatrice......");
-			System.out.println(new String("Béatrice......".getBytes(),"UTF-8"));
-			System.out.println(new String("Béatrice......".getBytes(),"UTF-8"));
-			*/
 
 			Utilisateur utilisateur = (Utilisateur)request.getSession().getAttribute("utilisateur");
 			DaoPersonnel from = ((List<DaoPersonnel>)dao.getListePersonnels(utilisateur.getNom(), utilisateur.getPrenom())).get(0);
@@ -136,14 +124,11 @@ public class UtilsTache implements Controller {
 				FileItem fileItem = (FileItem) fileObject1;
 				File dest = null;
 				File tmp = new File("c:\\fop");
-				System.out.println("file name = "+fileItem.getName());
 				if(!tmp.exists()) {
 					new File("/opt/fop/GTI/" + idPlanning + "/").mkdirs();
 					dest = new File("/opt/fop/GTI/" + idPlanning + "/" + fileItem.getName());
 				} else {
 					int index=fileItem.getName().lastIndexOf('\\');
-					System.out.println("index="+index);
-					System.out.println(fileItem.getName().substring(index+1));
 					new File("c:\\fop\\GTI\\" + idPlanning + "\\").mkdirs();
 					dest = new File("c:\\fop\\GTI\\" + idPlanning + "\\" + fileItem.getName().substring(index+1));
 				}
@@ -235,65 +220,35 @@ public class UtilsTache implements Controller {
 			if (fileObject1 != null) {
 				FileItem fileItem = (FileItem) fileObject1;
 				path = path + fileItem.getName().substring(fileItem.getName().length()-4);
-				//String[] tab=fileItem.getName().split(".");
-				/******************************************************/
-				//File f = (File) request.getAttribute("annexe"); 
-			
-				System.out.print("*****************************");
-				System.out.println(" nom ==>"+ nom);
-				//System.out.println(" tab ==>"+ tab.length);
 				
-				System.out.print("*****************************");
-				// String fileN = fileItem.toString(); 
 				String filename = fileItem.getName();
 				int index = filename.lastIndexOf("."); 
 				if(index >0) {
-					 extension = filename.substring(index +1); 
-					
-					System.out.print("\n ********************************");
-					System.out.println(" file name ==>" + filename); 
-					//System.out.println("\n file N ==>" + fileN); 
-					System.out.println(" Extention files is ==>" + extension + " extention length ==>" +extension.length()); 
-					
-					
-					
+					extension = filename.substring(index +1); 
 				}
 				
-				 //nom = nom+"."+tab[1];
-						
-				//nom = nom + fileItem.getName().substring(fileItem.getName().length()-5);
-				
-				//if(extension.length() >0) {
-					nom = nom+'.'+ extension;
-					System.out.print("*****************************");
-					System.out.println(" path ==>"+ path);
-					System.out.println(" nom ==>"+ nom);
-					System.out.println(" longueur ==>" + fileItem.getName().substring(fileItem.getName().length()-4));
-					System.out.print("*****************************");
-					/************************************************************/
-					File dest = null;
-					File tmp = new File("c:\\fop");
-					if(!tmp.exists()) {
-						new File("/opt/fop/cadastre/formulaires/").mkdirs();
-						dest = new File("/opt/fop/cadastre/formulaires/" + path); 
-	
-					} else {
-						new File("c:\\fop\\cadastre\\formulaires\\").mkdirs();
-						dest = new File("c:\\fop\\cadastre\\formulaires\\" + path);
-					}
-					try {
-						fileItem.write(dest);
-	
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-					Formulaire formulaire = new Formulaire();
-					formulaire.setNom(nom);
-					formulaire.setPath(path);
-					daoCadastre.addFormulaire(formulaire);
-				//}
+				nom = nom+'.'+ extension;
+				File dest = null;
+				File tmp = new File("c:\\fop");
+				if(!tmp.exists()) {
+					new File("/opt/fop/cadastre/formulaires/").mkdirs();
+					dest = new File("/opt/fop/cadastre/formulaires/" + path); 
+
+				} else {
+					new File("c:\\fop\\cadastre\\formulaires\\").mkdirs();
+					dest = new File("c:\\fop\\cadastre\\formulaires\\" + path);
+				}
+				try {
+					fileItem.write(dest);
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				Formulaire formulaire = new Formulaire();
+				formulaire.setNom(nom);
+				formulaire.setPath(path);
+				daoCadastre.addFormulaire(formulaire);
 			}
-			//request.getRequestDispatcher("/gestionTache.admin?idplanning=" + idPlanning).forward(request, response);
 			response.sendRedirect("index.cad");
 		/**
 		 * modifierVMAction
@@ -589,7 +544,6 @@ public class UtilsTache implements Controller {
 
 	public String generate(int length) {
 		String chars = "1234567890abcdefghijklmnopqrstuvwxyz";
-		System.out.println("----------------->>>>   " + chars.length());
 		String pass = "";
 		for (int x = 0; x < length; x++) {
 			int i = (int) Math.floor(Math.random() * chars.length());

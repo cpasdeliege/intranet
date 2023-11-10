@@ -512,9 +512,6 @@ PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().ge
 								<input type="hidden" name="descriptionFormulaire" value="<a href=&quot;afficherDemande.dsi?idDemandes=${dsi.idDemandes}&quot;>voir demande DSI n° ${dsi.idDemandes}</a><br><br><%= dsi.getDescription().replaceAll("\"", "&quot;") %>">
 								<input type="hidden" name="idDemande" value="${dsi.idDemandes}">
 								<input type="hidden" name="typeDemande" value="${dsi.typeDemande}">
-								<%
-								//System.out.println(dsi.getDescription().replaceAll("\"", "&quot;"));
-								%>
 							</form> 			
 						</td>
 						<% if(privilege.isDsiInfo()) { %> 

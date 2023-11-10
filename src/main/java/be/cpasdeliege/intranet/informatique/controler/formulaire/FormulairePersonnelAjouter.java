@@ -12,16 +12,7 @@ public class FormulairePersonnelAjouter extends SimpleFormController {
 	@Override
 	protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object formulaire,
 			BindException arg3) throws Exception {
-		// request.setCharacterEncoding("UTF-8");
 		request.getSession().setAttribute("formulairePersonnelAjouter", formulaire);
-		/*
-		 * ((FormulairePersonnel)formulaire).setNom(new
-		 * String(((FormulairePersonnel)formulaire).getNom().getBytes(),"UTF-8"));
-		 * ((FormulairePersonnel)formulaire).setPrenom(new
-		 * String(((FormulairePersonnel)formulaire).getPrenom().getBytes(),"UTF-8"));
-		 */
-		System.out.println("submit ajout formulaire nom=" + ((FormulairePersonnel) formulaire).getNom());
-		System.out.println("submit ajout formulaire prénom=" + ((FormulairePersonnel) formulaire).getPrenom());
 		return super.onSubmit(request, response, formulaire, arg3);
 	}
 

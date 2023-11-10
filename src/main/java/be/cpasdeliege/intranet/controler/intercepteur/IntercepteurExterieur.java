@@ -25,7 +25,6 @@ public class IntercepteurExterieur implements HandlerInterceptor {
 
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object controller)
 			throws Exception {
-		System.out.println("getServerName : " + request.getServerName());
 		PrivilegeInformatique privilege = (PrivilegeInformatique) request.getSession()
 				.getAttribute("privilegeInformatique");
 		if (privilege == null && request.getServerName().equals("intranet.cpasdeliege.be")) {

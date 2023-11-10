@@ -446,10 +446,7 @@ public class DaoDemServInf {
 	public synchronized List<DemServInf> getDemandesAccepteesChef(String nom, String prenom, String orderby) {
 		try {
 			String requete = "select * from demandes where validationSecrConf like 'oui' and dateExecEffective is null and nomChef like ? and prenomChef like ? order by ?";
-			System.out.println("Fred : Chef Nom : " + nom + " Prenom : " + prenom + " orderby : " + orderby);
 			Object[] parametres = new Object[] { nom, prenom, orderby };
-			System.out.println(
-					"********************************************************************************************");
 			ResultSet rs = (ResultSet) bd.executeQuery(
 					"select * from demandes where validationSecrConf like 'oui' and dateExecEffective is null and nomChef like '"
 							+ Utils.escapeCharacters(nom) + "' and prenomChef like '" + Utils.escapeCharacters(prenom) + "' order by " + orderby);
@@ -462,31 +459,18 @@ public class DaoDemServInf {
 				System.out.println("Cause : " + e.getCause());
 
 			}
-			System.out.println(
-					"********************************************************************************************");
+
 			List<DemServInf> tt = (List) bd.executeQueryDB(requete, parametres, new BeanListHandler(DemServInf.class));
 			System.out.println(tt.size());
 			for (int i = 0; i < tt.size(); i++) {
 				System.out.println(tt.get(i).getIdDemandes());
 			}
-			/*
-			 * for(DemServInf dsi : tt) { System.out.println(dsi.getIdDemandes()); }
-			 */
 
 			return (List) bd.executeQueryDB(requete, parametres, new BeanListHandler(DemServInf.class));
 		} catch (JSQLException e) {
 			throw new DaoException(e.getMessage());
 		}
 	}
-
-//	public synchronized List<DemServInf> getDemandesExecuteesChef(String nom, String prenom, String orderby) {
-//		try {
-//            String requete = "select * from demandes where dateExecEffective is not null and nomChef like '" + nom + "' and prenomChef like '" + prenom + "' order by " + orderby;
-//            return (List)bd.executeQueryDB(requete, new BeanListHandler(DemServInf.class));
-//        } catch (JSQLException e) {
-//            throw new DaoException(e.getMessage());
-//        } 
-//	}
 
 	public synchronized List<DemServInf> getDemandesExecuteesChef(String nom, String prenom, String orderby) {
 		try {
@@ -497,15 +481,6 @@ public class DaoDemServInf {
 			throw new DaoException(e.getMessage());
 		}
 	}
-
-//	public synchronized List<DemServInf> getDemandesRefuseesChef(String nom, String prenom, String orderby) {
-//		try {
-//            String requete = "select * from demandes where (validationSecrConf like 'non' or validationChef like 'non') and nomChef like '" + nom + "' and prenomChef like '" + prenom + "' order by " + orderby;
-//            return (List)bd.executeQueryDB(requete, new BeanListHandler(DemServInf.class));
-//        } catch (JSQLException e) {
-//            throw new DaoException(e.getMessage());
-//        } 
-//	}
 
 	public synchronized List<DemServInf> getDemandesRefuseesChef(String nom, String prenom, String orderby) {
 		try {

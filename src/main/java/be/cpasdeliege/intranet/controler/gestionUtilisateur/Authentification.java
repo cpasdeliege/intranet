@@ -30,29 +30,31 @@ public class Authentification implements Controller {
 			
 			response.sendRedirect((String)request.getSession().getAttribute("retour"));
 		} else if (utilisateur.isActif()){
-//			String date = new SimpleDateFormat("yyyyMMdd").format(new GregorianCalendar().getTime());
-//			String tmp = date + "psswrd";
-////			System.out.println(tmp);
-//			 byte[] hash;
-//		        try {
-//		            hash = MessageDigest.getInstance("MD5").digest(tmp.getBytes("UTF-8"));
-//		        } catch (NoSuchAlgorithmException e) {
-//		            throw new RuntimeException("Huh, MD5 should be supported?", e);
-//		        } catch (UnsupportedEncodingException e) {
-//		            throw new RuntimeException("Huh, UTF-8 should be supported?", e);
-//		        }
-//		        StringBuilder hex = new StringBuilder(hash.length * 2);
-//		        for (byte b : hash) {
-//		            int i = (b & 0xFF);
-//		            if (i < 0x10) hex.append('0');
-//		            hex.append(Integer.toHexString(i));
-//		        }
-//            
-//			Cookie cookie = new Cookie("prt", hex.toString());
-//			cookie.setDomain("10.104.87.242");
-//			cookie.setPath("/imprimantes/");
-//			cookie.setMaxAge(3600);
-//			response.addCookie(cookie);
+			/*
+			String date = new SimpleDateFormat("yyyyMMdd").format(new GregorianCalendar().getTime());
+			String tmp = date + "psswrd";
+			System.out.println(tmp);
+			 byte[] hash;
+		        try {
+		            hash = MessageDigest.getInstance("MD5").digest(tmp.getBytes("UTF-8"));
+		        } catch (NoSuchAlgorithmException e) {
+		            throw new RuntimeException("Huh, MD5 should be supported?", e);
+		        } catch (UnsupportedEncodingException e) {
+		            throw new RuntimeException("Huh, UTF-8 should be supported?", e);
+		        }
+		        StringBuilder hex = new StringBuilder(hash.length * 2);
+		        for (byte b : hash) {
+		            int i = (b & 0xFF);
+		            if (i < 0x10) hex.append('0');
+		            hex.append(Integer.toHexString(i));
+		        }
+            
+			Cookie cookie = new Cookie("prt", hex.toString());
+			cookie.setDomain("10.104.87.242");
+			cookie.setPath("/imprimantes/");
+			cookie.setMaxAge(3600);
+			response.addCookie(cookie);
+			*/
 			
 			request.getSession().setAttribute("utilisateur", utilisateur);
 			request.getSession().setAttribute("privilegeInformatique", metier.getPrivilegeInformatique(utilisateur.getLogin()));

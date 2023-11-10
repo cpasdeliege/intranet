@@ -191,8 +191,7 @@ public class AddDemande implements Controller {
 
 		String tmpNom = chef.split("_")[0];
 		String tmpPrenom = chef.split("_")[1];
-		System.out.println(tmpPrenom);
-		System.out.println(tmpNom);
+
 		/*
 		 * ============================================================= transfert du
 		 * validateur mis le 15-04-2021 par Théo
@@ -216,9 +215,6 @@ public class AddDemande implements Controller {
 		 */
 
 		/* ============================================================ */
-		System.out.println("\n *********************************");
-		System.out.println(" service dsi=>" + service);
-		System.out.println("\n *********************************");
 
 		dem.setTitre(titre);
 		dem.setNom(utilisateur.getNom());
@@ -391,7 +387,6 @@ public class AddDemande implements Controller {
 
 	private void mailValidDGInfo(DemServInf demande) {
 		try {
-			System.out.println("mailValidDGInfo");
 			Email email = new SimpleEmail();
 			email.setHostName("mail.cpasdeliege.be");
 			email.setSmtpPort(25);
@@ -414,7 +409,6 @@ public class AddDemande implements Controller {
 			// email.addTo("theodore.nzaramba@cpasdeliege.be");
 			/* **************************************** */
 			email.send();
-			System.out.println("mailValidDGInfo: SEND");
 		} catch (EmailException e) {
 			System.out.println("EmailException: " + e.getMessage());
 			e.printStackTrace();

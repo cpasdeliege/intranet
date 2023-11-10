@@ -46,53 +46,40 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 			BindException exception) throws Exception {
 		request.getSession().setAttribute("formulaireTacheAjouter", formulaire);
 
-		System.out.println("01");
 		Tache tmpformulaire = (Tache) formulaire;
-		System.out.println("02");
 		String incident = request.getParameter("incident");
-		System.out.println("03");
 		String heureIncident = request.getParameter("heureIncident");
-		System.out.println("04");
 		String minuteIncident = request.getParameter("minuteIncident");
-
-		System.out.println("05");
 		HttpSession session = request.getSession();
-		System.out.println("06");
 		session.setAttribute("incident", incident);
-		System.out.println("07");
 		session.setAttribute("heureIncident", heureIncident);
-		System.out.println("08");
 		session.setAttribute("minuteIncident", minuteIncident);
 
-		System.out.println("09");
 		if (incident != null) {
 			tmpformulaire.setIncident("1");
 		} else {
 			tmpformulaire.setIncident("0");
 		}
 
-		System.out.println("10");
 		if (heureIncident != null) {
 			tmpformulaire.setHeureIncident(heureIncident);
 		} else {
 			tmpformulaire.setHeureIncident("");
 		}
 
-		System.out.println("11");
 		if (minuteIncident != null) {
 			tmpformulaire.setMinuteIncident(minuteIncident);
 		} else {
 			tmpformulaire.setMinuteIncident("");
 		}
 
-		System.out.println("12");
 		if (testFormulaire(request, formulaire)) {
 			session.setAttribute("incident", null);
 			session.setAttribute("heureIncident", null);
 			session.setAttribute("minuteIncident", null);
 			int idPlanning = metier.addTache((Tache) formulaire);
 			String texte = request.getParameter("travail");
-			// if(!texte.trim().equals("")) {
+			
 			TicketItem ticket = new TicketItem();
 			ticket.setIdPlanning(idPlanning);
 			ticket.setTexte(texte);
@@ -113,28 +100,10 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 
 				// ajout relation entre DSI et GTI
 
-				// DemServInf demande = daoDsi.getDemande(idDemande);
-				// demande.setIdPlanning(""+idPlanning);
-				// daoDsi.updateDemande(demande);
-
 				Dsigti dsigti = new Dsigti();
 				dsigti.setIdDemande(idDemande);
 				dsigti.setIdPlanning("" + idPlanning);
 				daoDsi.addDsigti(dsigti);
-
-				// ajout remarque avec numéro de tache dans DSI
-				//
-				// Remarque rem = new Remarque();
-				// GregorianCalendar now = new GregorianCalendar();
-				// SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-				// rem.setIdDemande(idDemande);
-				// rem.setTexte("/!\\&nbsp;&nbsp;/!\\&nbsp;&nbsp;<a
-				// href=\"gestionTache.admin?idPlanning=" + idPlanning + "\">Tâche informatique
-				// n°" + idPlanning + "</a>");
-				// rem.setUser(utilisateur.getPrenom() + " " + utilisateur.getNom());
-				// rem.setDate(sdf.format(now.getTime()));
-				//
-				// daoDsi.addRemarque(rem);
 
 				// ajout de toutes les remarques du DSI dans le GTI
 
@@ -189,7 +158,6 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 				if (!utilisateur.getNom().equals("Hernandez")) {
 					mailNouvelleTache(tache, "juan.hernandez@cpasdeliege.be", from);
 					mailNouvelleTache(tache, "nicolas.radoux@cpasdeliege.be", from);
-					// mailNouvelleTache(tache, "theodore.nzaramba@cpasdeliege.be",from);
 				}
 
 				// mail à celui à qui est destinée la tâches si c'est pas lui que la crée
@@ -200,18 +168,16 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 					if (tmpEmployeInfo.length == 2) {
 						DaoPersonnel pers = ((List<DaoPersonnel>) dao.getListePersonnels(tmpEmployeInfo[0],
 								tmpEmployeInfo[1])).get(0);
-						// mailNouvelleTacheDSI(tache, pers.getEmail());
 						mailNouvelleTache(tache, pers.getEmail(), from);
 					}
 				}
 			}
-			// }
+			
 			request.getSession().setAttribute("formulaireTacheAjouter", null);
 			response.sendRedirect((String) request.getSession().getAttribute("retour") + "#" + idPlanning);
 		} else {
 			response.sendRedirect("formulaireTacheAjouter.admin");
 		}
-		System.out.println("13");
 		return super.onSubmit(request, response, formulaire, exception);
 	}
 
@@ -222,8 +188,6 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 			email.setHostName("mail.cpasdeliege.be");
 			email.setSmtpPort(25);
 			email.setAuthenticator(new DefaultAuthenticator("frederic.delree", "rksZRfh$"));
-			// email.setSSLOnConnect(true);
-			// email.setTLS(true);
 			email.setFrom("juan.hernandez@cpasdeliege.be", "Juan Hernandez");
 			email.setSubject("DSI - nouvelle tâche");
 			email.setMsg("Bonjour,\n\nMerci de bien vouloir t'occuper de la tâche n°" + tache.getIdPlanning() + " ("
@@ -245,8 +209,6 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 			email.setHostName("mail.cpasdeliege.be");
 			email.setSmtpPort(25);
 			email.setAuthenticator(new DefaultAuthenticator("frederic.delree", "rksZRfh$"));
-			// email.setSSLOnConnect(true);
-			// email.setTLS(true);ww
 			email.setFrom(from.getEmail(), from.getPrenom() + " " + from.getNom());
 			email.setSubject("TI " + tache.getIdPlanning() + " ** 1.CREATION** - " + tache.getTitre());
 			email.setMsg("Bonjour,\n\nNotification de la création de la tâche n°" + tache.getIdPlanning() + " ("
@@ -265,19 +227,14 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 	protected Object formBackingObject(HttpServletRequest request) throws Exception {
 		Tache tache = (Tache) request.getSession().getAttribute("formulaireTacheAjouter");
 		if (tache == null) {
-			System.out.println(request.getParameterNames());
 			tache = new Tache();
-			// String service =
-			// URLDecoder.decode(request.getParameter("serviceFormulaire"),"UTF-8");
+			
 			String service = request.getParameter("serviceFormulaire");
 			String nom = request.getParameter("nomFormulaire");
-			// String nom =
-			// URLDecoder.decode(request.getParameter("nomFormulaire"),StandardCharsets.UTF_8.name());
+			
 			String prenom = request.getParameter("prenomFormulaire");
 			String ordinateur = request.getParameter("ordinateurFormulaire");
-			// String ordinateur =
-			// URLDecoder.decode(request.getParameter("ordinateurFormulaire"),"UTF-8");
-
+			
 			String titre = request.getParameter("titreFormulaire");
 			String description = request.getParameter("descriptionFormulaire");
 			String echeance = request.getParameter("echeanceFormulaire");
@@ -285,15 +242,9 @@ public class FormulaireTacheAjouterControler extends SimpleFormController {
 			String idDemande = request.getParameter("idDemande");
 			String typeDemande = request.getParameter("typeDemande");
 
-			System.out.println("(" + typeDemande + ")");
-
 			String incident = request.getParameter("incident");
 			String heureIncident = request.getParameter("heureIncident");
 			String minuteIncident = request.getParameter("minuteIncident");
-
-			// System.out.println("i : " + incident);
-			// System.out.println("h : " + heureIncident);
-			// System.out.println("m : " + minuteIncident);
 
 			if (incident != null) {
 				tache.setIncident("1");

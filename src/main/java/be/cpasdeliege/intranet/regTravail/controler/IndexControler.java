@@ -253,7 +253,6 @@ public class IndexControler implements Controller {
 			        }
 			        response.setHeader("Content-Disposition", "attachment; filename=\"" + fichier + "\"");
 					OutputStream os = response.getOutputStream();
-//					response.setContentType("application/pdf");
 					int count;
 					byte buf[] = new byte[4096];
 					while((count = is.read(buf))>1) {
@@ -266,21 +265,16 @@ public class IndexControler implements Controller {
 				String fichier = request.getParameter("fichier");
 				String idPlanning = request.getParameter("idPlanning");
 				
-				System.out.println(idPlanning);
-				
 				if(fichier != null && idPlanning != null) {
 					InputStream is;
 					File tmp = new File("c:\\fop");
 			        if(!tmp.exists()) {
-//			        	byte[] isoByte = fichier.getBytes("UTF-8"); 
-//						String utf8String = new String(isoByte, "UTF8");
 			        	is = new FileInputStream("/opt/fop/GTI/" + idPlanning + "/" + fichier);
 			        } else {
 			        	is = new FileInputStream("c:\\fop\\GTI\\" + idPlanning + "\\" + fichier);
 			        }
 			        response.setHeader("Content-Disposition", "attachment; filename=\"" + fichier + "\"");
 					OutputStream os = response.getOutputStream();
-//					response.setContentType("application/pdf");
 					int count;
 					byte buf[] = new byte[4096];
 					while((count = is.read(buf))>1) {
@@ -307,28 +301,7 @@ public class IndexControler implements Controller {
 				}
 				is.close();
 				os.close();
-			} 
-			/* *****************************************************
-			 * else if(param.equals("sscNS")) {
-				InputStream is;
-				File tmp = new File("c:\\fop");
-		        if(!tmp.exists()) {
-		        	is = new FileInputStream("/opt/fop/N° 776 Avantages offerts aux agents grâce à l'affiliation au SSC de l'ORPSS.pdf");
-		        } else {
-		        	is = new FileInputStream("c:\\fop\\N° 776 Avantages offerts aux agents grâce à l'affiliation au SSC de l'ORPSS.pdf");
-		        }
-				OutputStream os = response.getOutputStream();
-				response.setContentType("application/pdf");
-				response.addHeader("Content-Disposition", "attachment; filename=\"N° 776 Avantages offerts aux agents grâce à l'affiliation au SSC de l'ORPSS.pdf\"");
-				int count;
-				byte buf[] = new byte[4096];
-				while((count = is.read(buf))>1) {
-					os.write(buf,0, count);
-				}
-				is.close();
-				os.close();
-			}  ******************************* */
-			else if(param.equals("sscPMC")) {
+			} else if(param.equals("sscPMC")) {
 				InputStream is;
 				File tmp = new File("c:\\fop");
 		        if(!tmp.exists()) {

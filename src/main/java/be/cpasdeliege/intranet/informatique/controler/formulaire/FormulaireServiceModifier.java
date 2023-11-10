@@ -16,12 +16,9 @@ public class FormulaireServiceModifier extends SimpleFormController {
 	@Override
 	protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object formulaire,
 			BindException arg3) throws Exception {
-//		metier.getLogger().log(new LogRecordIntranet(Level.INFO, ((FormulaireService)formulaire).getNom(), request));
-		System.out.println("\n modification du service");
 		metier.modifierService((FormulaireService) formulaire);
 		request.getSession().setAttribute("formulaireServiceModifier", null);
 		response.sendRedirect((String) request.getSession().getAttribute("retour"));
-		System.out.println("\n service submit");
 		return super.onSubmit(request, response, formulaire, arg3);
 	}
 

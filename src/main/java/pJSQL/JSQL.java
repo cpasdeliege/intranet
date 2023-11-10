@@ -230,7 +230,6 @@ public class JSQL {
 		try {
 			PreparedStatement pStatement = conDB.prepareStatement(query);
 			for (int i = 0; i < args.length; i++) {
-//            	System.out.println("message = " + i + "  --> " + args[i].toString());
 				pStatement.setObject(i + 1, args[i]);
 			}
 			return pStatement.executeUpdate();

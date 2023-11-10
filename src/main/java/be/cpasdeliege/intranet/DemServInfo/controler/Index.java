@@ -48,7 +48,6 @@ public class Index implements Controller {
 			daoDsi.deleteDemande(request.getParameter("idDemandes"));
 		} 
 
-		System.out.println("DSI BEFORE IF");
 		if(action.equals("fini")) {
 			if(privilege.isDsiUser()) {
 				Utilisateur utilisateur = (Utilisateur)request.getSession().getAttribute("utilisateur");

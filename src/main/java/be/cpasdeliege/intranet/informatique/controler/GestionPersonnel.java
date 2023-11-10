@@ -41,7 +41,7 @@ public class GestionPersonnel implements Controller {
 		}
 		//List listeService = metier.getListePersonnelService("%", new String(request.getParameter("nom").getBytes(), "UTF-8"), new String(request.getParameter("prenom").getBytes(), "UTF-8"));
 		List listeService = metier.getListePersonnelService("%", request.getParameter("nom"), request.getParameter("prenom"));
-		System.out.println("Freeeeeeeeeeeeeeeed :1");
+		
 		//List listeOrdinateur = metier.getListeOrdinateurPersonnel("%", new String(request.getParameter("nom").getBytes(), "UTF-8"),new String(request.getParameter("prenom").getBytes(), "UTF-8"));
 		List listeOrdinateur = metier.getListeOrdinateurPersonnel("%", request.getParameter("nom"),request.getParameter("prenom"));
 		modele.put("listeService", listeService);

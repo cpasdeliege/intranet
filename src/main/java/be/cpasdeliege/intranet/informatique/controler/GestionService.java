@@ -22,9 +22,7 @@ public class GestionService implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		HashMap modele = new HashMap();
-		System.out.println("*******************************");
-		System.out.println(request.getParameter("service"));
-		System.out.println("*******************************");
+		
 		//Service service = metier.getService(new String(request.getParameter("service").getBytes(), "UTF-8"));
 		Service service = metier.getService(request.getParameter("service"));
 		

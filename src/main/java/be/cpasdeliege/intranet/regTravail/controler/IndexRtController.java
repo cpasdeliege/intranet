@@ -23,7 +23,6 @@ public class IndexRtController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String param = request.getParameter("param");
-		System.out.println(param);
 		switch (param) {
 		case "rt":
 			ReadDocument(config.getPdfNouveauReglement(), response);

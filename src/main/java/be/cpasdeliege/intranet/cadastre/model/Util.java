@@ -26,7 +26,6 @@ public class Util {
 		if (extension.equalsIgnoreCase("doc") || extension.equalsIgnoreCase("docx")) {
 			return word;
 		} else if (extension.equalsIgnoreCase("xls") || extension.equalsIgnoreCase("xlsx")) {
-			System.out.println("fichier excel");
 			return excel;
 		} else if (extension.equalsIgnoreCase("odt")) {
 			return writer;

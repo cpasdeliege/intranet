@@ -38,7 +38,6 @@ public class Index implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String action = request.getParameter("action");
-		System.out.println("action ---> " + action);
 		if (action == null) {
 			return index(request, response);
 		} else if (action.equals("listeMP")) {

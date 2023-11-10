@@ -457,9 +457,6 @@ public class Domain implements DomainInterface {
 		// String(prenom.getBytes(),"UTF-8"));
 		if (list.size() != 0) {
 			try {
-				System.out.println("Domain class : getFormulairePersonnel : nom=" + nom);
-				System.out.println("Domain class : getFormulairePersonnel : prenom=" + prenom);
-				System.out.println(((DaoPersonnel) list.get(0)).getNom());
 				return daoPersonnelToFormulairePersonnel((DaoPersonnel) list.get(0));
 			} catch (UnsupportedEncodingException e) {
 				throw new DaoException(e.getMessage());
@@ -471,8 +468,6 @@ public class Domain implements DomainInterface {
 
 	public synchronized Personnel getPersonnel(String nom, String prenom) {
 		List list = dao.getListePersonnels(nom, prenom);
-		System.out.println(" domaine getPersonnel ==>" + nom + ", " + prenom);
-		/* ******************************************************* */
 		if (list.size() != 0) {
 			return daoPersonnelToPersonnel((DaoPersonnel) list.get(0));
 		} else {
@@ -521,18 +516,6 @@ public class Domain implements DomainInterface {
 	}
 
 	public synchronized List getListePersonnelService(int id_service, String nom, String prenom) {
-//		List listDao = dao.getListePersonnelService(service, nom, prenom);
-//		List<Personnel> list = new ArrayList<Personnel>();
-//		Iterator iter = listDao.iterator();
-//		while (iter.hasNext()) {
-//			Personnel element = daoPersonnelServiceToPersonnel((DaoPersonnelService) iter.next());
-//			
-//			list.add(element);
-//		}
-//		return list;
-		// List listePers=new ArrayList<DaoPersonnelService>();
-		// System.out.println(((ArrayList)dao.getListePersonnelDepartement(id_service,
-		// nom, prenom)).size());
 		return dao.getListePersonnelService(id_service, nom, prenom);
 	}
 
@@ -541,7 +524,6 @@ public class Domain implements DomainInterface {
 		listePers.addAll(dao.getListePersonnelService(127, "%", "%"));
 		listePers.addAll(dao.getListePersonnelService(128, "%", "%"));
 		List listePersReturn = dao.getListePersonnelService(-1, "%", "%");
-		System.out.print("\n listePersReturn.size()=" + listePersReturn.size());
 		for (int i = 0; i < listePers.size(); i++) {
 			if (listePersReturn.size() == 0) {
 				listePersReturn.add((DaoPersonnelService) listePers.get(0));
@@ -550,7 +532,6 @@ public class Domain implements DomainInterface {
 			boolean ok = true;
 
 			for (int j = 0; j < listePersReturn.size() && ok; j++) {
-				System.out.print("\n" + ((DaoPersonnelService) listePersReturn.get(j)).getNom());
 				if (((DaoPersonnelService) listePers.get(i)).getId_personnel()
 						.equals(((DaoPersonnelService) listePersReturn.get(j)).getId_personnel())) {
 					ok = false;
@@ -668,18 +649,6 @@ public class Domain implements DomainInterface {
 	}
 
 	public synchronized void modifierPersonnel(FormulairePersonnel employe) {
-		// dao.getListePersonnels(nom, prenom)
-		/***********************************************************************************************************************
-		 * *********************************************************************************************************************
-		 * *********************************************************************************************************************
-		 * *********************************************************************************************************************
-		 * *********************************************************************************************************************
-		 * *********************************************************************************************************************
-		 * *********************************************************************************************************************
-		 */
-		System.out.println("Freeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeed : prenom=" + employe.getPrenom());
-		// dao.supprimerPersonnel(employe.getNom(), employe.getPrenom());
-		// dao.addPersonnel(formulairePersonnelToDaoPersonnel(employe));
 		dao.updatePersonnel(formulairePersonnelToDaoPersonnel(employe));
 	}
 

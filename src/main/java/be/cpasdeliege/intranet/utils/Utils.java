@@ -66,12 +66,10 @@ public class Utils {
 			for (int j = 1; j <= params.length; j++) {
 
 				String name = params[j - 1];
-				System.out.println("name: " + name);
 				try {
 					Field f = c.getDeclaredField(name);
 					f.setAccessible(true);
 					Object v = f.get(o);
-					System.out.println("value : " + v);
 					if (v != null) {
 						csv += v.toString();
 						if (j != params.length) {

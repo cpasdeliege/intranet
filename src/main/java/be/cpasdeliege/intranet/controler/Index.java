@@ -20,7 +20,6 @@ public class Index implements Controller {
 		
 		String rep = request.getParameter("rep");
 		String action = request.getParameter("action");
-		System.out.println("INBDEEEEEEEEEEX");
 		if(rep == null) {
 			if(action == null) {
 				
