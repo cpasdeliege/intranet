@@ -191,7 +191,7 @@ public interface DaoInterface {
 
 	public abstract void addTicketItem(TicketItem ticket);
 
-	public abstract void supprimerTicketItem(int idTicketItem);
+	public abstract void supprimerTicketItem(int idTicketItem, String login);
 
 	public abstract void addEmailGenerique(EmailGenerique email);
 

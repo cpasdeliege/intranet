@@ -370,10 +370,9 @@ public class Domain implements DomainInterface {
 		return dao.getListeTicketItem(idPlanning);
 	}
 
-	public synchronized void supprimerTicketItem(int idTicketItem) {
-		TicketItem ticketItem = dao.getTicketItem(idTicketItem);
-		
-		dao.supprimerTicketItem(ticketItem.getIdTicketItem());
+	public synchronized void supprimerTicketItem(int idTicketItem, String login) {
+		TicketItem ticketItem = dao.getTicketItem(idTicketItem); // vérif qu'il existe
+		dao.supprimerTicketItem(ticketItem.getIdTicketItem(), login);
 	}
 
 	private DaoOrdinateurPersonnel formulaireOrdinateurPersonnelAssignerToDaoOrdinateurPersonnel(

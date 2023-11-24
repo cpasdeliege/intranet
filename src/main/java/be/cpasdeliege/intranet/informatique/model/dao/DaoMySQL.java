@@ -1,11 +1,12 @@
 package be.cpasdeliege.intranet.informatique.model.dao;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -497,7 +498,7 @@ public class DaoMySQL implements DaoInterface {
 
 	public List getListeTicketItem(int idPlanning) {
 		try {
-			String requete = "select * from ticket where idPlanning = ?";
+			String requete = "select * from ticket where idPlanning = ? and (destroyed = 0 OR destroyed IS NULL)";
 			Object[] parametres = new Object[] { idPlanning };
 			return (List) bd.executeQueryDB(requete, parametres, new BeanListHandler(TicketItem.class));
 		} catch (JSQLException e) {
@@ -521,10 +522,11 @@ public class DaoMySQL implements DaoInterface {
 		}
 	}
 
-	public void supprimerTicketItem(int idTicketItem) {
+	public void supprimerTicketItem(int idTicketItem, String login) {
 		try {
-			String requete = "delete from ticket where idticket = ?";
-			Object[] parametres = new Object[] { idTicketItem };
+			//String requete = "delete from ticket where idticket = ?";
+			String requete = "update ticket set destroyed = 1, destroyedAt = ?, destroyedBy = ? where idticket = ?"; // on fait un soft delete au lieu de supprimer le ticket de la table
+			Object[] parametres = new Object[] { new Timestamp(new Date().getTime()), login, idTicketItem };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
 			throw new DaoException(e.getMessage());
