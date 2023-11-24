@@ -15,6 +15,7 @@ public class PrivilegeInformatique {
 	boolean wifiUser = false;
 	boolean wifiAdmin = false;
 	boolean gpi = false;
+	boolean destroyTicket = false;
 
 	public boolean isGpi() {
 		return gpi;
@@ -206,5 +207,14 @@ public class PrivilegeInformatique {
 		} else {
 			this.wifiAdmin = false;
 		}
+	}
+
+	public boolean canDestroyTicket(){return this.isDestroyTicket();}
+	public boolean isDestroyTicket() {
+		return this.destroyTicket;
+	}
+
+	public void setDestroyTicket(boolean destroyTicket) {
+		this.destroyTicket = destroyTicket;
 	}
 }

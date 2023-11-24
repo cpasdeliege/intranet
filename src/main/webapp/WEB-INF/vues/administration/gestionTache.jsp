@@ -2,7 +2,13 @@
 <%@ taglib uri="/WEB-INF/c.tld" prefix="c" %>
 <%@ page import="java.util.*" %>
 <%@ page import="be.cpasdeliege.intranet.informatique.model.*" %>
-<%@page import="org.apache.commons.lang3.StringEscapeUtils" %>
+<%@ page import="org.apache.commons.lang3.StringEscapeUtils" %>
+<%
+PrivilegeInformatique privilege = (PrivilegeInformatique)request.getSession().getAttribute("privilegeInformatique");
+if(privilege == null) {
+	privilege = new PrivilegeInformatique();
+}
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -489,8 +495,10 @@ ${erreurFormulaireTacheModifier}
 												<td background="images/cadre/area_bottom.gif"></td>
 												<td background="images/cadre/area_bottom_right.gif"></td>
 											</tr>
-
+											
+											<% if(privilege.canDestroyTicket()) { %>
 											<td width="15px" style="position:absolute; right: 15px; top:15px;"><a href="supprimerTicketItemConfirmation.admin?ticket=<%= item.getIdTicketItem() %>"><img alt="surpprimer" src="images/administration/supprimer.gif" border="0"></a></td>
+											<% } %>
 										</table>
 									</td>
 								</tr>
