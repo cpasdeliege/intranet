@@ -1,28 +1,22 @@
 package be.cpasdeliege.intranet.informatique.model.dao;
 
-import java.io.UnsupportedEncodingException;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
-
-import javax.swing.text.StyledEditorKit.ItalicAction;
 
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-import pJSQL.JSQL;
-import pJSQL.JSQLException;
 import be.cpasdeliege.intranet.DemServInfo.model.TypeDemandeDsi;
 import be.cpasdeliege.intranet.informatique.controler.formulaire.FormulaireImprimanteOrdinateurAssigner;
-import be.cpasdeliege.intranet.informatique.model.Departement;
 import be.cpasdeliege.intranet.informatique.model.EmailGenerique;
 import be.cpasdeliege.intranet.informatique.model.Imprimante;
 import be.cpasdeliege.intranet.informatique.model.IntranetLog;
 import be.cpasdeliege.intranet.informatique.model.Log;
 import be.cpasdeliege.intranet.informatique.model.Personnel;
-import be.cpasdeliege.intranet.informatique.model.Pole;
 import be.cpasdeliege.intranet.informatique.model.PrivilegeInformatique;
 import be.cpasdeliege.intranet.informatique.model.Stat;
 import be.cpasdeliege.intranet.informatique.model.Statistiques;
@@ -39,8 +33,8 @@ import be.cpasdeliege.intranet.informatique.model.TypeOS;
 import be.cpasdeliege.intranet.informatique.model.TypeOrdinateur;
 import be.cpasdeliege.intranet.informatique.model.Utilisateur;
 import be.cpasdeliege.intranet.informatique.model.WifiVisiteurs;
-
-import be.cpasdeliege.intranet.utils.Utils;
+import pJSQL.JSQL;
+import pJSQL.JSQLException;
 
 public class DaoMySQL implements DaoInterface {
 
@@ -484,6 +478,23 @@ public class DaoMySQL implements DaoInterface {
 		}
 	}
 
+	public TicketItem getTicketItem(int idTicketItem) {
+
+		try {
+			String requete = "select * from ticket where idticket = ?";
+			Object[] parametres = new Object[] { idTicketItem };
+			List<TicketItem> tmp = (List<TicketItem>) bd.executeQueryDB(requete, parametres, new BeanListHandler(TicketItem.class));
+			if (tmp.size() == 1) {
+				TicketItem ticketItem = (TicketItem) tmp.get(0);
+				return ticketItem;
+			} else {
+				return null;
+			}
+		} catch (JSQLException e) {
+			throw new DaoException(e.getMessage());
+		}
+	}
+
 	public List getListeTicketItem(int idPlanning) {
 		try {
 			String requete = "select * from ticket where idPlanning = ?";
@@ -504,6 +515,16 @@ public class DaoMySQL implements DaoInterface {
 			Object[] parametres = new Object[] { ticket.getIdPlanning(),
 					// new String(ticket.getTexte().getBytes(), "UTF-8"),
 					ticket.getTexte(), ticket.getUser(), date };
+			bd.executeUpdate(requete, parametres);
+		} catch (JSQLException e) {
+			throw new DaoException(e.getMessage());
+		}
+	}
+
+	public void supprimerTicketItem(int idTicketItem) {
+		try {
+			String requete = "delete from ticket where idticket = ?";
+			Object[] parametres = new Object[] { idTicketItem };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
 			throw new DaoException(e.getMessage());

@@ -470,7 +470,7 @@ ${erreurFormulaireTacheModifier}
 								</tr>
 								<tr>
 									<td>
-										<table width="100%" cellpadding="0" cellspacing="0">
+										<table width="100%" cellpadding="0" cellspacing="0" style="position:relative;">
 											<tr height="25">
 												<td width="22" background="images/cadre/area_top_left.gif"></td>
 												<td background="images/cadre/area_top.gif"></td>
@@ -489,6 +489,8 @@ ${erreurFormulaireTacheModifier}
 												<td background="images/cadre/area_bottom.gif"></td>
 												<td background="images/cadre/area_bottom_right.gif"></td>
 											</tr>
+
+											<td width="15px" style="position:absolute; right: 15px; top:15px;"><a href="supprimerTicketItemConfirmation.admin?ticket=<%= item.getIdTicketItem() %>"><img alt="surpprimer" src="images/administration/supprimer.gif" border="0"></a></td>
 										</table>
 									</td>
 								</tr>

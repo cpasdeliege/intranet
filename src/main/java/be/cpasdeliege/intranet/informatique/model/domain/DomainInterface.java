@@ -222,9 +222,13 @@ public interface DomainInterface {
 
 	public abstract List getListeTache();
 
+	public abstract TicketItem getTicketItem(int idTicketItem);
+
 	public abstract List getListeTicketItem(int idPlanning);
 
 	public abstract void addTicketItem(TicketItem ticket);
+
+	public abstract void supprimerTicketItem(int idTicketItem);
 
 	public abstract void addEmailGenerique(EmailGenerique email);
 

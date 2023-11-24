@@ -1,10 +1,29 @@
 package be.cpasdeliege.intranet.informatique.model;
 
 public class TicketItem {
+	int idTicketItem = 0;
+	int idticket = 0; // c'est "idticket" dans la DB, du coup on adapte...
 	int idPlanning = 0;
 	String texte = "";
 	String user = "";
 	String date = "";
+
+	public int getIdTicketItem() {
+		return idTicketItem;
+	}
+
+	public void setIdTicketItem(int idTicketItem) {
+		this.idTicketItem = idTicketItem;
+	}
+
+	public int getIdticket() {
+		return this.idticket;
+	}
+
+	public void setIdticket(int idticket) {
+		this.idticket = idticket;
+		this.idTicketItem = idticket; // vu que c'est "idticket" dans l'admin, on redirige le set vers IdTicketItem
+	}
 
 	public int getIdPlanning() {
 		return idPlanning;

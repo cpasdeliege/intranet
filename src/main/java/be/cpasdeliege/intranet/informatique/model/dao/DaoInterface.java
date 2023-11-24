@@ -185,9 +185,13 @@ public interface DaoInterface {
 
 	public abstract List getListeTacheFinie(String service, String nom, String prenom, String ordinateur, String order);
 
+	public abstract TicketItem getTicketItem(int idTicketItem);
+
 	public abstract List getListeTicketItem(int idPlanning);
 
 	public abstract void addTicketItem(TicketItem ticket);
+
+	public abstract void supprimerTicketItem(int idTicketItem);
 
 	public abstract void addEmailGenerique(EmailGenerique email);
 

@@ -355,6 +355,11 @@ public class Domain implements DomainInterface {
 //	}
 
 	@Override
+	public TicketItem getTicketItem(int idTicketItem){
+		return dao.getTicketItem(idTicketItem);
+	}
+
+	@Override
 	public void addTicketItem(TicketItem ticket) {
 		dao.addTicketItem(ticket);
 
@@ -363,6 +368,12 @@ public class Domain implements DomainInterface {
 	@Override
 	public List getListeTicketItem(int idPlanning) {
 		return dao.getListeTicketItem(idPlanning);
+	}
+
+	public synchronized void supprimerTicketItem(int idTicketItem) {
+		TicketItem ticketItem = dao.getTicketItem(idTicketItem);
+		
+		dao.supprimerTicketItem(ticketItem.getIdTicketItem());
 	}
 
 	private DaoOrdinateurPersonnel formulaireOrdinateurPersonnelAssignerToDaoOrdinateurPersonnel(
