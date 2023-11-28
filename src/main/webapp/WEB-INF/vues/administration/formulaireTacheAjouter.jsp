@@ -206,7 +206,13 @@
 						</tr>
 						<tr>
 							<td align="right" valign="top">tâche :</td>
-							<td><textarea cols="60" rows="10" name="travail" />${description}</textarea></td>
+							<td>
+								<textarea id="zonedetexte" cols="60" rows="10" name="travail" />${description}</textarea>
+								<br>
+								<input onclick="ajoutLien()" type="button" value="ajouter lien"/>
+								<input onclick="ajoutLienDSI()" type="button" value="ajouter lien DSI"/>
+								<input onclick="ajoutLienTHI()" type="button" value="ajouter lien TI"/>
+							</td>
 						</tr>
 						<tr>
 							<td></td>
@@ -237,5 +243,17 @@
 	</table>
 
 	<jsp:include page="../basDePage.jsp"></jsp:include>
+	
+	<script type="text/javascript">
+		function ajoutLien() {
+			document.getElementById('zonedetexte').value = document.getElementById('zonedetexte').value+' <a href=""></a>';
+		}
+		function ajoutLienDSI() {
+			document.getElementById('zonedetexte').value = document.getElementById('zonedetexte').value+' <a href="afficherDemande.dsi?idDemandes=">DSI</a>';
+		}
+		function ajoutLienTHI() {
+			document.getElementById('zonedetexte').value = document.getElementById('zonedetexte').value+' <a href="gestionTache.admin?idPlanning=">TI</a>';
+		}
+	</script>
 </body>
 </html>

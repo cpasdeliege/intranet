@@ -524,9 +524,9 @@ public class DaoMySQL implements DaoInterface {
 
 	public void supprimerTicketItem(int idTicketItem, String login) {
 		try {
-			//String requete = "delete from ticket where idticket = ?";
-			String requete = "update ticket set destroyed = 1, destroyedAt = ?, destroyedBy = ? where idticket = ?"; // on fait un soft delete au lieu de supprimer le ticket de la table
-			Object[] parametres = new Object[] { new Timestamp(new Date().getTime()), login, idTicketItem };
+			String requete = "delete from ticket where idticket = ?"; // On supprime le ticket, un trigger crée une entrée dans history_ticket
+			//String requete = "update ticket set destroyed = 1, destroyedAt = ?, destroyedBy = ? where idticket = ?"; // on fait un soft delete au lieu de supprimer le ticket de la table
+			Object[] parametres = new Object[] { idTicketItem }; //{ new Timestamp(new Date().getTime()), login, idTicketItem };
 			bd.executeUpdate(requete, parametres);
 		} catch (JSQLException e) {
 			throw new DaoException(e.getMessage());

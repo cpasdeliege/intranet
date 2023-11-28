@@ -448,7 +448,11 @@ ${erreurFormulaireTacheModifier}
 						
 					</td>
 				</tr>
-				
+				<tr>
+					<td></td>
+					<td><br><input type="submit" value="modifier"/></td>
+					<td></td>
+				</tr>
 				<%
 					List liste = (List)request.getAttribute("listeTicketItem");
 					for(int i = 0; i < liste.size(); i++) {
@@ -497,7 +501,11 @@ ${erreurFormulaireTacheModifier}
 											</tr>
 											
 											<% if(privilege.canDestroyTicket()) { %>
-											<td width="15px" style="position:absolute; right: 15px; top:15px;"><a href="supprimerTicketItemConfirmation.admin?ticket=<%= item.getIdTicketItem() %>"><img alt="surpprimer" src="images/administration/supprimer.gif" border="0"></a></td>
+											<td width="15px" style="position:absolute; right: 15px; top:15px;"><a href="supprimerTicketItemConfirmation.admin?ticket=<%= item.getIdTicketItem() %>"><img alt="surpprimer" title="Supprimer" src="images/administration/supprimer.gif" border="0"></a></td>
+											<% } %>
+											
+											<% if(privilege.canEditTicket()) { %>
+											<td width="15px" style="position:absolute; right: 35px; top:15px;"><a href="editerTicketItem.admin?ticket=<%= item.getIdTicketItem() %>"><img alt="éditer" title ="Editer" src="images/administration/editer.png" border="0"></a></td>
 											<% } %>
 										</table>
 									</td>
@@ -519,7 +527,6 @@ ${erreurFormulaireTacheModifier}
 					<td>
 						<a href="${retour}#${formulaireTacheModifier.idPlanning }"><img alt="retour" src="images/administration/retour.jpg" border="0"></a>
 					</td>
-					<td align="right"><input type="submit" value="modifier"/></td>
 				</tr>
 			</table>
 			

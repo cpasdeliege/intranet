@@ -16,6 +16,7 @@ public class PrivilegeInformatique {
 	boolean wifiAdmin = false;
 	boolean gpi = false;
 	boolean destroyTicket = false;
+	boolean editTicket = false;
 
 	public boolean isGpi() {
 		return gpi;
@@ -216,5 +217,14 @@ public class PrivilegeInformatique {
 
 	public void setDestroyTicket(boolean destroyTicket) {
 		this.destroyTicket = destroyTicket;
+	}
+
+	public boolean canEditTicket(){return this.isEditTicket();}
+	public boolean isEditTicket() {
+		return this.editTicket;
+	}
+
+	public void setEditTicket(boolean editTicket) {
+		this.editTicket = editTicket;
 	}
 }
