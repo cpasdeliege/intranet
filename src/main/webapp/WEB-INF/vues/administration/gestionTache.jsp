@@ -505,7 +505,7 @@ ${erreurFormulaireTacheModifier}
 											<% } %>
 											
 											<% if(privilege.canEditTicket()) { %>
-											<% String rightValue = privilege.canDestroyTicket() ? "40" : "15"; %>
+											<% String rightValue = privilege.canDestroyTicket() ? "35" : "15"; %>
 											<td width="15px" style="position:absolute; right: <%= rightValue %>px; top:15px;"><a href="modifierTicketItem.admin?ticket=<%= item.getIdTicketItem() %>"><img alt="éditer" title ="Editer" src="images/administration/editer.png" border="0"></a></td>
 											<% } %>
 										</table>
