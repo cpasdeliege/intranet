@@ -375,6 +375,15 @@ public class Domain implements DomainInterface {
 		dao.supprimerTicketItem(ticketItem.getIdTicketItem(), login);
 	}
 
+	public synchronized void modifierTicketItem(int idTicket, String texte) {
+		// Fred Derlee
+		/*
+		 * dao.supprimerService(service.getNom());
+		 * dao.addService(formulaireServiceToDaoService(service));
+		 */
+		dao.updateTicketItem(idTicket,texte);
+	}
+
 	private DaoOrdinateurPersonnel formulaireOrdinateurPersonnelAssignerToDaoOrdinateurPersonnel(
 			FormulaireOrdinateurPersonnelAssigner formulaire) {
 		DaoOrdinateurPersonnel personnelOrdinateur = new DaoOrdinateurPersonnel();

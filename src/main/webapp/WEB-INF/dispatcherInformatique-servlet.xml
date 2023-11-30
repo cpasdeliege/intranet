@@ -124,6 +124,7 @@
 				<prop key="/formulaireTacheAjouter.admin">FormulaireTacheAjouterControler</prop>
 				<prop key="/supprimerTicketItem.admin">SupprimerTicketItemControler</prop>
 				<prop key="/supprimerTicketItemConfirmation.admin">SupprimerTicketItemConfirmationControler</prop>
+				<prop key="/modifierTicketItem.admin">ModifierTicketItemControler</prop>
 				
 				<prop key="/rapports.admin">GestionLogControler</prop>
 				
@@ -195,7 +196,7 @@
 				<prop key="/supprimerPersonnel.admin">SupprimerPersonnelControler</prop>
 				<prop key="/supprimerPersonnelConfirmation.admin">SupprimerPersonnelConfirmationControler</prop>
 				<prop key="/formulairePersonnelModifier.admin">FormulairePersonnelModifierControler</prop>
-				<prop key="/modifierPersonnel.admin">ModifierPersonnelControler</prop>	
+				<prop key="/modifierPersonnel.admin">ModifierPersonnelControler</prop>
 			</props>
 		</property>
 	</bean>
@@ -534,6 +535,12 @@
 		</property>
 	</bean>
 	
+	<bean id="ModifierTicketItemControler" 
+		class="be.cpasdeliege.intranet.informatique.controler.action.ModifierTicketItem">
+		<property name="metier">
+			<ref bean="domain"/>
+		</property>
+	</bean>
 	
 	<bean id="SupprimerServiceConfirmationControler" class="be.cpasdeliege.intranet.informatique.controler.SupprimerServiceConfirmation">
 		<property name="metier">

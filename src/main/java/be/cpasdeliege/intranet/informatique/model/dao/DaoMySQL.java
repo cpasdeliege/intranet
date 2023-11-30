@@ -533,6 +533,20 @@ public class DaoMySQL implements DaoInterface {
 		}
 	}
 
+	@Override
+	public void updateTicketItem(int idTicket, String texte) {
+		try {
+			String requete = "update ticket set texte = ? where idticket = ?";
+
+			Object[] parametres = new Object[] { texte, idTicket };
+
+			bd.executeUpdate(requete, parametres);
+		} catch (JSQLException e) {
+			throw new DaoException(e.getMessage());
+		}
+
+	}
+
 	public int addTache(Tache tache) {
 		try {
 			String requete = "insert into planning (" + "ordinateur, " + "nom, " + "prenom, " + "nomInfo, "
